@@ -1,0 +1,14 @@
+Subject: A1: wait for worker completion before writing final module statistics
+
+--- a/src/System.cc
++++ b/src/System.cc
+@@ -555,6 +555,9 @@
+         pangolin::BindToContext("ORB-SLAM2: Map Viewer");*/
+ 
+ #ifdef REGISTER_TIMES
++    // Snapshot statistics only after all writers have finished.
++    while(!mpLocalMapper->isFinished() || !mpLoopCloser->isFinished() || mpLoopCloser->isRunningGBA())
++        usleep(5000);
+     mpTracker->PrintTimeStats();
+ #endif
+ 

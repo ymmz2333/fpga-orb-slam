@@ -1,0 +1,114 @@
+From be1170c4dedb82cc4e71cad75a8567fbdb6582f7 Mon Sep 17 00:00:00 2001
+From: cornmeal-porridge <18718516898@163.com>
+Date: Sun, 4 Oct 2026 21:00:23 +0900
+Subject: [PATCH] Record per-frame map identity and relocalization; export all
+ final maps without algorithm changes
+
+---
+ Examples/Monocular/mono_euroc.cc |  7 +++++++
+ include/System.h                 |  3 +++
+ include/Tracking.h               |  2 ++
+ src/System.cc                    | 25 +++++++++++++++++++++++++
+ 4 files changed, 37 insertions(+)
+
+diff --git a/Examples/Monocular/mono_euroc.cc b/Examples/Monocular/mono_euroc.cc
+index 5829b6b..bb6e4ce 100644
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -119,6 +119,9 @@ int main(int argc, char **argv)
+ #ifdef REGISTER_TIMES
+     // Keep buffered state output outside the measured TrackMonocular interval.
+     ofstream featureFile("FeatureTimeStats.csv");
++    ofstream mapFile("MapStateStats.csv");
++    if(!mapFile) { cerr << "Cannot create MapStateStats.csv" << endl; return 2; }
++    mapFile << "frame_index,map_id,relocalized\n";
+     if(!featureFile) { cerr << "Cannot create FeatureTimeStats.csv" << endl; return 2; }
+     featureFile << "frame_index,timestamp_ns,role,count,extractor_calls,read_ms,decode_ms,native_ms,dump_ms,auxiliary_ms,inliers\n";
+     featureFile << setprecision(17);
+@@ -210,6 +213,8 @@ int main(int argc, char **argv)
+                         << featureStats.count << ',' << featureStats.extractor_calls << ','
+                         << featureStats.read_ms << ',' << featureStats.decode_ms << ',' << featureStats.native_ms << ','
+                         << featureStats.dump_ms << ',' << featureStats.auxiliary_ms << ',' << inliers << '\n';
++            mapFile << stateFrameIndex << ',' << SLAM.GetActiveMapId() << ','
++                    << (SLAM.DidRelocalizeCurrentFrame() ? 1 : 0) << '\n';
+             stateFile << stateFrameIndex++ << ',' << seq << ',' << ni << ',' << tframe
+                       << ',' << previousTrackingState << ',' << currentTrackingState << '\n';
+             previousTrackingState = currentTrackingState;
+@@ -251,9 +256,11 @@ int main(int argc, char **argv)
+ #ifdef REGISTER_TIMES
+     stateFile.close();
+     featureFile.close();
++    mapFile.close();
+ #endif
+     // Stop all threads
+     SLAM.Shutdown();
++    SLAM.SaveMapDiagnostics("Diagnostics");
+ 
+     // Save camera trajectory
+     if (bFileName)
+diff --git a/include/System.h b/include/System.h
+index 1cb430c..4d15b1c 100644
+--- a/include/System.h
++++ b/include/System.h
+@@ -175,6 +175,9 @@ public:
+     // You can call this right after TrackMonocular (or stereo or RGBD)
+     int GetTrackingState();
+     int GetTrackingInliers();
++    unsigned long GetActiveMapId();
++    bool DidRelocalizeCurrentFrame();
++    void SaveMapDiagnostics(const string &prefix);
+     std::vector<MapPoint*> GetTrackedMapPoints();
+     std::vector<cv::KeyPoint> GetTrackedKeyPointsUn();
+ 
+diff --git a/include/Tracking.h b/include/Tracking.h
+index 863c98e..d21ef73 100644
+--- a/include/Tracking.h
++++ b/include/Tracking.h
+@@ -101,6 +101,8 @@ public:
+     void NewDataset();
+     int GetNumberDataset();
+     int GetMatchesInliers();
++    // Read synchronously after GrabImageMonocular; instrumentation only.
++    bool DidRelocalizeCurrentFrame() const { return mCurrentFrame.mnId == mnLastRelocFrameId && mState == OK; }
+ 
+     //DEBUG
+     void SaveSubTrajectory(string strNameFile_frames, string strNameFile_kf, string strFolder="");
+diff --git a/src/System.cc b/src/System.cc
+index 6edc8f7..0656be2 100644
+--- a/src/System.cc
++++ b/src/System.cc
+@@ -1339,6 +1339,31 @@ int System::GetTrackingInliers()
+     return mpTracker->GetMatchesInliers();
+ }
+ 
++unsigned long System::GetActiveMapId()
++{
++    return mpAtlas->GetCurrentMap()->GetId();
++}
++
++bool System::DidRelocalizeCurrentFrame()
++{
++    return mpTracker->DidRelocalizeCurrentFrame();
++}
++
++void System::SaveMapDiagnostics(const string &prefix)
++{
++    // Called after Shutdown. Export every map, rather than just the largest map.
++    ofstream summary(prefix + "_maps.csv");
++    summary << "map_id,keyframes,map_points,trajectory_file\n";
++    for(Map* map : mpAtlas->GetAllMaps())
++    {
++        const size_t keyframes=map->GetAllKeyFrames().size();
++        const string filename=prefix+"_map"+to_string(map->GetId())+".txt";
++        summary << map->GetId() << ',' << keyframes << ',' << map->GetAllMapPoints().size()
++                << ',' << (keyframes ? filename : "") << '\n';
++        if(keyframes) SaveTrajectoryEuRoC(filename,map);
++    }
++}
++
+ int System::GetTrackingState()
+ {
+     unique_lock<mutex> lock(mMutexState);
+-- 
+2.51.0.windows.1
+

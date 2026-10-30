@@ -1,0 +1,37 @@
+/dts-v1/;
+/plugin/;
+
+/* ACZ7015 Linux4.14 live-DT overlay. Root address/size cells must both be1.
+   Apply only after stopping and unbinding the old audio/video consumers. */
+/ {
+    fragment@0 {
+        target-path = "/amba_pl";
+        __overlay__ {
+            Check_GPIO@43c70000 { status = "disabled"; };
+            DVP_Capture2DDR@43c00000 { status = "disabled"; };
+            Measure_Camera_Parametar@43c60000 { status = "disabled"; };
+            audio_formatter@43c10000 { status = "disabled"; };
+            i2c@41600000 { status = "disabled"; };
+            dma@43000000 { status = "disabled"; };
+            clk_wiz@43c20000 { status = "disabled"; };
+            i2s_receiver@43c30000 { status = "disabled"; };
+            i2s_transmitter@43c40000 { status = "disabled"; };
+            v_tc@43c50000 { status = "disabled"; };
+            xlnx_vdma_lcd { status = "disabled"; };
+        };
+    };
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            orb60@43c00000 {
+                compatible = "generic-uio";
+                reg = <0x43c00000 0x10000>, <0x43c10000 0x10000>,
+                      <0x20000000 0x01000000>;
+                reg-names = "layer", "descriptor", "dedicated-ddr";
+                status = "okay";
+            };
+        };
+    };
+};

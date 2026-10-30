@@ -1,0 +1,4 @@
+{
+  "sshAlias": "rk3588",
+  "remoteRoot": "~/orbslam3_cpu_baseline"
+}

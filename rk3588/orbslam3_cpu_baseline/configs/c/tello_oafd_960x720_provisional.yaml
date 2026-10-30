@@ -1,0 +1,40 @@
+%YAML:1.0
+
+# 临时内参，待标定后重跑；借用另一台 Tello 的参数，未标定本机。
+# Provisional borrowed intrinsics, NOT a calibration of this aircraft.
+# Source: https://github.com/geturin/OAFD_Monocular/blob/41f98f3fb53c3250187efc55c2893373dc32cfbc/config/tello.yaml
+# Source SHA256: c6a130727d77874d8521cea82927faadad7256409d63bd2cc08547d6574d58b7
+# Same 960x720 dimensions; EIS/crop/device equivalence is unverified.
+# Camera.fps is nominal 30; replay waits must use actual selected timestamps.
+File.version: "1.0"
+Camera.type: "PinHole"
+Camera1.fx: 910.072
+Camera1.fy: 914.094
+Camera1.cx: 485.523
+Camera1.cy: 336.718
+Camera1.k1: -0.005941
+Camera1.k2: 0.055161
+Camera1.p1: -0.006094
+Camera1.p2: 0.003192
+Camera.width: 960
+Camera.height: 720
+Camera.fps: 30
+Camera.RGB: 0
+
+# A3/B1 extractor configuration (initialization uses 5000 features).
+ORBextractor.nFeatures: 1000
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -3.5
+Viewer.ViewpointF: 500.0

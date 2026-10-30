@@ -1,0 +1,7 @@
+numpy
+av
+opencv-python
+PySide6
+pyqtgraph
+PyOpenGL
+paramiko>=3.5,<4

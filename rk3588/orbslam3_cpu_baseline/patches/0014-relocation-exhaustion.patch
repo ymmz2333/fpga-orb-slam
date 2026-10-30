@@ -1,0 +1,11 @@
+--- a/src/MLPnPsolver.cpp
++++ b/src/MLPnPsolver.cpp
+@@ -199,6 +199,8 @@
+ 	                        vbInliers[mvKeyPointIndices[i]] = true;
+ 	                }
+ 	                Tout = mRefinedTcw;
++                // Exhaustion must be propagated even when refinement returns a pose.
++                bNoMore = mnIterations >= mRansacMaxIts;
+                 RelocDiagnostic::event("refine_return",this,-1,nCurrentIterations,mnIterations,mRansacMaxIts,bNoMore,mnInliersi,mnRefinedInliers,-1,1);
+ 	                return true;
+ 	            }

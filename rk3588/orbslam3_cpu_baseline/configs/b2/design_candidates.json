@@ -1,0 +1,30 @@
+{
+  "label": "设计候选",
+  "intrinsics_label": "借用内参，未本机标定",
+  "normal_features": 1000,
+  "initialization_multiplier": 5,
+  "default_levels": 8,
+  "default_scale": 1.2,
+  "ini_fast": 20,
+  "min_fast": 7,
+  "smoke_frames": 600,
+  "audit_stride": 100,
+  "fast_probe_thresholds": [10, 15, 20, 25],
+  "datasets": [
+    {"name": "MH01", "kind": "euroc", "path": "~/data/euroc/MH_01_easy", "timestamps": "vendor/ORB_SLAM3/Examples/Monocular/EuRoC_TimeStamps/MH01.txt", "yaml": "configs/a3/baseline_752x480.yaml", "width": 752, "height": 480, "intrinsics_label": "EuRoC 标定内参", "forecast_reference": "reports/b1/*/raw/native_run*/run_metadata.json"},
+    {"name": "flight_20261004T184929_998838_6bb93c56", "kind": "prepared", "path": "runtime/c/datasets/TT_C1_01/flight_20261004T184929_998838_6bb93c56", "timestamps": "runtime/c/datasets/TT_C1_01/flight_20261004T184929_998838_6bb93c56/timestamps.txt", "yaml": "configs/c/tello_oafd_960x720_provisional.yaml", "width": 960, "height": 720, "intrinsics_label": "借用内参，未本机标定", "forecast_reference": "reports/c2/*/raw/*184929*/run_metadata.json"},
+    {"name": "flight_20261004T200648_509768_918b85a4", "kind": "prepared", "path": "runtime/c/datasets/TT_C1_01/flight_20261004T200648_509768_918b85a4", "timestamps": "runtime/c/datasets/TT_C1_01/flight_20261004T200648_509768_918b85a4/timestamps.txt", "yaml": "configs/c/tello_oafd_960x720_provisional.yaml", "width": 960, "height": 720, "intrinsics_label": "借用内参，未本机标定", "forecast_reference": "reports/c2/*/raw/*200648*/run_metadata.json"}
+  ],
+  "variants": {
+    "native": {},
+    "V0": {},
+    "P1": {"levels": 1},
+    "P2": {"levels": 2, "scale": 2.0, "box2": 1, "mean_rounding": 0},
+    "F": {"fixed_fast": 1},
+    "G": {"grid": 1},
+    "A8": {"angle_bins": 8},
+    "A32": {"angle_bins": 32},
+    "B": {"skip_blur": 1},
+    "MIN": {"levels": 1, "fixed_fast": 1, "grid": 1, "angle_bins": 8, "skip_blur": 1}
+  }
+}

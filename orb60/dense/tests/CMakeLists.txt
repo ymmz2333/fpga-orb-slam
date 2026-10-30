@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(dense_geometry_native_tests LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 14)
+find_package(OpenCV REQUIRED COMPONENTS core imgcodecs imgproc)
+add_executable(test_feature_mask test_feature_mask.cpp)
+target_include_directories(test_feature_mask PRIVATE ../slam ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(test_feature_mask PRIVATE ${OpenCV_LIBS})

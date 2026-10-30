@@ -1,0 +1,48 @@
+{
+  "origin": "Authored coordinate formulas in tools/generate_camera_fixtures.py",
+  "reference": "Pillow JPEG decoder draft L, then explicit center crop; no RGB-to-gray conversion",
+  "pillow_version": "12.3.0",
+  "libjpeg_turbo": "3.1.4.1",
+  "cases": [
+    {
+      "name": "1280x720_RGB_2",
+      "width": 1280,
+      "height": 720,
+      "mode": "RGB",
+      "subsampling": 2
+    },
+    {
+      "name": "1280x800_L_0",
+      "width": 1280,
+      "height": 800,
+      "mode": "L",
+      "subsampling": 0
+    },
+    {
+      "name": "960x720_RGB_1",
+      "width": 960,
+      "height": 720,
+      "mode": "RGB",
+      "subsampling": 1
+    },
+    {
+      "name": "1024x768_RGB_0",
+      "width": 1024,
+      "height": 768,
+      "mode": "RGB",
+      "subsampling": 0
+    }
+  ],
+  "sha256": {
+    "1024x768_RGB_0.gray": "b55778d4bf64130e2931c96176babdc70164fac1618731b1bc41d3ff89f9c856",
+    "1024x768_RGB_0.jpg": "8eff1258b8fbcabe3f431cc366068a13d17546d4d07a15a35e6341f5c9017ad6",
+    "1280x720_RGB_2.gray": "97f7ce43bf7a0d73310552a1a9aa7740333dcf753c0cad194e07ca481e5faeaf",
+    "1280x720_RGB_2.jpg": "12587d17d95cdecdb86164e189923ad715eb1e903414e82f9b32718331105ee4",
+    "1280x800_L_0.gray": "8f1a277a4c36d5185f5ea2d6de6b06fbe76a50ef07c908c8df8e5250ee90df99",
+    "1280x800_L_0.jpg": "1d75af8b752b8d3402de35d66e72b92aa84f2e6aaab538d4fb40b9272b43646f",
+    "960x720_RGB_1.gray": "1ebca2d75b016c2e89f6cf9074f77f057e8bf4c43ec488e62eff7c4c43886e67",
+    "960x720_RGB_1.jpg": "4055e5d9562d4869c2c2dc0a83a639eab055f6c6747c2dd0cdedbb9546624e60",
+    "cmyk.jpg": "935e2a6d43271a6949b2c99de5cc05df184a1acfa24a9b80150a220d647527d1",
+    "progressive.jpg": "18897b1e230a2a9f294fa1ecd5392a0bc6cc5d30ee3cc76e8863e1da933510af"
+  }
+}

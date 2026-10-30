@@ -1,0 +1,107 @@
+{
+  "state": "COMPLETED",
+  "started_utc": "2026-10-21T17:21:27.994577+00:00",
+  "scope": "Physical FPGA + Ethernet + rk3588 SLAM integration; accuracy not calibrated",
+  "command": [
+    "/home/cat/orbslam3_cpu_baseline/vendor/ORB_SLAM3/Examples/Monocular/mono_euroc",
+    "/home/cat/orbslam3_cpu_baseline/vendor/ORB_SLAM3/Vocabulary/ORBvoc.txt",
+    "/home/cat/orbslam3_cpu_baseline/configs/c/tello_oafd_960x720_provisional.yaml",
+    "/home/cat/orbslam3_cpu_baseline/runtime/c/datasets/TT_C1_01/flight_20261004T184929_998838_6bb93c56",
+    "/home/cat/orbslam3_cpu_baseline/runtime/dense/room_full/slam/timestamps.txt",
+    "--no-viewer",
+    "--feature-mode",
+    "fpga-pipeline",
+    "--feature-dir",
+    "[fe80::20a:35ff:fe00:122%eth0]:5600",
+    "--unpaced"
+  ],
+  "frames": 2273,
+  "dataset": "/home/cat/orbslam3_cpu_baseline/runtime/c/datasets/TT_C1_01/flight_20261004T184929_998838_6bb93c56",
+  "camera_sha256": "01d15a6af41be4ed17c72c4232b719eea016e13c357a7554ca79a09bb79a287b",
+  "initialization_features": 1000,
+  "normal_features": 1000,
+  "calibration": "borrowed provisional intrinsics, not calibrated",
+  "execution_platform": "rk3588",
+  "hostname": "lubancat",
+  "architecture": "aarch64",
+  "network_interface": "",
+  "fpga_route": "",
+  "network_before": {},
+  "feature_mode": "fpga-pipeline",
+  "unpaced": true,
+  "telemetry": false,
+  "telemetry_record": false,
+  "telemetry_fps": 30,
+  "executable_sha256": "6f66b548a7b3eceb371d762eea8b669a5e959aee34531245df41983aa0bb7791",
+  "library_sha256": "cab73dac745f4711fa2cb2a7af3a1bbfe03078d41d064926c6d050befdbe42db",
+  "source_sha256": {
+    "include/FpgaORB.h": "7e917cf88f97c3b9d4fdee7ef26da2efb11d5060ffa78b451c7635ba0621d38e",
+    "include/Orb60Protocol.h": "c68cc73e4d3a4f0c2bf4675e9bccc61efec6c50298826668c64e3e0a2b831851",
+    "include/FeatureIO.h": "930ef0ceb683d5244067e312caa89425ab53d9f682bedec5176bee05d67484e6",
+    "src/FeatureIO.cc": "8575152c17d0b0c4f80792920608055c1a049387bec29e1205e28b11846d03aa",
+    "src/Tracking.cc": "fe22faccc7a9e3b4e48e24b7942af6f304b95bd140e0432ac48da2c6729bd42f",
+    "src/ORBmatcher.cc": "47f690ddcac964f2c5d1cebe3e9a2198569fda31a84898643f6b3b764e75991f",
+    "include/FpgaPipeline.h": "c774919a6e0554a91b2680d1e2c3946d02754419e2ac2b89b8418dff684c2994",
+    "include/FpgaReplayInput.h": "a6d42fd6f35eaec6ef8247f483ccf63b017cd59a86fa192740f686874aa40f98",
+    "include/System.h": "b4c7b78afa095fa9cc747a576cec2fdff0e1595cb5a7db6088c101659f93c27d",
+    "src/System.cc": "59fadd7ee12c80b09487c96fbee35f09e7f45679128fcde9f249ad197a0d3ec1",
+    "include/OrbTelemetry.h": "000a75da458bff58704bf30b2c977a8e1ffcf7964c40dcc38dc53f81a558f43b",
+    "Examples/Monocular/mono_euroc.cc": "579f7c1110b344dbb5f39c5adb953ebdce7057eb2b84eb55925c94246ecea7c7"
+  },
+  "process_id": 35092,
+  "exit_code": 0,
+  "wall_seconds": 50.9525214009991,
+  "finished_utc": "2026-10-21T17:22:18.965228+00:00",
+  "peak_child_rss_kib": 548860,
+  "feature_frames": 2273,
+  "hardware_requests": 2273,
+  "cpu_orb_calls": 0,
+  "tracking_states": {
+    "1": 110,
+    "2": 2081,
+    "3": 82
+  },
+  "trajectory_poses": 2163,
+  "initialized": true,
+  "count": {
+    "min": 261.0,
+    "mean": 846.3062032556094,
+    "max": 936.0
+  },
+  "read_ms": {
+    "min": 0.001166,
+    "mean": 6.8372595648922125,
+    "max": 36.191885
+  },
+  "decode_ms": {
+    "min": 0.059207,
+    "mean": 0.1326446669599648,
+    "max": 1.327337
+  },
+  "integration_pass": true,
+  "network_ms": {
+    "mean": 36.80956152265728,
+    "p99": 57.579776,
+    "max": 72.487601
+  },
+  "wait_ms": {
+    "mean": 6.8372595648922125,
+    "p99": 22.070663,
+    "max": 36.191885
+  },
+  "latency_ms": {
+    "mean": 43.303988933128025,
+    "p99": 82.495274,
+    "max": 119.850793
+  },
+  "processing_seconds": 40.670034458,
+  "processing_fps": 55.88881421645536,
+  "pipeline": {
+    "sent": 2273,
+    "received": 2273,
+    "consumed": 2273,
+    "max_inflight": 3,
+    "max_input": 2,
+    "max_results": 3
+  }
+}

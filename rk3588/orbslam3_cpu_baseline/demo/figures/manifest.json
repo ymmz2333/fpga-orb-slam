@@ -1,0 +1,38 @@
+{
+  "purpose": "D2 visualization of accepted A2 data; no new SLAM run",
+  "selected_run": "attempt_01",
+  "tracking_resolution": "600x350",
+  "resize_policy": "official nonuniform resize",
+  "dpi": 300,
+  "font": "Microsoft YaHei",
+  "selected_ate_rmse_m": 0.02321254327131122,
+  "raw_inputs_sha256": {
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\groundtruth_cam0.tum": "e721804c509c20ced19fe39b1e2a54d018e5006e05b54d7cb731568457a865b5",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_01\\TrackingStates.csv": "5df79377afe64f233004cec23ad5d6f36baf313dc5c1bfeb138e2b9ee301f286",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_01\\TrackingTimeStats.txt": "57daed468f9fbbc93f1bf15a414234d5217e183fa4f50f3176f01f40b36430e9",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_01\\f_MH01.txt": "cffb44fa108ac648b8d68b23de29b0a8946398e5da9b727e9360913730eb4667",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_01\\ate.json": "c61fea4cfc01a3920520d02804377dae249c49629ae29403dced35257fa42e5f",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_02\\TrackingStates.csv": "35be923d667ec2cc797048e846560d412768b8f2b07a7adeb4921b5250da6dda",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_02\\TrackingTimeStats.txt": "cec0afd7badc7b1176f9650f367f427a1d7617602c62575c737cb270d763d8df",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_02\\f_MH01.txt": "10bf879bfe4884e9534c704c072032206baa1cef59bdcfd84101df1528a5b57a",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_02\\ate.json": "517b98ec1a18be4847f9adeee3152a310c1b63deee5d8ec7250497db1077c0c4",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_03\\TrackingStates.csv": "5df79377afe64f233004cec23ad5d6f36baf313dc5c1bfeb138e2b9ee301f286",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_03\\TrackingTimeStats.txt": "8c159423a67131b07d2e371b3e6eed46abd976b9dd331b69775682a34b5a26c1",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_03\\f_MH01.txt": "afe8d131232f1375585f9e75289b6ee0911c35fcdc2337512fcdda3f861c240d",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_03\\ate.json": "4e78bf451cce6f998cd8252d0455fd9a849617787c04fd937cb4007666d1b873",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_04\\TrackingStates.csv": "4692bd242235137b7a2f8cb33c1be385d5a83ed35bf18b7ecb054debe9c3e432",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_04\\TrackingTimeStats.txt": "eaf9d0be95e11e61504813ac174aa17e7fe92454128fb6f70bcb83133cd808ff",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_04\\f_MH01.txt": "ea404e4805dbc335f8fb6cd51502c9cd9a5975ada8f1e055fb5f3a63c90b621b",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_04\\ate.json": "70b3c904fac1a20288a2b631bd5c5ea5d11cc8e41f9d855465dc56bfe3acac12",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_05\\TrackingStates.csv": "5df79377afe64f233004cec23ad5d6f36baf313dc5c1bfeb138e2b9ee301f286",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_05\\TrackingTimeStats.txt": "9b4b3ea44f2a60f20af2f3f477d56bee8fa6f359e8f45739caf6169aef28cc0b",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_05\\f_MH01.txt": "26dad60a7da528c8c348d60c36dc57e50b7e22dfc5463c2aca1e150bda55af03",
+    "reports\\a2\\MH01_600x350_passive_01\\raw\\attempt_05\\ate.json": "edc6c0b4fe59ee3c7570267cdcbf9a5f81f1ec06d2ccf99305c001286186c214"
+  },
+  "figures_sha256": {
+    "01_trajectory_xy.png": "33daa1b07d46d148f5b0784046fae0eec14a69ecb99a2fa69c3274744d264022",
+    "02_frame_timing.png": "997fe3e19813c62a6f2322420e93b448501818603e409256aa37049500b728fc",
+    "03_orb_share.png": "392357c68e081b7133de8d09c6ae3d495417931a1534b17d5f710e73c451c85d",
+    "04_ate_runs.png": "885ad578d79859f133c2155ee8455a156d7c44a067786a84be9edac863962204"
+  }
+}

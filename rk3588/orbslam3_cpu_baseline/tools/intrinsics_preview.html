@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>临时内参画面对比</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#14191f;color:#edf2f6;font:16px/1.6 "Microsoft YaHei",system-ui,sans-serif}
+main{max-width:1220px;margin:auto;padding:24px}h1{font-size:26px;margin:0 0 8px}.muted{color:#aebdca}p{margin:8px 0}
+.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:18px 0}button,select{font:inherit;color:inherit;background:#27333f;border:1px solid #506273;border-radius:6px;padding:7px 12px}button{cursor:pointer}input[type=range]{accent-color:#4ec1de;min-width:240px}
+.stage{position:relative;background:#000;border:1px solid #405060}canvas{display:block;width:100%;height:auto;touch-action:none;cursor:col-resize}.badge{position:absolute;top:10px;background:#000b;padding:3px 10px;border-radius:4px;pointer-events:none}.left{left:10px}.right{right:10px}
+.stats{display:flex;gap:22px;flex-wrap:wrap;padding:12px 0}strong{color:#71d4e9}.note{background:#202a34;padding:12px 16px;border-left:3px solid #69cadd;margin:12px 0}.small{font-size:13px}a{color:#85d5e8}details{padding:12px 0}#heat{width:min(100%,640px)}
+</style><main><h1>临时内参：原图与畸变校正后的画面</h1>
+<p class="muted">与 C2 相同的实拍灰度帧 · 原尺寸 · 相同 K · 不自动裁剪、不放大填满黑边</p>
+<div class="note">当前 SLAM 在原图提取特征，再校正特征点坐标。这里把同一畸变模型作用到整幅图，方便检查几何变化；它不是 SLAM 实际显示的输入画面，也不能证明本机标定正确。</div>
+<div class="controls"><label>片段 <select id="clip"></select></label><button id="prev">上一帧</button><button id="next">下一帧</button><label><input type="checkbox" id="grid">参考网格</label><label><input type="checkbox" id="blink">整帧切换</label><button id="flip">显示校正后</button></div>
+<p id="caption"></p><div class="stage"><canvas id="canvas"></canvas><span class="badge left">原图</span><span class="badge right">校正后</span></div>
+<div class="controls"><label>拖动分界线 <input id="split" type="range" min="0" max="100" value="50"></label><span id="coord" class="muted small">在画面上拖动，或勾选“整帧切换”后用按钮来回比较。</span></div>
+<div class="stats" id="stats"></div><p class="muted small">位移按输出像素到原图采样位置计算，是借用参数造成的几何变化，不是标定误差。黑边表示部分采样位置超出原图。</p>
+<details><summary>参数与像素位移图</summary><pre id="params"></pre><img id="heat" src="assets/displacement.png" alt="像素位移热力图"><p id="legend"></p></details>
+<p>观察书架、门框等真实直线：原本笔直的线若被校正明显拉弯，借用畸变系数可能不适合本机；若变化不明显，也不能据此确认 fx/fy 或畸变参数准确。</p>
+<p class="muted small">临时内参，待标定后重跑。← / → 切换帧，空格切换整幅原图与校正图。原视频和 C2 实验配置不受此页面影响。</p>
+<script>
+const data=__PREVIEW_DATA__;
+const $=s=>document.getElementById(s),ctx=$('canvas').getContext('2d');let index=0,original=new Image(),corrected=new Image(),showCorrected=false,ticket=0;
+const clips=[...new Set(data.samples.map(s=>s.clip))];for(const [i,c]of clips.entries()){let o=document.createElement('option');o.value=c;const t=c.match(/T(\d{2})(\d{2})(\d{2})/);o.textContent=`${c.startsWith('flight')?'飞行':'手持'} ${i+1} · ${t?t.slice(1).join(':'):c}`;$('clip').append(o)}
+$('canvas').width=data.width;$('canvas').height=data.height;
+$('stats').innerHTML=`<span>平均位移 <strong>${data.metrics.mean_px.toFixed(2)} px</strong></span><span>P95 <strong>${data.metrics.p95_px.toFixed(2)} px</strong></span><span>最大位移 <strong>${data.metrics.max_px.toFixed(2)} px</strong></span>`;
+$('params').textContent=JSON.stringify({K:data.K,D:data.D,resolution:[data.width,data.height]},null,2);
+$('legend').textContent=`蓝色接近 0 px，红色接近 ${data.metrics.max_px.toFixed(2)} px；采样中心超出原图 ${data.metrics.source_center_outside_percent.toFixed(2)}%。`;
+function draw(){if(!original.complete||!corrected.complete||!original.naturalWidth||!corrected.naturalWidth)return;let w=data.width,h=data.height,cut=w*Number($('split').value)/100;ctx.clearRect(0,0,w,h);
+ if($('blink').checked){ctx.drawImage(showCorrected?corrected:original,0,0)}else{ctx.drawImage(corrected,0,0);ctx.save();ctx.beginPath();ctx.rect(0,0,cut,h);ctx.clip();ctx.drawImage(original,0,0);ctx.restore();ctx.strokeStyle='#65e3ff';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cut,0);ctx.lineTo(cut,h);ctx.stroke()}
+ if($('grid').checked){ctx.strokeStyle='#6de8ff99';ctx.lineWidth=1;ctx.beginPath();for(let x=0;x<w;x+=80){ctx.moveTo(x,0);ctx.lineTo(x,h)}for(let y=0;y<h;y+=80){ctx.moveTo(0,y);ctx.lineTo(w,y)}ctx.stroke()}
+ $('flip').textContent=showCorrected?'显示原图':'显示校正后';document.querySelector('.left').textContent=$('blink').checked?(showCorrected?'校正后':'原图'):'原图';document.querySelector('.right').style.display=$('blink').checked?'none':'';
+}
+function load(){let s=data.samples[index],id=++ticket;original=new Image();corrected=new Image();original.onload=corrected.onload=()=>{if(id===ticket)draw()};original.src=s.original;corrected.src=s.corrected;$('clip').value=s.clip;$('caption').textContent=`${s.clip} · 帧 ${s.frame_index} · ${s.time_s.toFixed(2)} 秒 · 样本 ${index+1}/${data.samples.length}${s.corrupt==='True'?' · 解码损坏标记':''}`;}
+function step(n){index=(index+n+data.samples.length)%data.samples.length;load()}
+$('clip').onchange=()=>{index=data.samples.findIndex(s=>s.clip===$('clip').value);load()};$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);$('grid').onchange=$('blink').onchange=$('split').oninput=draw;
+$('flip').onclick=()=>{showCorrected=!showCorrected;$('blink').checked=true;draw()};document.onkeydown=e=>{if(e.target.tagName==='SELECT'||e.target.tagName==='INPUT')return;if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);if(e.code==='Space'){e.preventDefault();$('flip').click()}};
+function pointer(e){let r=$('canvas').getBoundingClientRect(),x=Math.max(0,Math.min(data.width-1,(e.clientX-r.left)/r.width*data.width));if(e.buttons){$('split').value=x/data.width*100;draw()}}
+$('canvas').onpointermove=pointer;$('canvas').onpointerdown=e=>{$('canvas').setPointerCapture(e.pointerId);$('split').value=(e.clientX-$('canvas').getBoundingClientRect().left)/$('canvas').getBoundingClientRect().width*100;draw()};load();
+</script></main></html>

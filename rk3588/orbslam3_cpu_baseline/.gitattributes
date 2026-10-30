@@ -1,0 +1,17 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.patch text eol=lf
+*.ps1 text eol=crlf
+# Preserve the exact board bytes used by the B1 SHA256 evidence manifest.
+/reports/b1/** -text
+# Preserve downloaded references and C0 hash/decoder evidence verbatim.
+/reports/c0/** -text
+/configs/c/*.yaml text eol=lf
+/reports/c1/** -text
+/reports/c2/** -text
+# Preserve B2 raw logs, telemetry, and checksums without Git newline conversion.
+/reports/b2/** -text
+/reports/b3_precheck/** -text
+/reports/pc0/** -text
+# Preserve H1/H2 CSV/log snapshots and their SHA256 manifests byte-for-byte.
+/reports/h1_h2/** -text

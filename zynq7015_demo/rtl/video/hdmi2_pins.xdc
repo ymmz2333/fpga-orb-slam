@@ -1,0 +1,10 @@
+# ACZ7015 user manual V1.5, PDF p26, table 11; dedicated HDMI_2.
+set_property PACKAGE_PIN T2 [get_ports hdmi_clk_p]
+set_property PACKAGE_PIN T1 [get_ports hdmi_clk_n]
+set_property PACKAGE_PIN K7 [get_ports {hdmi_dat_p[2]}]
+set_property PACKAGE_PIN L7 [get_ports {hdmi_dat_n[2]}]
+set_property PACKAGE_PIN M8 [get_ports {hdmi_dat_p[1]}]
+set_property PACKAGE_PIN M7 [get_ports {hdmi_dat_n[1]}]
+set_property PACKAGE_PIN N6 [get_ports {hdmi_dat_p[0]}]
+set_property PACKAGE_PIN N5 [get_ports {hdmi_dat_n[0]}]
+set_property IOSTANDARD TMDS_33 [get_ports {hdmi_clk_p hdmi_clk_n hdmi_dat_p[*] hdmi_dat_n[*]}]

@@ -1,0 +1,11 @@
+/.venv/
+/.work/
+**/__pycache__/
+**/build/
+**/runtime/
+**/logs/
+**/local_env.ps1
+**/local_board.json
+**/.env
+*.pem
+*.key

@@ -1,0 +1,12 @@
+{
+  "zynq_host": "192.168.50.23",
+  "stream_port": 5601,
+  "control_port": 5602,
+  "map_port": 5603,
+  "viewer_port": 18765,
+  "camera": "camera_orb.csv",
+  "rk_camera": "camera_rk.yaml",
+  "executable": "../rk_build/demo_bin/mono_bridge",
+  "vocabulary": "../rk_source/Vocabulary/ORBvoc.txt",
+  "runs": "../runs"
+}

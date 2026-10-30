@@ -1,0 +1,7 @@
+# Private Python3.11 GUI only; the system SLAM/NPU environment stays separate.
+PySide6-Essentials==6.7.3
+shiboken6==6.7.3
+pyqtgraph==0.13.7
+PyOpenGL==3.1.10
+numpy==1.26.4
+opencv-python-headless==4.10.0.84

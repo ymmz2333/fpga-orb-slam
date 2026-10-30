@@ -1,0 +1,42 @@
+{
+  "purpose": "DEMO ONLY; excluded from all experimental summaries",
+  "display": ":0",
+  "xauthority": "/run/user/1000/gdm/Xauthority",
+  "command": [
+    "/home/cat/orbslam3_cpu_baseline/vendor/ORB_SLAM3/Examples/Monocular/mono_euroc",
+    "/home/cat/orbslam3_cpu_baseline/vendor/ORB_SLAM3/Vocabulary/ORBvoc.txt",
+    "/home/cat/orbslam3_cpu_baseline/demo/EuRoC_demo.yaml",
+    "/home/cat/data/euroc/MH_01_easy",
+    "/home/cat/orbslam3_cpu_baseline/vendor/ORB_SLAM3/Examples/Monocular/EuRoC_TimeStamps/MH01.txt",
+    "MH01_DEMO",
+    "--viewer"
+  ],
+  "governors_before": {
+    "policy0": "interactive",
+    "policy4": "interactive",
+    "policy6": "interactive"
+  },
+  "measured_cpu_percent_definition": "100% = one logical core",
+  "pid": 74779,
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "exit_code": -6,
+  "wall_time_s": 13.0293796320002,
+  "governors_after": {
+    "policy0": "interactive",
+    "policy4": "interactive",
+    "policy6": "interactive"
+  },
+  "governors_unchanged": true,
+  "cpu_logical_cores": 8,
+  "tracking_cpu_mean_percent": 269.8854278875863,
+  "tracking_cpu_median_percent": 269.8854278875863
+}

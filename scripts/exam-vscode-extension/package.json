@@ -1,0 +1,101 @@
+{
+  "name": "fpga-task-buttons",
+  "displayName": "FPGA Task Buttons",
+  "description": "Local Verilog playground: testbench, design, run, logs and waveforms in one VS Code tab.",
+  "version": "0.0.8",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:fpgaTaskButtons.compile",
+    "onCommand:fpgaTaskButtons.simulate",
+    "onCommand:fpgaTaskButtons.wave",
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fpgaTaskButtons.compile",
+        "title": "FPGA: Compile current file",
+        "icon": "$(check)"
+      },
+      {
+        "command": "fpgaTaskButtons.simulate",
+        "title": "FPGA: Simulate current file",
+        "icon": "$(play)"
+      },
+      {
+        "command": "fpgaTaskButtons.wave",
+        "title": "FPGA: Open latest waveform",
+        "icon": "$(pulse)"
+      },
+      {
+        "icon": "$(new-folder)",
+        "command": "fpgaTaskButtons.newQuestion",
+        "title": "Verilog 考试: 新建题目"
+      },
+      {
+        "icon": "$(folder-opened)",
+        "command": "fpgaTaskButtons.importTb",
+        "title": "Verilog 考试: 导入老师 TB ZIP"
+      },
+      {
+        "icon": "$(new-file)",
+        "command": "fpgaTaskButtons.newDesign",
+        "title": "Verilog 考试: 新建设计文件"
+      },
+      {
+        "title": "Verilog: 打开练习台",
+        "command": "fpgaTaskButtons.playground",
+        "icon": "$(play-circle)"
+      },
+      {
+        "title": "Verilog: Run 当前题目",
+        "icon": "$(play)",
+        "command": "fpgaTaskButtons.playgroundRun"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "fpgaTaskButtons.compile",
+          "when": "!verilogExam && (resourceLangId == verilog || resourceLangId == systemverilog)",
+          "group": "navigation@1"
+        },
+        {
+          "command": "fpgaTaskButtons.simulate",
+          "when": "!verilogExam && (resourceLangId == verilog || resourceLangId == systemverilog)",
+          "group": "navigation@2"
+        },
+        {
+          "command": "fpgaTaskButtons.wave",
+          "when": "!verilogExam && (editorIsOpen)",
+          "group": "navigation@3"
+        },
+        {
+          "command": "fpgaTaskButtons.importTb",
+          "group": "navigation@4",
+          "when": "!verilogExam && (workspaceFolderCount > 0 && resourceLangId == verilog)"
+        },
+        {
+          "command": "fpgaTaskButtons.newDesign",
+          "group": "navigation@5",
+          "when": "!verilogExam && (workspaceFolderCount > 0 && resourceLangId == verilog)"
+        },
+        {
+          "group": "navigation@1",
+          "command": "fpgaTaskButtons.playgroundRun",
+          "when": "verilogExam && (resourceLangId == verilog || resourceLangId == systemverilog)"
+        }
+      ]
+    }
+  },
+  "extensionDependencies": [
+    "mshr-h.veriloghdl"
+  ]
+}

@@ -1,0 +1,52 @@
+Subject: A1: add explicit viewer switches to mono_euroc without changing the default
+
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -20,6 +20,8 @@
+ #include<algorithm>
+ #include<fstream>
+ #include<chrono>
++#include<vector>
++#include<string>
+ 
+ #include<opencv2/core/core.hpp>
+ 
+@@ -32,9 +34,27 @@
+ 
+ int main(int argc, char **argv)
+ {  
++    // Preserve v1.0's headless default, while making the run condition explicit.
++    bool bUseViewer = false;
++    vector<char*> positionalArguments;
++    positionalArguments.push_back(argv[0]);
++    for(int i = 1; i < argc; ++i)
++    {
++        const string argument(argv[i]);
++        if(argument == "--no-viewer")
++            bUseViewer = false;
++        else if(argument == "--viewer")
++            bUseViewer = true;
++        else
++            positionalArguments.push_back(argv[i]);
++    }
++    argc = static_cast<int>(positionalArguments.size());
++    positionalArguments.push_back(nullptr);
++    argv = positionalArguments.data();
++
+     if(argc < 5)
+     {
+-        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name)" << endl;
++        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name) [--no-viewer|--viewer]" << endl;
+         return 1;
+     }
+ 
+@@ -80,7 +100,8 @@
+     int fps = 20;
+     float dT = 1.f/fps;
+     // Create SLAM system. It initializes all system threads and gets ready to process frames.
+-    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, false);
++    cout << "Viewer: " << (bUseViewer ? "enabled" : "disabled") << endl;
++    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, bUseViewer);
+     float imageScale = SLAM.GetImageScale();
+ 
+     double t_resize = 0.f;

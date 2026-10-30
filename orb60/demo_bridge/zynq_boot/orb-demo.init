@@ -1,0 +1,47 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          orb-demo
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: USB camera PL ORB and fixed-map localization on HDMI
+### END INIT INFO
+set -eu
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
+pidfile=/run/orb-demo-service.pid
+running() {
+    test -r "$pidfile" || return 1
+    pid=$(cat "$pidfile")
+    case "$pid" in ''|*[!0-9]*) return 1;; esac
+    kill -0 "$pid" 2>/dev/null || return 1
+    tr '\000' ' ' < "/proc/$pid/cmdline" | grep -Eq '/opt/orb-demo/(boot/start_camera.sh|current/run_zynq.sh)'
+}
+case "${1:-status}" in
+start)
+    if running; then echo 'ORB_DEMO_ALREADY_RUNNING'; exit 0; fi
+    test ! -d /run/zynq-slam.lock || { echo 'ERROR: old SLAM lock remains; inspect before starting' >&2; exit 1; }
+    test ! -d /run/orb-demo.lock || { echo 'ERROR: demo lock remains; inspect before starting' >&2; exit 1; }
+    nohup sh /opt/orb-demo/boot/start_camera.sh > /run/orb-demo-service.log 2>&1 < /dev/null &
+    echo "$!" > "$pidfile"
+    sleep 1
+    running || { tail -15 /run/orb-demo-service.log >&2; exit 1; }
+    echo "ORB_DEMO_STARTED pid=$(cat "$pidfile")"
+    ;;
+stop)
+    if running; then
+        kill -TERM "$(cat "$pidfile")"
+        n=0
+        while running && test "$n" -lt 20; do sleep 1; n=$((n+1)); done
+        if running; then echo 'ERROR: demo did not stop' >&2; exit 1; fi
+    fi
+    rm -f "$pidfile"
+    echo ORB_DEMO_STOPPED
+    ;;
+status)
+    if running; then echo "ORB_DEMO_RUNNING pid=$(cat "$pidfile")"; else echo ORB_DEMO_STOPPED; exit 1; fi
+    ;;
+restart) "$0" stop; "$0" start;;
+*) echo 'Usage: orb-demo start|stop|restart|status' >&2; exit 2;;
+esac

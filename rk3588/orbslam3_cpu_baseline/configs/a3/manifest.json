@@ -1,0 +1,104 @@
+[
+  {
+    "configuration": "baseline_752x480",
+    "tracking_width": 752,
+    "tracking_height": 480,
+    "nFeatures": 1000,
+    "nLevels": 8,
+    "initialization_nFeatures": 5000,
+    "resize_policy": "none",
+    "effective_intrinsics": [
+      458.654,
+      457.296,
+      367.215,
+      248.375
+    ],
+    "settings": "configs/a3/baseline_752x480.yaml",
+    "sha256": "946a70e9567a9c0175093c95fcbdd1e45b19a982e3e2fe3bf6e02864bac04127"
+  },
+  {
+    "configuration": "half_376x240",
+    "tracking_width": 376,
+    "tracking_height": 240,
+    "nFeatures": 1000,
+    "nLevels": 8,
+    "initialization_nFeatures": 5000,
+    "resize_policy": "Settings isotropic 0.5",
+    "effective_intrinsics": [
+      229.327,
+      228.648,
+      183.6075,
+      124.1875
+    ],
+    "settings": "configs/a3/half_376x240.yaml",
+    "sha256": "c73ac093e1afcd5a974d3a15bc8683ec7a37f0a71778127763e5df7a41cfdd48"
+  },
+  {
+    "configuration": "features_500",
+    "tracking_width": 752,
+    "tracking_height": 480,
+    "nFeatures": 500,
+    "nLevels": 8,
+    "initialization_nFeatures": 2500,
+    "resize_policy": "none",
+    "effective_intrinsics": [
+      458.654,
+      457.296,
+      367.215,
+      248.375
+    ],
+    "settings": "configs/a3/features_500.yaml",
+    "sha256": "cd810f757b47bc15cc015b1f5a6fa4d5cf70fe91d4ddfb88542629688093af40"
+  },
+  {
+    "configuration": "features_1500",
+    "tracking_width": 752,
+    "tracking_height": 480,
+    "nFeatures": 1500,
+    "nLevels": 8,
+    "initialization_nFeatures": 7500,
+    "resize_policy": "none",
+    "effective_intrinsics": [
+      458.654,
+      457.296,
+      367.215,
+      248.375
+    ],
+    "settings": "configs/a3/features_1500.yaml",
+    "sha256": "5d504de00a4c947d978064cb3903fd4ec867e3559cf763b8ee044cbbf677209c"
+  },
+  {
+    "configuration": "levels_4",
+    "tracking_width": 752,
+    "tracking_height": 480,
+    "nFeatures": 1000,
+    "nLevels": 4,
+    "initialization_nFeatures": 5000,
+    "resize_policy": "none",
+    "effective_intrinsics": [
+      458.654,
+      457.296,
+      367.215,
+      248.375
+    ],
+    "settings": "configs/a3/levels_4.yaml",
+    "sha256": "e3a716a31402aad184c5e0b2507645d95533fd855341f07beb69db49ec9a6803"
+  },
+  {
+    "configuration": "levels_1",
+    "tracking_width": 752,
+    "tracking_height": 480,
+    "nFeatures": 1000,
+    "nLevels": 1,
+    "initialization_nFeatures": 5000,
+    "resize_policy": "none",
+    "effective_intrinsics": [
+      458.654,
+      457.296,
+      367.215,
+      248.375
+    ],
+    "settings": "configs/a3/levels_1.yaml",
+    "sha256": "74a62f0ef0384bd0c851b3512f32349a168eb0cc387ef6e7ef98244023374861"
+  }
+]

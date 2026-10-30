@@ -1,0 +1,18 @@
+{
+  "upstream": "https://github.com/opencv/opencv/tree/4.2.0/modules/calib3d/src",
+  "license": "BSD-3-Clause; LICENSE reproduced with binary packages",
+  "adaptation": "Remove cv::Mat overloads/templates and instrumentation; substitute the same double CV_PI constant. Numerical solver unchanged.",
+  "upstream_sha256": {
+    "p3p.cpp": "34ea856a49bf24242a9aeef14d70987d0d845c6afefef12ad263d2a38ed54bbc",
+    "p3p.h": "2fd108a1d2c25e017b820ea56f9c7457e472b831eb6831855f4579f6ffef83a2",
+    "polynom_solver.cpp": "9626fa6f6360d0737e00b699e6d6e92638956e7b3fd9c71f6e7d221604fa84cf",
+    "polynom_solver.h": "62b932712cd50e368d2a8abad2df5b8262308c0d9b0eb55bce9da3b81b13cd9d"
+  },
+  "subset_sha256": {
+    "LICENSE": "c3596f2f886631ac49af2c9a201ca559f850bb5726bdc25eacbe2369a70caad9",
+    "p3p.cpp": "9b9103e39e90740d6071c3615dbbfb2186fa3e16c2f054917bf5a28483e16ece",
+    "p3p.h": "5e081c36d4f7584a12c0bdbab7cabee264e94aae53caedf8a79bb35699214bae",
+    "polynom_solver.cpp": "e2337d4891c903881a4c2258d6f1c9d0f03056e630fe60dee8282f11ae7f9d09",
+    "polynom_solver.h": "62b932712cd50e368d2a8abad2df5b8262308c0d9b0eb55bce9da3b81b13cd9d"
+  }
+}

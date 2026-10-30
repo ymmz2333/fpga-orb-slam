@@ -1,0 +1,8 @@
+build/
+hls_build/
+board_build/
+release/
+__pycache__/
+baseline/**/host_build/
+optimized/**/host_build/
+*.log

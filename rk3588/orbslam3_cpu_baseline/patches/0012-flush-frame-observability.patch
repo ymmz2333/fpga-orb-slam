@@ -1,0 +1,39 @@
+From 5ddfbe80b234748e9f48dc5d66b7019c5a999bd7 Mon Sep 17 00:00:00 2001
+From: cornmeal-porridge <18718516898@163.com>
+Date: Mon, 5 Oct 2026 18:12:31 +0900
+Subject: [PATCH] P3: flush per-frame state, map and feature logs for watchdog
+ recovery
+
+---
+ Examples/Monocular/mono_euroc.cc | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/Examples/Monocular/mono_euroc.cc b/Examples/Monocular/mono_euroc.cc
+index bb6e4ce..285a6d3 100644
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -133,6 +133,10 @@ int main(int argc, char **argv)
+     }
+     stateFile << "frame_index,sequence_index,sequence_frame,timestamp_s,state_before,state_after\n";
+     stateFile << setprecision(17);
++    // Headers and completed-frame rows must survive a watchdog termination.
++    featureFile.flush();
++    mapFile.flush();
++    stateFile.flush();
+     size_t stateFrameIndex = 0;
+     int previousTrackingState = -1; // System is not ready before the first input.
+ #endif
+@@ -218,6 +222,10 @@ int main(int argc, char **argv)
+             stateFile << stateFrameIndex++ << ',' << seq << ',' << ni << ',' << tframe
+                       << ',' << previousTrackingState << ',' << currentTrackingState << '\n';
+             previousTrackingState = currentTrackingState;
++            // Flush after t2: logging does not change TrackMonocular or realtime pacing.
++            featureFile.flush();
++            mapFile.flush();
++            stateFile.flush();
+ #endif
+ 
+             double ttrack= std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
+-- 
+2.51.0.windows.1
+

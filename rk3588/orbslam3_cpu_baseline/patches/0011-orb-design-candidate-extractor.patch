@@ -1,0 +1,225 @@
+From 70f55e38034304ca95bee22e1c7b4e5ec25b4b1f Mon Sep 17 00:00:00 2001
+From: RK3588 Baseline <rk3588-baseline@local>
+Date: Mon, 5 Oct 2026 04:42:47 +0900
+Subject: [PATCH] Add configurable ORB design candidate rules for standalone
+ feature producer
+
+---
+ include/ORBextractor.h |  21 +++++++
+ src/ORBextractor.cc    | 121 ++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 141 insertions(+), 1 deletion(-)
+
+diff --git a/include/ORBextractor.h b/include/ORBextractor.h
+index ea764da..774d0dc 100644
+--- a/include/ORBextractor.h
++++ b/include/ORBextractor.h
+@@ -83,6 +83,27 @@ public:
+ 
+     std::vector<cv::Mat> mvImagePyramid;
+ 
++#ifdef ORB_DESIGN_CANDIDATES
++    // Only the standalone CPU design-candidate generator defines this macro.
++    // The accepted SLAM library keeps its original class layout and behavior.
++    struct DesignOptions {
++        bool fixed_fast=false, grid=false, skip_blur=false, box2=false;
++        int angle_bins=0, mean_rounding=0;
++    };
++    struct DesignLayer {
++        int level=0,width=0,height=0,budget=0,candidates=0,selected=0;
++        int cell_side=0,cell_cols=0,cell_rows=0,empty_cells=0,shortfall=0;
++    };
++    DesignOptions design;
++    std::vector<DesignLayer> designLayers;
++    const std::vector<int>& DesignBudgets() const { return mnFeaturesPerLevel; }
++    static float DesignQuantize(float angle,int bins);
++    static cv::Mat DesignBox2(const cv::Mat& image,int rounding);
++    static std::vector<cv::KeyPoint> DesignGrid(const std::vector<cv::KeyPoint>& keys,
++                                               int width,int height,int budget,DesignLayer& stats);
++    DesignLayer DesignProbeLevel0(const cv::Mat& image,int threshold);
++#endif
++
+ protected:
+ 
+     void ComputePyramid(cv::Mat image);
+diff --git a/src/ORBextractor.cc b/src/ORBextractor.cc
+index 970b7cc..59f766c 100644
+--- a/src/ORBextractor.cc
++++ b/src/ORBextractor.cc
+@@ -58,6 +58,9 @@
+ #include <opencv2/imgproc/imgproc.hpp>
+ #include <vector>
+ #include <iostream>
++#ifdef ORB_DESIGN_CANDIDATES
++#include <stdexcept>
++#endif
+ 
+ #include "ORBextractor.h"
+ 
+@@ -778,9 +781,95 @@ namespace ORB_SLAM3
+         return vResultKeys;
+     }
+ 
++#ifdef ORB_DESIGN_CANDIDATES
++    float ORBextractor::DesignQuantize(float angle,int bins)
++    {
++        if(bins==0) return angle;
++        if(bins<1 || bins>360 || angle<0 || angle>=360)
++            throw std::runtime_error("Invalid design-candidate angle/bins");
++        const float step=360.f/bins;
++        const int k=int(std::floor((angle+180.f/bins)/step))%bins;
++        return k*step;
++    }
++
++    Mat ORBextractor::DesignBox2(const Mat& image,int rounding)
++    {
++        if(image.type()!=CV_8UC1 || image.cols%2 || image.rows%2 || (rounding!=0 && rounding!=1))
++            throw std::runtime_error("P2 requires even 8-bit grayscale dimensions and explicit rounding");
++        Mat result(image.rows/2,image.cols/2,CV_8UC1);
++        for(int y=0;y<result.rows;++y) for(int x=0;x<result.cols;++x) {
++            const int sum=int(image.at<uchar>(2*y,2*x))+image.at<uchar>(2*y,2*x+1)
++                         +image.at<uchar>(2*y+1,2*x)+image.at<uchar>(2*y+1,2*x+1);
++            result.at<uchar>(y,x)=uchar((sum+(rounding?2:0))/4);
++        }
++        return result;
++    }
++
++    static bool designRaster(const KeyPoint& a,const KeyPoint& b) {
++        return a.pt.y<b.pt.y || (a.pt.y==b.pt.y && a.pt.x<b.pt.x);
++    }
++
++    vector<KeyPoint> ORBextractor::DesignGrid(const vector<KeyPoint>& keys,
++                                             int width,int height,int budget,DesignLayer& stats)
++    {
++        if(width<=0 || height<=0 || budget<=0) throw std::runtime_error("Invalid G grid geometry/budget");
++        stats.width=width;stats.height=height;stats.budget=budget;stats.candidates=keys.size();
++        stats.cell_side=std::max(1,int(std::floor(std::sqrt(double(width)*height/budget))));
++        // Remainders are merged into the LAST full cell, not appended as new cells.
++        stats.cell_cols=std::max(1,width/stats.cell_side);stats.cell_rows=std::max(1,height/stats.cell_side);
++        vector<int> best(stats.cell_cols*stats.cell_rows,-1);
++        for(size_t i=0;i<keys.size();++i) {
++            const auto& k=keys[i];
++            if(k.pt.x<0 || k.pt.x>=width || k.pt.y<0 || k.pt.y>=height)
++                throw std::runtime_error("Candidate outside original effective area");
++            int x=std::min(int(k.pt.x)/stats.cell_side,stats.cell_cols-1);
++            int y=std::min(int(k.pt.y)/stats.cell_side,stats.cell_rows-1);
++            int& previous=best[y*stats.cell_cols+x];
++            if(previous<0 || k.response>keys[previous].response ||
++               (k.response==keys[previous].response && designRaster(k,keys[previous]))) previous=i;
++        }
++        vector<KeyPoint> result;
++        stats.empty_cells=0;
++        for(int i:best) { if(i<0) ++stats.empty_cells; else result.push_back(keys[i]); }
++        if(int(result.size())>budget) {
++            std::stable_sort(result.begin(),result.end(),[](const KeyPoint& a,const KeyPoint& b) {
++                return a.response>b.response || (a.response==b.response && designRaster(a,b));
++            });
++            result.resize(budget);
++        }
++        stats.selected=result.size();stats.shortfall=std::max(0,budget-stats.selected);
++        return result;
++    }
++
++    ORBextractor::DesignLayer ORBextractor::DesignProbeLevel0(const Mat& image,int threshold)
++    {
++        if(image.type()!=CV_8UC1 || threshold<0 || threshold>255)
++            throw std::runtime_error("Invalid FAST probe input");
++        const int border=EDGE_THRESHOLD-3,width=image.cols-2*border,height=image.rows-2*border;
++        const int cols=width/35,rows=height/35;
++        if(cols<1 || rows<1) throw std::runtime_error("Image too small for original FAST tiling");
++        const int wc=std::ceil(float(width)/cols),hc=std::ceil(float(height)/rows);
++        vector<KeyPoint> candidates;
++        for(int y=0;y<rows;++y) {
++            const int iy=border+y*hc,my=std::min(iy+hc+6,image.rows-border);
++            if(iy>=image.rows-border-3) continue;
++            for(int x=0;x<cols;++x) {
++                const int ix=border+x*wc,mx=std::min(ix+wc+6,image.cols-border);
++                if(ix>=image.cols-border-6) continue;
++                vector<KeyPoint> cell;FAST(image.rowRange(iy,my).colRange(ix,mx),cell,threshold,true);
++                for(auto k:cell) { k.pt.x+=x*wc;k.pt.y+=y*hc;candidates.push_back(k); }
++            }
++        }
++        DesignLayer stats;DesignGrid(candidates,width,height,mnFeaturesPerLevel[0],stats);return stats;
++    }
++#endif
++
+     void ORBextractor::ComputeKeyPointsOctTree(vector<vector<KeyPoint> >& allKeypoints)
+     {
+         allKeypoints.resize(nlevels);
++#ifdef ORB_DESIGN_CANDIDATES
++        designLayers.assign(nlevels,DesignLayer());
++#endif
+ 
+         const float W = 35;
+ 
+@@ -840,7 +929,11 @@ namespace ORB_SLAM3
+                     }*/
+ 
+ 
+-                    if(vKeysCell.empty())
++                    if(vKeysCell.empty()
++#ifdef ORB_DESIGN_CANDIDATES
++                       && !design.fixed_fast
++#endif
++                       )
+                     {
+                         FAST(mvImagePyramid[level].rowRange(iniY,maxY).colRange(iniX,maxX),
+                              vKeysCell,minThFAST,true);
+@@ -874,8 +967,18 @@ namespace ORB_SLAM3
+             vector<KeyPoint> & keypoints = allKeypoints[level];
+             keypoints.reserve(nfeatures);
+ 
++#ifdef ORB_DESIGN_CANDIDATES
++            auto& record=designLayers[level];record.level=level;
++            record.width=width;record.height=height;record.budget=mnFeaturesPerLevel[level];
++            record.candidates=vToDistributeKeys.size();
++            if(design.grid) keypoints=DesignGrid(vToDistributeKeys,width,height,mnFeaturesPerLevel[level],record);
++            else
++#endif
+             keypoints = DistributeOctTree(vToDistributeKeys, minBorderX, maxBorderX,
+                                           minBorderY, maxBorderY,mnFeaturesPerLevel[level], level);
++#ifdef ORB_DESIGN_CANDIDATES
++            record.selected=keypoints.size();record.shortfall=std::max(0,record.budget-record.selected);
++#endif
+ 
+             const int scaledPatchSize = PATCH_SIZE*mvScaleFactor[level];
+ 
+@@ -893,6 +996,10 @@ namespace ORB_SLAM3
+         // compute orientations
+         for (int level = 0; level < nlevels; ++level)
+             computeOrientation(mvImagePyramid[level], allKeypoints[level], umax);
++#ifdef ORB_DESIGN_CANDIDATES
++        if(design.angle_bins) for(auto& layer:allKeypoints) for(auto& k:layer)
++            k.angle=DesignQuantize(k.angle,design.angle_bins);
++#endif
+     }
+ 
+     void ORBextractor::ComputeKeyPointsOld(std::vector<std::vector<KeyPoint> > &allKeypoints)
+@@ -1130,6 +1237,9 @@ namespace ORB_SLAM3
+ 
+             // preprocess the resized image
+             Mat workingMat = mvImagePyramid[level].clone();
++#ifdef ORB_DESIGN_CANDIDATES
++            if(!design.skip_blur)
++#endif
+             GaussianBlur(workingMat, workingMat, Size(7, 7), 2, 2, BORDER_REFLECT_101);
+ 
+             // Compute the descriptors
+@@ -1180,6 +1290,15 @@ namespace ORB_SLAM3
+             // Compute the resized image
+             if( level != 0 )
+             {
++#ifdef ORB_DESIGN_CANDIDATES
++                if(design.box2) {
++                    if(nlevels!=2 || scaleFactor!=2.0 || level!=1)
++                        throw std::runtime_error("P2 requires exactly two levels / scaleFactor=2");
++                    Mat average=DesignBox2(mvImagePyramid[0],design.mean_rounding);
++                    if(average.size()!=sz) throw std::runtime_error("P2 pyramid size mismatch");
++                    average.copyTo(mvImagePyramid[level]);
++                } else
++#endif
+                 resize(mvImagePyramid[level-1], mvImagePyramid[level], sz, 0, 0, INTER_LINEAR);
+ 
+                 copyMakeBorder(mvImagePyramid[level], temp, EDGE_THRESHOLD, EDGE_THRESHOLD, EDGE_THRESHOLD, EDGE_THRESHOLD,
+-- 
+2.51.0.windows.1
+

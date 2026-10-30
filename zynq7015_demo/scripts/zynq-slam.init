@@ -1,0 +1,10 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          zynq-slam
+# Required-Start:    $local_fs
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Physical ORB and recorded-input SLAM on HDMI_2
+### END INIT INFO
+exec sh /opt/zynq-slam/current/scripts/zslamctl.sh "${1:-status}"

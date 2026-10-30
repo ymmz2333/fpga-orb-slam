@@ -1,0 +1,64 @@
+Subject: A2: record aligned before/after tracking states and final Atlas map count
+
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -22,6 +22,7 @@
+ #include<chrono>
+ #include<vector>
+ #include<string>
++#include<iomanip>
+ 
+ #include<opencv2/core/core.hpp>
+ 
+@@ -106,6 +107,19 @@
+ 
+     double t_resize = 0.f;
+     double t_track = 0.f;
++#ifdef REGISTER_TIMES
++    // Keep buffered state output outside the measured TrackMonocular interval.
++    ofstream stateFile("TrackingStates.csv");
++    if(!stateFile.is_open())
++    {
++        cerr << "Cannot create TrackingStates.csv" << endl;
++        return 2;
++    }
++    stateFile << "frame_index,sequence_index,sequence_frame,timestamp_s,state_before,state_after\n";
++    stateFile << setprecision(17);
++    size_t stateFrameIndex = 0;
++    int previousTrackingState = -1; // System is not ready before the first input.
++#endif
+ 
+     for (seq = 0; seq<num_seq; seq++)
+     {
+@@ -169,6 +183,11 @@
+ #ifdef REGISTER_TIMES
+             t_track = t_resize + std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(t2 - t1).count();
+             SLAM.InsertTrackTime(t_track);
++            // GetTrackingState mirrors Tracking::mState after GrabImageMonocular.
++            const int currentTrackingState = SLAM.GetTrackingState();
++            stateFile << stateFrameIndex++ << ',' << seq << ',' << ni << ',' << tframe
++                      << ',' << previousTrackingState << ',' << currentTrackingState << '\n';
++            previousTrackingState = currentTrackingState;
+ #endif
+ 
+             double ttrack= std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
+@@ -204,6 +223,9 @@
+         }
+ 
+     }
++#ifdef REGISTER_TIMES
++    stateFile.close();
++#endif
+     // Stop all threads
+     SLAM.Shutdown();
+ 
+--- a/src/Tracking.cc
++++ b/src/Tracking.cc
+@@ -217,6 +217,7 @@
+     f << fixed;
+     f << "Number of KFs: " << mpAtlas->GetAllKeyFrames().size() << endl;
+     f << "Number of MPs: " << mpAtlas->GetAllMapPoints().size() << endl;
++    f << "Number of Maps: " << mpAtlas->GetAllMaps().size() << endl;
+ 
+     f << "OpenCV version: " << CV_VERSION << endl;
+ 

@@ -1,0 +1,8 @@
+vendor/
+build/
+install/
+install-demo/
+runtime/
+logs/
+local_board.json
+__pycache__/

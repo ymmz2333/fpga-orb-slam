@@ -1,0 +1,298 @@
+[
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/h/harfbuzz/gir1.2-harfbuzz-0.0_2.6.4-1ubuntu4.3_arm64.deb",
+    "filename": "gir1.2-harfbuzz-0.0_2.6.4-1ubuntu4.3_arm64.deb",
+    "size": 26380,
+    "sha256": "b24977ef77b72c41b0c4b99cf191052afbf223118b62f0adab643ef41a306f96",
+    "package": "gir1.2-harfbuzz-0.0",
+    "version": "2.6.4-1ubuntu4.3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/i/icu/icu-devtools_66.1-2ubuntu2.1_arm64.deb",
+    "filename": "icu-devtools_66.1-2ubuntu2.1_arm64.deb",
+    "size": 175516,
+    "sha256": "8eef257eefd54eb76f71b73ab29498b2f44837cb17a5137a829ade82e020f123",
+    "package": "icu-devtools",
+    "version": "66.1-2ubuntu2.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/d/dbus/libdbus-1-dev_1.12.16-2ubuntu2.3_arm64.deb",
+    "filename": "libdbus-1-dev_1.12.16-2ubuntu2.3_arm64.deb",
+    "size": 164632,
+    "sha256": "0dce8b1059a4b290bb55d2db1b6a87c7a60e0ae211ead8d2e3d5f09756efa80b",
+    "package": "libdbus-1-dev",
+    "version": "1.12.16-2ubuntu2.3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/x/xorgproto/x11proto-record-dev_2019.2-1ubuntu1_all.deb",
+    "filename": "x11proto-record-dev_2019.2-1ubuntu1_all.deb",
+    "size": 2624,
+    "sha256": "74e54aa68fc7c278f52c53548606d6b5af5f8ec6c740e36e43efe71bf5e08b6f",
+    "package": "x11proto-record-dev",
+    "version": "2019.2-1ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxtst/libxtst-dev_1.2.3-1_arm64.deb",
+    "filename": "libxtst-dev_2%3a1.2.3-1_arm64.deb",
+    "size": 14420,
+    "sha256": "aa1dd3a10537728c42f1bf37dd7f22c1d6864366bbf107d96f80635bd10a4f3e",
+    "package": "libxtst-dev",
+    "version": "2:1.2.3-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/a/at-spi2-core/libatspi2.0-dev_2.36.0-2_arm64.deb",
+    "filename": "libatspi2.0-dev_2.36.0-2_arm64.deb",
+    "size": 66744,
+    "sha256": "8ec6f3666d48ad1bafd2e8700a5ad4498adb903eeab2b91d94ec511c814c2ed4",
+    "package": "libatspi2.0-dev",
+    "version": "2.36.0-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/a/at-spi2-atk/libatk-bridge2.0-dev_2.34.2-0ubuntu2~20.04.1_arm64.deb",
+    "filename": "libatk-bridge2.0-dev_2.34.2-0ubuntu2~20.04.1_arm64.deb",
+    "size": 3136,
+    "sha256": "1a1910c2ca92a0094c76e502a4b40fef26121984871ae8c62df9f8a3de8cd50d",
+    "package": "libatk-bridge2.0-dev",
+    "version": "2.34.2-0ubuntu2~20.04.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/a/atk1.0/libatk1.0-dev_2.35.1-1ubuntu2_arm64.deb",
+    "filename": "libatk1.0-dev_2.35.1-1ubuntu2_arm64.deb",
+    "size": 95152,
+    "sha256": "8ba05819931742e735bea25470f1f8370d4ef8909fa27a9ff14e2c9dedc0a7d2",
+    "package": "libatk1.0-dev",
+    "version": "2.35.1-1ubuntu2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/c/cairo/libcairo-script-interpreter2_1.16.0-4ubuntu1_arm64.deb",
+    "filename": "libcairo-script-interpreter2_1.16.0-4ubuntu1_arm64.deb",
+    "size": 50724,
+    "sha256": "55d2d4344947b85a37d672650c58046070058f65819b88689224f07d6f7c6636",
+    "package": "libcairo-script-interpreter2",
+    "version": "1.16.0-4ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/f/fontconfig/libfontconfig1-dev_2.13.1-2ubuntu3_arm64.deb",
+    "filename": "libfontconfig1-dev_2.13.1-2ubuntu3_arm64.deb",
+    "size": 728316,
+    "sha256": "a4c7b981a7003ab75932cfabedd6697474c2ec541517ea7850be9637f3b753c3",
+    "package": "libfontconfig1-dev",
+    "version": "2.13.1-2ubuntu3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libi/libice/libice-dev_1.0.10-0ubuntu1_arm64.deb",
+    "filename": "libice-dev_2%3a1.0.10-0ubuntu1_arm64.deb",
+    "size": 46240,
+    "sha256": "88fc257d81dbdcf119377643702d98a93f98f094c69502878d103302ca9ec759",
+    "package": "libice-dev",
+    "version": "2:1.0.10-0ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libs/libsm/libsm-dev_1.2.3-1_arm64.deb",
+    "filename": "libsm-dev_2%3a1.2.3-1_arm64.deb",
+    "size": 16444,
+    "sha256": "5ae0e03223e1a6b84a940aff9d039a76885b24878fb9a88cc9c1913dd7a038c6",
+    "package": "libsm-dev",
+    "version": "2:1.2.3-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxcb/libxcb-render0-dev_1.14-2_arm64.deb",
+    "filename": "libxcb-render0-dev_1.14-2_arm64.deb",
+    "size": 18768,
+    "sha256": "8018b0160914688ffbdc8b65133e6efbd66bd22489098aad49881c9fb0c6fad2",
+    "package": "libxcb-render0-dev",
+    "version": "1.14-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxcb/libxcb-shm0-dev_1.14-2_arm64.deb",
+    "filename": "libxcb-shm0-dev_1.14-2_arm64.deb",
+    "size": 6892,
+    "sha256": "11b9e8ec5927cfaf5315e4ae150a893c4de03389540f0c58bbd68802f3acd3dc",
+    "package": "libxcb-shm0-dev",
+    "version": "1.14-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/c/cairo/libcairo2-dev_1.16.0-4ubuntu1_arm64.deb",
+    "filename": "libcairo2-dev_1.16.0-4ubuntu1_arm64.deb",
+    "size": 597684,
+    "sha256": "110c189c772d498b531bfc2d8942ed6cad28cc65796f7a5958aa4ca335a6f51e",
+    "package": "libcairo2-dev",
+    "version": "1.16.0-4ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libd/libdatrie/libdatrie-dev_0.2.12-3_arm64.deb",
+    "filename": "libdatrie-dev_0.2.12-3_arm64.deb",
+    "size": 17460,
+    "sha256": "a4e37ffd84495ffc87041ebe9f38cf2e706c3be9a85634e560e4ffde515d2bc2",
+    "package": "libdatrie-dev",
+    "version": "0.2.12-3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libe/libepoxy/libepoxy-dev_1.5.4-1_arm64.deb",
+    "filename": "libepoxy-dev_1.5.4-1_arm64.deb",
+    "size": 125840,
+    "sha256": "65bd98007fde92504f0054eb87450a062dd16084617a7ab78d697e03f65d3011",
+    "package": "libepoxy-dev",
+    "version": "1.5.4-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/f/fribidi/libfribidi-dev_1.0.8-2ubuntu0.1_arm64.deb",
+    "filename": "libfribidi-dev_1.0.8-2ubuntu0.1_arm64.deb",
+    "size": 62200,
+    "sha256": "3a601826f1a6f51f966b0ab77faae36841f9cfb6e2c3ba70321a2b859cf29703",
+    "package": "libfribidi-dev",
+    "version": "1.0.8-2ubuntu0.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/g/gdk-pixbuf/libgdk-pixbuf2.0-dev_2.40.0+dfsg-3ubuntu0.5_arm64.deb",
+    "filename": "libgdk-pixbuf2.0-dev_2.40.0+dfsg-3ubuntu0.5_arm64.deb",
+    "size": 43548,
+    "sha256": "885a984e3eba810eb9b237f2b5a5807cb4eff8264079e95e1d23429a900b912f",
+    "package": "libgdk-pixbuf2.0-dev",
+    "version": "2.40.0+dfsg-3ubuntu0.5"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/g/graphite2/libgraphite2-dev_1.3.13-11build1_arm64.deb",
+    "filename": "libgraphite2-dev_1.3.13-11build1_arm64.deb",
+    "size": 14684,
+    "sha256": "e505f2868ee71763037c24077c14cd8ff6c2d013d4d7ce48b21719f86b2e36e1",
+    "package": "libgraphite2-dev",
+    "version": "1.3.13-11build1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/h/harfbuzz/libharfbuzz-gobject0_2.6.4-1ubuntu4.3_arm64.deb",
+    "filename": "libharfbuzz-gobject0_2.6.4-1ubuntu4.3_arm64.deb",
+    "size": 19380,
+    "sha256": "1b5bbb400a4b9731b033d3d76dcc7ba21943811de0174cc23d14b301591c0a48",
+    "package": "libharfbuzz-gobject0",
+    "version": "2.6.4-1ubuntu4.3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/i/icu/libicu-dev_66.1-2ubuntu2.1_arm64.deb",
+    "filename": "libicu-dev_66.1-2ubuntu2.1_arm64.deb",
+    "size": 9320488,
+    "sha256": "c19f2637b20756d61f347116cadcac4eb0078922bbcec9d4fddbab1987233178",
+    "package": "libicu-dev",
+    "version": "66.1-2ubuntu2.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/h/harfbuzz/libharfbuzz-dev_2.6.4-1ubuntu4.3_arm64.deb",
+    "filename": "libharfbuzz-dev_2.6.4-1ubuntu4.3_arm64.deb",
+    "size": 495180,
+    "sha256": "963b35371ae97a1ea5ecf73f1e0c67a84b14de9dc96dd8c8574357700f7a353a",
+    "package": "libharfbuzz-dev",
+    "version": "2.6.4-1ubuntu4.3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libt/libthai/libthai-dev_0.1.28-3_arm64.deb",
+    "filename": "libthai-dev_0.1.28-3_arm64.deb",
+    "size": 23784,
+    "sha256": "cd5fcba9566c933e47df662b0fbab1abffc2c3820cfc31b4a8dd7d600e3265aa",
+    "package": "libthai-dev",
+    "version": "0.1.28-3"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/x/xft/libxft-dev_2.3.3-0ubuntu1_arm64.deb",
+    "filename": "libxft-dev_2.3.3-0ubuntu1_arm64.deb",
+    "size": 47448,
+    "sha256": "65812bc31aa8b1364b272413368bea0bfb337ba6114b48ebba0674b0cd34b2f1",
+    "package": "libxft-dev",
+    "version": "2.3.3-0ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/p/pango1.0/pango1.0-tools_1.44.7-2ubuntu4_arm64.deb",
+    "filename": "pango1.0-tools_1.44.7-2ubuntu4_arm64.deb",
+    "size": 25356,
+    "sha256": "2faee9fde7425eb873d596d128a2c39438e05519edbddac22ce00f9b502a0446",
+    "package": "pango1.0-tools",
+    "version": "1.44.7-2ubuntu4"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/p/pango1.0/libpango1.0-dev_1.44.7-2ubuntu4_arm64.deb",
+    "filename": "libpango1.0-dev_1.44.7-2ubuntu4_arm64.deb",
+    "size": 132284,
+    "sha256": "b48783f8574b21dde7e75444a2877059115db6c02e7cf36de1ec1992203ac7ca",
+    "package": "libpango1.0-dev",
+    "version": "1.44.7-2ubuntu4"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/w/wayland/libwayland-bin_1.18.0-1ubuntu0.1_arm64.deb",
+    "filename": "libwayland-bin_1.18.0-1ubuntu0.1_arm64.deb",
+    "size": 19352,
+    "sha256": "364fca3208fdda53ab032da92def120efb3ecc54ffa2a83ed744417d9bc442f0",
+    "package": "libwayland-bin",
+    "version": "1.18.0-1ubuntu0.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/w/wayland/libwayland-dev_1.18.0-1ubuntu0.1_arm64.deb",
+    "filename": "libwayland-dev_1.18.0-1ubuntu0.1_arm64.deb",
+    "size": 64616,
+    "sha256": "f4af22759193809f17a4b44664c17301567bc793bec3a164d776a9b5c4deb948",
+    "package": "libwayland-dev",
+    "version": "1.18.0-1ubuntu0.1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxcomposite/libxcomposite-dev_0.4.5-1_arm64.deb",
+    "filename": "libxcomposite-dev_1%3a0.4.5-1_arm64.deb",
+    "size": 9220,
+    "sha256": "392af0b50fc0f339dc7663829751a4841165edcd733f2107fe2b05c4007eed7b",
+    "package": "libxcomposite-dev",
+    "version": "1:0.4.5-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxcursor/libxcursor-dev_1.2.0-2_arm64.deb",
+    "filename": "libxcursor-dev_1%3a1.2.0-2_arm64.deb",
+    "size": 26728,
+    "sha256": "1b2a7dfdfe01172a08be289e6fe74f26b5bca28909b777d05e8d003444c23fdc",
+    "package": "libxcursor-dev",
+    "version": "1:1.2.0-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxdamage/libxdamage-dev_1.1.5-2_arm64.deb",
+    "filename": "libxdamage-dev_1%3a1.1.5-2_arm64.deb",
+    "size": 5248,
+    "sha256": "723d9f64150d63f74bda992b32b0fc186b249997fb37476269b1dd3eadf80c1c",
+    "package": "libxdamage-dev",
+    "version": "1:1.1.5-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/x/xorgproto/x11proto-xinerama-dev_2019.2-1ubuntu1_all.deb",
+    "filename": "x11proto-xinerama-dev_2019.2-1ubuntu1_all.deb",
+    "size": 2628,
+    "sha256": "132d244aa067f7b8bd56f59b615c8f3c0681791fc58d8663fa99fd5bbf316626",
+    "package": "x11proto-xinerama-dev",
+    "version": "2019.2-1ubuntu1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxinerama/libxinerama-dev_1.1.4-2_arm64.deb",
+    "filename": "libxinerama-dev_2%3a1.1.4-2_arm64.deb",
+    "size": 7916,
+    "sha256": "81f6e67355ca2a9db2f34d400f196b5a14b8134ca06a8afc0a6d7308a5b01868",
+    "package": "libxinerama-dev",
+    "version": "2:1.1.4-2"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/libx/libxkbcommon/libxkbcommon-dev_0.10.0-1_arm64.deb",
+    "filename": "libxkbcommon-dev_0.10.0-1_arm64.deb",
+    "size": 45424,
+    "sha256": "de8cd1ee82282cdf6037c6bd0c809c0f8644d489bd6b77c1d6b0538323f13a03",
+    "package": "libxkbcommon-dev",
+    "version": "0.10.0-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/w/wayland-protocols/wayland-protocols_1.20-1_all.deb",
+    "filename": "wayland-protocols_1.20-1_all.deb",
+    "size": 60260,
+    "sha256": "4b8b41972cdf5269cdcd964d636d3ee15824ebf58cea79a952fe7a773af71af6",
+    "package": "wayland-protocols",
+    "version": "1.20-1"
+  },
+  {
+    "url": "https://mirrors.ustc.edu.cn/ubuntu-ports/pool/main/g/gtk+3.0/libgtk-3-dev_3.24.20-0ubuntu1.2_arm64.deb",
+    "filename": "libgtk-3-dev_3.24.20-0ubuntu1.2_arm64.deb",
+    "size": 1067192,
+    "sha256": "1c286b4f54099c4db5d577fd20e5a5e0b0c7108c5c40318ce0c4af25779ff66c",
+    "package": "libgtk-3-dev",
+    "version": "3.24.20-0ubuntu1.2"
+  }
+]

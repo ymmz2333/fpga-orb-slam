@@ -1,0 +1,16 @@
+--- a/src/FeatureIO.cc
++++ b/src/FeatureIO.cc
+@@ -1,4 +1,5 @@
+ #include "FeatureIO.h"
++#include "RelocDiagnostic.h"
+ #include "ORBextractor.h"
+ #include <chrono>
+ #include <cmath>
+@@ -123,6 +124,7 @@
+                 stats.timestamp_ns,other,image.cols,image.rows,extractors[other],extra_mono,extra,desc); stats.dump_ms+=ms(start);
+         }
+     }
++    RelocDiagnostic::selected(stats.timestamp_ns,role,image.cols,image.rows,extractor->GetFeatures(),extractor->GetScaleFactor(),extractor->GetScaleFactors(),keys);
+     stats.count=keys.size(); return mono_left;
+ }
+ }

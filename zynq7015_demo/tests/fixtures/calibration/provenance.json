@@ -1,0 +1,15 @@
+{
+  "sha256": "0e84dbba3462b0e3ec8599e949eb34946ac9d9bb2d79ff337635698db600950d",
+  "source": "Actual DECXIN CAMERA USB_HOST1 unscaled960x720 center crop from1280x720MJPEG",
+  "capture": "calibration-q12-03",
+  "frame": 900,
+  "timestamp_ns": 7586194925000,
+  "inner_corners": [
+    11,
+    8
+  ],
+  "square_mm": 1.5,
+  "evidence": "calibration-q12-03-evidence_20261024_180726.tar.gz",
+  "evidence_sha256": "c37e24613676a7652980554fc82357b429b95379c65a2311987ab73823ba1531",
+  "scope": "Detector regression fixture, not calibrated intrinsics or independent pose truth"
+}

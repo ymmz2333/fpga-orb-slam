@@ -1,0 +1,27 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -97,3 +97,24 @@
+   coherency, Linux drivers, live video I/O, power, or temperature.  Keep these
+   as explicit board-stage gates.
+ 
++## RK3588 SSH workflow
++
++- Reuse key-authenticated `ssh rk3588`. The PowerShell short command `rk`
++  calls `rk3588/orbslam3_cpu_baseline/scripts/rk.ps1`; use that path directly
++  if profiles are disabled. `rk check` is the compact connection check.
++- Use `rk exec 'command' -Name short-name`, then `rk status <job_id>` or
++  `rk wait <job_id> -Seconds 30`. Commands start in the board project root.
++  Use `rk start` when detached execution is wanted. Never relaunch a job just
++  because the client's bounded wait expired.
++- Full output stays under board `runtime/ssh_jobs/<job_id>/`. Read bounded
++  `rk log <job_id> -Lines 20` or `-Match 'error:|fatal|traceback|segmentation'`.
++  Do not dump full build logs, repeat unchanged output, or retry passwords.
++- STARTING/RUNNING is not completion, even if the query exits 0. Require
++  SUCCEEDED, exit_code=0, and task-specific acceptance evidence. LOST means
++  there is no trustworthy final exit code. Continue checking live jobs at
++  intervals no longer than about 60 seconds and report meaningful progress.
++- Read `rk3588/orbslam3_cpu_baseline/docs/SSH_WORKFLOW.md` for configuration,
++  log limits and recovery. Host settings and keys stay in ignored local
++  config/native SSH config. Respect the user's latest experiment-stage approval;
++  SSH setup does not grant additional experiment scope.
++

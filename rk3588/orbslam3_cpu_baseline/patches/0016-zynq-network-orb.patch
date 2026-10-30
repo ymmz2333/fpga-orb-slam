@@ -1,0 +1,87 @@
+diff --git a/Examples/Monocular/mono_euroc.cc b/Examples/Monocular/mono_euroc.cc
+index bb6e4ce..fcab489 100644
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -63,7 +63,7 @@ int main(int argc, char **argv)
+ 
+     if(argc < 5)
+     {
+-        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name) [--no-viewer|--viewer] [--feature-mode native|dump|inject] [--feature-dir DIR]" << endl;
++        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name) [--no-viewer|--viewer] [--feature-mode native|dump|inject|fpga] [--feature-dir DIR]" << endl;
+         return 1;
+     }
+ 
+diff --git a/include/FeatureIO.h b/include/FeatureIO.h
+index 95c1532..fb1a6be 100644
+--- a/include/FeatureIO.h
++++ b/include/FeatureIO.h
+@@ -16,6 +16,7 @@ class FeatureIO {
+ public:
+     static void Configure(const std::string& mode,const std::string& directory);
+     static bool Active();
++    static int InitializationFeatures(int normal_features);
+     static void Begin(uint64_t timestamp_ns);
+     static void SetExtractors(ORBextractor* normal,ORBextractor* initialization);
+     static FeatureIOStats Stats();
+diff --git a/src/FeatureIO.cc b/src/FeatureIO.cc
+index ceda6a1..c9185ab 100644
+--- a/src/FeatureIO.cc
++++ b/src/FeatureIO.cc
+@@ -1,5 +1,6 @@
+ #include "FeatureIO.h"
+ #include "ORBextractor.h"
++#include "FpgaORB.h"
+ #include <chrono>
+ #include <cmath>
+ #include <cstring>
+@@ -44,11 +45,15 @@ static_assert(sizeof(float)==4 && std::numeric_limits<float>::is_iec559,"float32
+ static_assert(sizeof(MemoryRecord)==64,"memory snapshot layout mismatch");
+ }
+ void FeatureIO::Configure(const std::string& selected,const std::string& directory) {
+-    require(selected=="native" || selected=="dump" || selected=="inject","invalid mode");
++    require(selected=="native" || selected=="dump" || selected=="inject" || selected=="fpga","invalid mode");
+     require(selected=="native" || !directory.empty(),"feature directory required");
+     mode=selected; root=directory;
+     if(mode=="dump") for(int role=0;role<2;++role) { mkdirs(root+"/"+name(role)); mkdirs(root+"/memory/"+name(role)); }
+ }
++int FeatureIO::InitializationFeatures(int normal_features) {
++    if(mode=="fpga") { require(normal_features==1000,"FPGA capacity is1000 in both roles"); return 1000; }
++    return 5*normal_features;
++}
+ bool FeatureIO::Active() { return mode!="inactive"; }
+ void FeatureIO::Begin(uint64_t timestamp_ns) { stats=FeatureIOStats(); stats.timestamp_ns=timestamp_ns; }
+ void FeatureIO::SetExtractors(ORBextractor* normal,ORBextractor* initialization) { extractors[0]=normal; extractors[1]=initialization; }
+@@ -111,7 +116,10 @@ int FeatureIO::Process(ORBextractor* extractor,const cv::Mat& image,std::vector<
+     require(stats.timestamp_ns>0 && extractors[0] && extractors[1],"missing monocular frame context");
+     int role=extractor==extractors[1] ? 1 : 0; require(extractor==extractors[role],"unknown extractor");
+     stats.role=role; int mono_left;
+-    if(mode=="inject") mono_left=LoadPacket(file(role),stats.timestamp_ns,role,image.cols,image.rows,extractor,keys,descriptors,stats.read_ms,stats.decode_ms);
++    if(mode=="fpga") {
++        static FpgaORB receiver;
++        mono_left=receiver.extract(root,stats.timestamp_ns,role,extractor,image,keys,descriptors,stats.read_ms,stats.decode_ms);
++    } else if(mode=="inject") mono_left=LoadPacket(file(role),stats.timestamp_ns,role,image.cols,image.rows,extractor,keys,descriptors,stats.read_ms,stats.decode_ms);
+     else {
+         auto start=Clock::now(); mono_left=(*extractor)(image,cv::Mat(),keys,descriptors,lapping); stats.native_ms=ms(start); ++stats.extractor_calls;
+         if(mode=="dump") {
+diff --git a/src/Tracking.cc b/src/Tracking.cc
+index a20af90..b5e2fd2 100644
+--- a/src/Tracking.cc
++++ b/src/Tracking.cc
+@@ -600,7 +600,7 @@ void Tracking::newParameterLoader(Settings *settings) {
+         mpORBextractorRight = new ORBextractor(nFeatures,fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
+ 
+     if(mSensor==System::MONOCULAR || mSensor==System::IMU_MONOCULAR)
+-        mpIniORBextractor = new ORBextractor(5*nFeatures,fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
++        mpIniORBextractor = new ORBextractor(FeatureIO::InitializationFeatures(nFeatures),fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
+ 
+     //IMU parameters
+     Sophus::SE3f Tbc = settings->Tbc();
+@@ -1288,7 +1288,7 @@ bool Tracking::ParseORBParamFile(cv::FileStorage &fSettings)
+         mpORBextractorRight = new ORBextractor(nFeatures,fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
+ 
+     if(mSensor==System::MONOCULAR || mSensor==System::IMU_MONOCULAR)
+-        mpIniORBextractor = new ORBextractor(5*nFeatures,fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
++        mpIniORBextractor = new ORBextractor(FeatureIO::InitializationFeatures(nFeatures),fScaleFactor,nLevels,fIniThFAST,fMinThFAST);
+ 
+     cout << endl << "ORB Extractor Parameters: " << endl;
+     cout << "- Number of Features: " << nFeatures << endl;

@@ -1,0 +1,17 @@
+Subject: A1: enable REGISTER_TIMES consistently for the SLAM library and linked examples
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -113,6 +113,12 @@
+ include/Config.h
+ include/Settings.h)
+ 
++# PUBLIC keeps REGISTER_TIMES-dependent headers consistent in the library and examples.
++option(ORB_SLAM3_REGISTER_TIMES "Record per-frame and module timing statistics" ON)
++if(ORB_SLAM3_REGISTER_TIMES)
++    target_compile_definitions(${PROJECT_NAME} PUBLIC REGISTER_TIMES)
++endif()
++
+ add_subdirectory(Thirdparty/g2o)
+ 
+ target_link_libraries(${PROJECT_NAME}

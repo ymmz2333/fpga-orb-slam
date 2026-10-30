@@ -1,0 +1,16 @@
+{
+  "libturbojpeg-native.a": {
+    "sha256": "770eae2bd693d57ec94eb9f1e93fa682b41c767d464bf6640237e30730aba4ad",
+    "upstream_version": "3.2.0",
+    "target": "native",
+    "scope": "Retained static library, not a new build",
+    "original_report_sha256": "69e50bbaa40ff4cf0e27389aac6682fc97ee8ce332ebd635f2237ff51787d89b"
+  },
+  "libturbojpeg-arm.a": {
+    "sha256": "3eb4d8caa63dafb39a1fc249332d580c91e357a902c5b56ed9696c9f11bdd6ef",
+    "upstream_version": "3.2.0",
+    "target": "arm",
+    "scope": "Retained static library, not a new build",
+    "original_report_sha256": "c40feb0cd39b2db22448891da162f86fa23da855a9cbd52a6df85ab05ff985e5"
+  }
+}

@@ -1,0 +1,135 @@
+--- a/include/System.h
++++ b/include/System.h
+@@ -44,6 +44,8 @@
+ namespace ORB_SLAM3
+ {
+ 
++struct OrbTelemetryData;
++
+ class Verbose
+ {
+ public:
+@@ -178,6 +180,7 @@
+     unsigned long GetActiveMapId();
+     bool DidRelocalizeCurrentFrame();
+     void SaveMapDiagnostics(const string &prefix);
++    void GetVisualizationSnapshot(OrbTelemetryData& out,bool include_map);
+     std::vector<MapPoint*> GetTrackedMapPoints();
+     std::vector<cv::KeyPoint> GetTrackedKeyPointsUn();
+ 
+--- a/src/System.cc
++++ b/src/System.cc
+@@ -19,6 +19,7 @@
+ 
+ 
+ #include "System.h"
++#include "OrbTelemetry.h"
+ #include "Converter.h"
+ #include <thread>
+ #include <pangolin/pangolin.h>
+@@ -1364,6 +1365,39 @@
+     }
+ }
+ 
++void System::GetVisualizationSnapshot(OrbTelemetryData& out,bool include_map)
++{
++    out.state=GetTrackingState();
++    Map* map=mpAtlas->GetCurrentMap();
++    if(!map)return;
++    out.map_id=map->GetId();
++    const auto& keys=mpTracker->mCurrentFrame.mvKeys;
++    const auto& matches=mpTracker->mCurrentFrame.mvpMapPoints;
++    const auto& outliers=mpTracker->mCurrentFrame.mvbOutlier;
++    out.features.reserve(keys.size());
++    for(size_t i=0;i<keys.size();++i) {
++        bool tracked=i<matches.size()&&matches[i]&&i<outliers.size()&&!outliers[i];
++        out.features.push_back({keys[i].pt.x,keys[i].pt.y,keys[i].octave,tracked});
++    }
++    if(!include_map)return;
++    // Same point/pose APIs as MapDrawer. Skip a busy map rather than delaying tracking.
++    unique_lock<mutex> lock(map->mMutexMapUpdate,std::try_to_lock);
++    if(!lock.owns_lock())return;
++    out.map_full=true;
++    for(MapPoint* point:map->GetAllMapPoints()) {
++        if(!point||point->isBad())continue;
++        Eigen::Vector3f xyz=point->GetWorldPos();
++        if(xyz.allFinite())out.points.push_back({point->mnId,xyz});
++        if(out.points.size()>=20000)break;
++    }
++    for(KeyFrame* key:map->GetAllKeyFrames()) {
++        if(!key||key->isBad())continue;
++        Eigen::Matrix4f pose=key->GetPoseInverse().matrix();
++        if(pose.allFinite())out.keyframes.push_back({key->mnId,pose});
++        if(out.keyframes.size()>=2000)break;
++    }
++}
++
+ int System::GetTrackingState()
+ {
+     unique_lock<mutex> lock(mMutexState);
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -29,6 +29,7 @@
+ #include<System.h>
+ #include<FeatureIO.h>
+ #include<FpgaReplayInput.h>
++#include<OrbTelemetry.h>
+ #include<memory>
+ 
+ using namespace std;
+@@ -40,7 +41,8 @@
+ {  
+     // Preserve v1.0's headless default, while making the run condition explicit.
+     bool bUseViewer = false, unpaced=false;
+-    string featureMode="native", featureDirectory;
++    string featureMode="native", featureDirectory, telemetryDirectory;
++    bool telemetryRecord=false;
+     vector<char*> positionalArguments;
+     positionalArguments.push_back(argv[0]);
+     for(int i = 1; i < argc; ++i)
+@@ -52,6 +54,10 @@
+             unpaced=true;
+         else if(argument == "--viewer")
+             bUseViewer = true;
++        else if(argument == "--telemetry-record") telemetryRecord=true;
++        else if(argument == "--telemetry-dir") {
++            if(i+1>=argc)return 1;telemetryDirectory=argv[++i];
++        }
+         else if(argument == "--feature-mode" || argument == "--feature-dir")
+         {
+             if(i+1>=argc) { cerr << "Missing option value: " << argument << endl; return 1; }
+@@ -120,6 +126,8 @@
+     float imageScale = SLAM.GetImageScale();
+     if(ORB_SLAM3::FeatureIO::PipelineActive()&&imageScale!=1.f) throw runtime_error("fixed FPGA image scale must be1");
+ 
++    std::unique_ptr<ORB_SLAM3::OrbTelemetry> telemetry;
++    if(!telemetryDirectory.empty()) telemetry.reset(new ORB_SLAM3::OrbTelemetry(telemetryDirectory,telemetryRecord));
+     double t_resize = 0.f;
+     double t_track = 0.f;
+ #ifdef REGISTER_TIMES
+@@ -202,7 +210,7 @@
+ 
+             // Pass the image to the SLAM system
+             // cout << "tframe = " << tframe << endl;
+-            SLAM.TrackMonocular(im,tframe); // TODO change to monocular_inertial
++            auto currentTcw=SLAM.TrackMonocular(im,tframe); // TODO change to monocular_inertial
+ 
+     #ifdef COMPILEDWITHC11
+             std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
+@@ -232,6 +240,8 @@
+             double ttrack= std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
+ 
+             vTimesTrack[ni]=ttrack;
++            if(telemetry) telemetry->capture(SLAM,im,currentTcw,uint64_t(ni),timestampNs,
++                ORB_SLAM3::FeatureIO::Stats(),ttrack*1000.,ni==nImages[seq]-1);
+ 
+             // Wait to load the next frame
+             double T=0;
+@@ -271,6 +281,7 @@
+ #endif
+     const double replaySeconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-replayStart).count();
+     cout<<"REPLAY_SUMMARY frames="<<tot_images<<" seconds="<<replaySeconds<<" fps="<<tot_images/replaySeconds<<endl;
++    if(telemetry)telemetry->finish();
+     // Stop all threads
+     SLAM.Shutdown();
+     SLAM.SaveMapDiagnostics("Diagnostics");

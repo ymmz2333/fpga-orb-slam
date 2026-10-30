@@ -1,0 +1,45 @@
+Subject: A1: align module timing entries with initialization and early-return frames
+
+--- a/src/Tracking.cc
++++ b/src/Tracking.cc
+@@ -1793,6 +1793,13 @@
+ 
+ void Tracking::Track()
+ {
++#ifdef REGISTER_TIMES
++    // Reserve one entry for every frame, including initialization/early returns.
++    // Modules that are not executed take zero time; executed stages fill their slot.
++    vdPosePred_ms.push_back(0.0);
++    vdLMTrack_ms.push_back(0.0);
++    vdNewKF_ms.push_back(0.0);
++#endif
+ 
+     if (bStepByStep)
+     {
+@@ -2112,7 +2119,7 @@
+         std::chrono::steady_clock::time_point time_EndPosePred = std::chrono::steady_clock::now();
+ 
+         double timePosePred = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndPosePred - time_StartPosePred).count();
+-        vdPosePred_ms.push_back(timePosePred);
++        vdPosePred_ms.back() = timePosePred;
+ #endif
+ 
+ 
+@@ -2194,7 +2201,7 @@
+         std::chrono::steady_clock::time_point time_EndLMTrack = std::chrono::steady_clock::now();
+ 
+         double timeLMTrack = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndLMTrack - time_StartLMTrack).count();
+-        vdLMTrack_ms.push_back(timeLMTrack);
++        vdLMTrack_ms.back() = timeLMTrack;
+ #endif
+ 
+         // Update drawer
+@@ -2253,7 +2260,7 @@
+             std::chrono::steady_clock::time_point time_EndNewKF = std::chrono::steady_clock::now();
+ 
+             double timeNewKF = std::chrono::duration_cast<std::chrono::duration<double,std::milli> >(time_EndNewKF - time_StartNewKF).count();
+-            vdNewKF_ms.push_back(timeNewKF);
++            vdNewKF_ms.back() = timeNewKF;
+ #endif
+ 
+             // We allow points with high innovation (considererd outliers by the Huber Function)

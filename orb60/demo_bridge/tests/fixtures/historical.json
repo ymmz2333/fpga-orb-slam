@@ -1,0 +1,57 @@
+{
+  "scope": "Historical physical ORB captures, transport-only fixtures; never production replay",
+  "frames": [
+    {
+      "frame_index": "0",
+      "source_frame_index": "24",
+      "timestamp_ns": "1000000000",
+      "mp4_pts_s": "0.8",
+      "role": "1",
+      "count": "280",
+      "record_offset": "0",
+      "record_crc32": "936492043",
+      "records_sha256": "ae467c6187dcb329aeb3c9d8277ecce5283f857c8038ea6d8ad63a0bff15e925",
+      "gray_sha256": "ca97a577cdc1d574a07cc3019009a515622a058994ed3610cee2ee19b961fc5e",
+      "png_sha256": "8f5b2ed1b1aca24f1db159f44458f502b6173bbbb6e301e116a4720df3467ad6",
+      "engine_ns": "5095878",
+      "roundtrip_ns": "24627048",
+      "file": "historical_frame_0.packet",
+      "packet_sha256": "9431df1ccd31bf7ee6a88de44c9e369233b11c22de6fed24740d6c0c1b4e75b1"
+    },
+    {
+      "frame_index": "1",
+      "source_frame_index": "25",
+      "timestamp_ns": "1031739600",
+      "mp4_pts_s": "0.8333333333333334",
+      "role": "1",
+      "count": "279",
+      "record_offset": "280",
+      "record_crc32": "3433578952",
+      "records_sha256": "670d74788ab14fc335286e32a3d695f0869ded9d2c0a761eccd70e7b3673f9eb",
+      "gray_sha256": "f2540b08b6ff77fbbb8b76b4d505edbad44a615af1816efb37b12251b43fd6b5",
+      "png_sha256": "6a1acfce86a21ed2bd1cdf281f4586e45dbca8deea76ee211ec6e40766e20af0",
+      "engine_ns": "5077755",
+      "roundtrip_ns": "25329361",
+      "file": "historical_frame_1.packet",
+      "packet_sha256": "bd18719c6d7b0a8233ec9e5c78de8273cdbbd2162fb95c38fb7c76602f7d89f6"
+    },
+    {
+      "frame_index": "2",
+      "source_frame_index": "26",
+      "timestamp_ns": "1071488300",
+      "mp4_pts_s": "0.8666666666666667",
+      "role": "1",
+      "count": "282",
+      "record_offset": "559",
+      "record_crc32": "1195246446",
+      "records_sha256": "040993d31a3bf281d5f1291ed0830ef9060f25fa1a107cb56687b16da0b9fd1a",
+      "gray_sha256": "228a7eaea9b41f544084cd08456535a2d0f9d646915357ff9cb1750ba359f308",
+      "png_sha256": "f9338001df921469d8a368b1a453d0e68111f9e8038eea0ba5b23f1a5f84a306",
+      "engine_ns": "5078517",
+      "roundtrip_ns": "23086217",
+      "file": "historical_frame_2.packet",
+      "packet_sha256": "a9a4865ec0a6405f0c29b75dcbc7d79e9a3af72945a0a2819cf6face2fa693de"
+    }
+  ],
+  "feature_io_sha256": "8575152c17d0b0c4f80792920608055c1a049387bec29e1205e28b11846d03aa"
+}

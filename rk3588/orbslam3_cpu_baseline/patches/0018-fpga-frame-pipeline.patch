@@ -1,0 +1,165 @@
+--- a/include/FeatureIO.h
++++ b/include/FeatureIO.h
+@@ -17,6 +17,11 @@
+     static void Configure(const std::string& mode,const std::string& directory);
+     static bool Active();
+     static bool FPGAActive();
++    static bool PipelineActive();
++    static void StartPipeline();
++    static void QueueFrame(uint64_t timestamp,const cv::Mat& image);
++    static void FinishPipeline();
++    static void AbortPipeline();
+     static int InitializationFeatures(int normal_features);
+     static void Begin(uint64_t timestamp_ns);
+     static void SetExtractors(ORBextractor* normal,ORBextractor* initialization);
+--- a/src/FeatureIO.cc
++++ b/src/FeatureIO.cc
+@@ -1,6 +1,8 @@
+ #include "FeatureIO.h"
+ #include "ORBextractor.h"
+ #include "FpgaORB.h"
++#include "FpgaPipeline.h"
++#include <memory>
+ #include <chrono>
+ #include <cmath>
+ #include <cstring>
+@@ -44,17 +46,27 @@
+ static_assert(sizeof(float)==4 && std::numeric_limits<float>::is_iec559,"float32 required");
+ static_assert(sizeof(MemoryRecord)==64,"memory snapshot layout mismatch");
+ }
++namespace { std::unique_ptr<FpgaPipeline> pipeline; }
+ void FeatureIO::Configure(const std::string& selected,const std::string& directory) {
+-    require(selected=="native" || selected=="dump" || selected=="inject" || selected=="fpga","invalid mode");
++    require(selected=="native" || selected=="dump" || selected=="inject" || selected=="fpga" || selected=="fpga-pipeline","invalid mode");
+     require(selected=="native" || !directory.empty(),"feature directory required");
+-    mode=selected; root=directory;
++    pipeline.reset();mode=selected; root=directory;
+     if(mode=="dump") for(int role=0;role<2;++role) { mkdirs(root+"/"+name(role)); mkdirs(root+"/memory/"+name(role)); }
+ }
+ int FeatureIO::InitializationFeatures(int normal_features) {
+-    if(mode=="fpga") { require(normal_features==1000,"FPGA capacity is1000 in both roles"); return 1000; }
++    if(FPGAActive()) { require(normal_features==1000,"FPGA capacity is1000 in both roles"); return 1000; }
+     return 5*normal_features;
+ }
+-bool FeatureIO::FPGAActive() { return mode=="fpga"; }
++bool FeatureIO::FPGAActive() { return mode=="fpga" || PipelineActive(); }
++bool FeatureIO::PipelineActive() { return mode=="fpga-pipeline"; }
++void FeatureIO::StartPipeline() {
++    require(PipelineActive()&&!pipeline,"pipeline start order");pipeline.reset(new FpgaPipeline(root));
++}
++void FeatureIO::QueueFrame(uint64_t timestamp,const cv::Mat& image) {
++    require(PipelineActive()&&bool(pipeline),"pipeline not configured");pipeline->submit(timestamp,image);
++}
++void FeatureIO::FinishPipeline() { if(pipeline)pipeline->finish(); }
++void FeatureIO::AbortPipeline() { if(pipeline)pipeline->abort(); }
+ bool FeatureIO::Active() { return mode!="inactive"; }
+ void FeatureIO::Begin(uint64_t timestamp_ns) { stats=FeatureIOStats(); stats.timestamp_ns=timestamp_ns; }
+ void FeatureIO::SetExtractors(ORBextractor* normal,ORBextractor* initialization) { extractors[0]=normal; extractors[1]=initialization; }
+@@ -117,7 +129,9 @@
+     require(stats.timestamp_ns>0 && extractors[0] && extractors[1],"missing monocular frame context");
+     int role=extractor==extractors[1] ? 1 : 0; require(extractor==extractors[role],"unknown extractor");
+     stats.role=role; int mono_left;
+-    if(mode=="fpga") {
++    if(PipelineActive()) {
++        mono_left=pipeline->consume(stats.timestamp_ns,role,extractor,keys,descriptors,stats.read_ms,stats.decode_ms);
++    } else if(mode=="fpga") {
+         static FpgaORB receiver;
+         mono_left=receiver.extract(root,stats.timestamp_ns,role,extractor,image,keys,descriptors,stats.read_ms,stats.decode_ms);
+     } else if(mode=="inject") mono_left=LoadPacket(file(role),stats.timestamp_ns,role,image.cols,image.rows,extractor,keys,descriptors,stats.read_ms,stats.decode_ms);
+--- a/Examples/Monocular/mono_euroc.cc
++++ b/Examples/Monocular/mono_euroc.cc
+@@ -28,6 +28,8 @@
+ 
+ #include<System.h>
+ #include<FeatureIO.h>
++#include<FpgaReplayInput.h>
++#include<memory>
+ 
+ using namespace std;
+ 
+@@ -37,7 +39,7 @@
+ int main(int argc, char **argv)
+ {  
+     // Preserve v1.0's headless default, while making the run condition explicit.
+-    bool bUseViewer = false;
++    bool bUseViewer = false, unpaced=false;
+     string featureMode="native", featureDirectory;
+     vector<char*> positionalArguments;
+     positionalArguments.push_back(argv[0]);
+@@ -46,6 +48,8 @@
+         const string argument(argv[i]);
+         if(argument == "--no-viewer")
+             bUseViewer = false;
++        else if(argument == "--unpaced")
++            unpaced=true;
+         else if(argument == "--viewer")
+             bUseViewer = true;
+         else if(argument == "--feature-mode" || argument == "--feature-dir")
+@@ -63,12 +67,13 @@
+ 
+     if(argc < 5)
+     {
+-        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name) [--no-viewer|--viewer] [--feature-mode native|dump|inject|fpga] [--feature-dir DIR]" << endl;
++        cerr << endl << "Usage: ./mono_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) (trajectory_file_name) [--no-viewer|--viewer] [--feature-mode native|dump|inject|fpga|fpga-pipeline] [--unpaced] [--feature-dir DIR]" << endl;
+         return 1;
+     }
+ 
+     ORB_SLAM3::FeatureIO::Configure(featureMode,featureDirectory);
+     const int num_seq = (argc-3)/2;
++    if(ORB_SLAM3::FeatureIO::PipelineActive()&&num_seq!=1) throw runtime_error("FPGA pipeline accepts one sequence per connection");
+     cout << "num_seq = " << num_seq << endl;
+     bool bFileName= (((argc-3) % 2) == 1);
+     string file_name;
+@@ -113,6 +118,7 @@
+     cout << "Viewer: " << (bUseViewer ? "enabled" : "disabled") << endl;
+     ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::MONOCULAR, bUseViewer);
+     float imageScale = SLAM.GetImageScale();
++    if(ORB_SLAM3::FeatureIO::PipelineActive()&&imageScale!=1.f) throw runtime_error("fixed FPGA image scale must be1");
+ 
+     double t_resize = 0.f;
+     double t_track = 0.f;
+@@ -137,8 +143,11 @@
+     int previousTrackingState = -1; // System is not ready before the first input.
+ #endif
+ 
++    auto replayStart=std::chrono::steady_clock::now();
+     for (seq = 0; seq<num_seq; seq++)
+     {
++        std::unique_ptr<ORB_SLAM3::FpgaReplayInput> input;
++        if(ORB_SLAM3::FeatureIO::PipelineActive()) input.reset(new ORB_SLAM3::FpgaReplayInput(vstrImageFilenames[seq]));
+ 
+         // Main loop
+         cv::Mat im;
+@@ -147,7 +156,7 @@
+         {
+ 
+             // Read image from file
+-            im = cv::imread(vstrImageFilenames[seq][ni],cv::IMREAD_UNCHANGED); //,CV_LOAD_IMAGE_UNCHANGED);
++            im = input ? input->get(size_t(ni)) : cv::imread(vstrImageFilenames[seq][ni],cv::IMREAD_UNCHANGED); //,CV_LOAD_IMAGE_UNCHANGED);
+             double tframe = vTimestampsCam[seq][ni];
+ 
+             if(im.empty())
+@@ -234,11 +243,13 @@
+             //std::cout << "T: " << T << std::endl;
+             //std::cout << "ttrack: " << ttrack << std::endl;
+ 
+-            if(ttrack<T) {
++            if(!unpaced && ttrack<T) {
+                 //std::cout << "usleep: " << (dT-ttrack) << std::endl;
+                 usleep((T-ttrack)*1e6); // 1e6
+             }
+         }
++
++        if(input) input->finish();
+ 
+         if(seq < num_seq - 1)
+         {
+@@ -258,6 +269,8 @@
+     featureFile.close();
+     mapFile.close();
+ #endif
++    const double replaySeconds=std::chrono::duration<double>(std::chrono::steady_clock::now()-replayStart).count();
++    cout<<"REPLAY_SUMMARY frames="<<tot_images<<" seconds="<<replaySeconds<<" fps="<<tot_images/replaySeconds<<endl;
+     // Stop all threads
+     SLAM.Shutdown();
+     SLAM.SaveMapDiagnostics("Diagnostics");
