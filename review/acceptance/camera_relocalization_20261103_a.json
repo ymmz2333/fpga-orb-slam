@@ -1,0 +1,62 @@
+{
+  "status": "HOST_VERIFIED_REAL_CAMERA_FIXED_MAP_LOCALIZATION_PASS",
+  "files_verified": 29,
+  "archive_sha256": "ea627ef8adc6f0a131d2e30923291393c7d04f6a8750c10e8127281633bd75ad",
+  "input": "actual_KV260_USB3_YUYV_camera",
+  "ORB": "actual_7015_PL",
+  "localization": "native7015_PS",
+  "frames": 2400,
+  "valid": 2386,
+  "first_valid_frame": 2,
+  "valid_after_initialization": 0.9949958298582152,
+  "loss_segments": [
+    {
+      "first": 260,
+      "last": 267,
+      "frames": 8
+    },
+    {
+      "first": 408,
+      "last": 408,
+      "frames": 1
+    },
+    {
+      "first": 1194,
+      "last": 1194,
+      "frames": 1
+    },
+    {
+      "first": 1212,
+      "last": 1212,
+      "frames": 1
+    },
+    {
+      "first": 1407,
+      "last": 1407,
+      "frames": 1
+    }
+  ],
+  "native_entry_seconds": 101.86999999999898,
+  "native_entry_FPS": 23.559438500049318,
+  "capture_stream_and_drain_FPS": 23.64920872785868,
+  "source_sequence_gaps": 2498,
+  "frame_identity_mismatches": 0,
+  "CPU_ORB_calls": 0,
+  "HDMI_errors": 0,
+  "RGB_background_points": 333261,
+  "RGB_background_builds": 1,
+  "RGB_background_hits": 2399,
+  "map_unchanged": true,
+  "map_version": "556ab232a814a878aa32fb23f49da2d720faee93bf18b99d25d7e0c56d355422",
+  "relative_position_extent": [
+    0.5182578286029349,
+    0.25965183601563513,
+    0.4355189351564878
+  ],
+  "max_relative_displacement_from_first": 0.4236096331813301,
+  "median_valid_inliers": 139.0,
+  "trajectory_scope": "Relative SLAM world; pose change observed, no external ground-truth accuracy claim",
+  "original_camera_mapping_stability_passed": false,
+  "full_camera_chain_strictly_accepted": false,
+  "physical_direct_cable_tested": false
+}

@@ -1,0 +1,10 @@
+// Merge into the new DPU+points overlay only. Not a standalone firmware overlay.
+// Confirm address_map.tsv and do not add this node to the old DPU-only design.
+&amba {
+    point_project_uio: point-project@a2000000 {
+        compatible = "generic-uio";
+        linux,uio-name = "kv260_point_project";
+        reg = <0 0xa2000000 0 0x10000>;
+        // Polled completion; leave the kernel's GIE disabled.
+    };
+};

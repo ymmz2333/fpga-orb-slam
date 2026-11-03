@@ -1,0 +1,22 @@
+{
+  "status": "HOST_FINAL_RUNTIME_EVIDENCE_VERIFIED",
+  "archive_sha256": "7e4f091b23eedc45380d7e26525748e73b3f744682e34ee65d98c204a0c20cc5",
+  "host_tests": {
+    "passed": 416,
+    "skipped": 4
+  },
+  "restart_verified": true,
+  "same_map_reuse_verified": true,
+  "last_saved_map_points": 508943,
+  "pose_accuracy_retested": false,
+  "evidence": "FINAL_EVIDENCE.tar.gz",
+  "tracked_source_sha256": {
+    "orb60\\kv260\\manual_gui.py": "ad7144c5f59ef67db321ba3afd284f5075b1758f9aab8ee9e3592c9b9b4ed8b0",
+    "orb60\\kv260\\manual_control.py": "d0ba03eab45b40fe0523e80093b781ea26d37f483c4fb6d2cc15b6b8631fa08d",
+    "orb60\\kv260\\manual_restart.py": "c0ddc87831c39213238998f807725a6d99514800416ead85391ab5424d62400f",
+    "orb60\\kv260\\install_camera_map_7015.py": "ef84a209802520f7be51e54b4e9052aab306ce125dc9e3ed2840c521d4a01c11",
+    "orb60\\kv260\\two_board_session.py": "6d610fef8a182116c2057c262bf5db8b072a86d4ce7935dfe6851405bde217c1",
+    "orb60\\kv260\\startup\\stop_session.py": "8b3e163dfe093c40953f40ca9805892854303a1f94fd0c66103c1fbeef65e4d9"
+  },
+  "final_small_QA_directory_removal": "Not executed: SSH transport disconnected after operator was told ready to test"
+}

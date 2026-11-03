@@ -1,0 +1,13 @@
+{
+  "root": ".",
+  "video": "replay_300/video.mp4",
+  "identities": "network_video_inputs_20261103_a/identities.csv",
+  "reference_features": "runs/full_video_live_20261102_a/tracking/frames.csv",
+  "camera": "replay_300/camera_from_yaml_v2.csv",
+  "bundle": "runs/network_fixed_map_bundle_20261103_a",
+  "localizer": "localizer_build_v1/fixed_map_kv260",
+  "gui_python": ".venv_gui/bin/python",
+  "endpoint": "[fe80::20a:35ff:fe00:122%eth0]:5600",
+  "localization_dense_port": 18791,
+  "processing_timeout_seconds": 600
+}

@@ -1,0 +1,22 @@
+{
+  "root": ".",
+  "video": "replay_300/video.mp4",
+  "identities": "network_video_inputs_20261103_a/identities.csv",
+  "reference_features": "runs/full_video_live_20261102_a/tracking/frames.csv",
+  "executable": "network_native_20261103_c/bin/mono_kv260_network",
+  "native_build": "network_native_20261103_c/BUILD.json",
+  "vocabulary": "vocabulary/ORBvoc.txt",
+  "yaml": "replay_300/camera.yaml",
+  "gui_python": ".venv_gui/bin/python",
+  "model": "models/midas_kv260_b4096.xmodel",
+  "placement": "models/placement.json",
+  "preflight": "platform_dpu_only/deployment_20261103_a/preflight_vivado.json",
+  "selection": "models/depth_model_selection.json",
+  "camera": "replay_300/camera_from_yaml_v2.csv",
+  "endpoint": "[fe80::20a:35ff:fe00:122%eth0]:5600",
+  "dense_port": 18790,
+  "telemetry_fps": 15,
+  "gpu_only": true,
+  "depth_interval_ns": 1000000000,
+  "processing_timeout_seconds": 600
+}

@@ -25,8 +25,10 @@ trap cleanup EXIT
 trap 'exit 143' HUP INT TERM
 mkfifo -m 600 "$lock/control.fifo"
 exec 3<>"$lock/control.fifo"
-run="$release/runs/$(date -u +%Y%m%dT%H%M%S)-$$"
-mkdir "$run"
+# This board has no RTC: the same wall clock and PID can recur on every boot.
+# Keep the boot identity and allocate atomically without reusing old evidence.
+boot_id=$(cat /proc/sys/kernel/random/boot_id)
+run=$(mktemp -d "$release/runs/$(date -u +%Y%m%dT%H%M%S)-$boot_id-XXXXXX")
 "$release/bin/zynq-demo" --camera /dev/video0 --uio /dev/uio0 \
  --source-calibration "$release/config/camera_source.csv" \
  --calibration "$release/config/camera_orb.csv" --maps "$maps" \

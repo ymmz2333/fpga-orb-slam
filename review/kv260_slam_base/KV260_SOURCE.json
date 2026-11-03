@@ -1,0 +1,2495 @@
+{
+  "target": "aarch64-linux-gnu",
+  "display": "headless",
+  "cpu_orb_fallback": false,
+  "files": {
+    ".gitignore": {
+      "sha256": "3d4b3313a2e4b68826b484190acfb2dbd03f46765d28674b3f470a3ee1a4245c",
+      "retained_before": "3d4b3313a2e4b68826b484190acfb2dbd03f46765d28674b3f470a3ee1a4245c"
+    },
+    "Changelog.md": {
+      "sha256": "598c27c12b930b9615fa9d91d3ddbf5672c70a21d23e1d075710596a446b3a78",
+      "retained_before": "598c27c12b930b9615fa9d91d3ddbf5672c70a21d23e1d075710596a446b3a78"
+    },
+    "CMakeLists.txt": {
+      "sha256": "8ea9fee26c56c84eb711d0a982fbc2a65792138d6770f5286ec52b4867ad878d",
+      "retained_before": "782731995003849739bad975b55331e77d16c31af05350c774a345d9da3207da"
+    },
+    "Dependencies.md": {
+      "sha256": "3493ccfefda3f98575335377f429f917fde2fc03a31b51a6938e69913dd05612",
+      "retained_before": "3493ccfefda3f98575335377f429f917fde2fc03a31b51a6938e69913dd05612"
+    },
+    "evaluation/associate.py": {
+      "sha256": "dbe8d8c486977fccda3fd1edc484b8906bbcc354bf2bc246b80f17abf30c6cc4",
+      "retained_before": "dbe8d8c486977fccda3fd1edc484b8906bbcc354bf2bc246b80f17abf30c6cc4"
+    },
+    "evaluation/evaluate_ate_scale.py": {
+      "sha256": "983dac4dc14f095a4d4d483a9d43ce0c8400db03635b0d8a150c11ee1171163c",
+      "retained_before": "983dac4dc14f095a4d4d483a9d43ce0c8400db03635b0d8a150c11ee1171163c"
+    },
+    "evaluation/Ground_truth/EuRoC_imu/MH_GT.txt": {
+      "sha256": "b4a6e4e31efd76f07003c0706ef3e7d0ab5fce7c52073ecdda07eacc4fb4cd5d",
+      "retained_before": "b4a6e4e31efd76f07003c0706ef3e7d0ab5fce7c52073ecdda07eacc4fb4cd5d"
+    },
+    "evaluation/Ground_truth/EuRoC_imu/V1_GT.txt": {
+      "sha256": "f93608adfabd863788a110835ba88380a77b31656a4ec9820b13cf6c4d51e2c1",
+      "retained_before": "f93608adfabd863788a110835ba88380a77b31656a4ec9820b13cf6c4d51e2c1"
+    },
+    "evaluation/Ground_truth/EuRoC_imu/V2_GT.txt": {
+      "sha256": "0b7928c7bf7af8f01e674c9ac43eb49197de768a4b1b7d937ea14242b0f0db20",
+      "retained_before": "0b7928c7bf7af8f01e674c9ac43eb49197de768a4b1b7d937ea14242b0f0db20"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH01_GT.txt": {
+      "sha256": "4d938b75b4a2a955fbd2dd5ab393b393f7e600f6e9bee2ebe7e188f5d7d6a7c3",
+      "retained_before": "4d938b75b4a2a955fbd2dd5ab393b393f7e600f6e9bee2ebe7e188f5d7d6a7c3"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH02_GT.txt": {
+      "sha256": "f09692c9300e2fef986a19f23d494bc2ad8384b40837f3a160d46e76a9857535",
+      "retained_before": "f09692c9300e2fef986a19f23d494bc2ad8384b40837f3a160d46e76a9857535"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH03_GT.txt": {
+      "sha256": "8cce9e0b759687176cd85647018c9dfcc3ab115124871de37d9b10e3bdf4a449",
+      "retained_before": "8cce9e0b759687176cd85647018c9dfcc3ab115124871de37d9b10e3bdf4a449"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH04_GT.txt": {
+      "sha256": "c4b0dfb0500c2d65af93200c27273072311928b3b20fc005c726c76decc78c30",
+      "retained_before": "c4b0dfb0500c2d65af93200c27273072311928b3b20fc005c726c76decc78c30"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH05_GT.txt": {
+      "sha256": "1fec0e02b7e82aa616dd2c583b369785e49f51cbc3123a2296fcf04256538883",
+      "retained_before": "1fec0e02b7e82aa616dd2c583b369785e49f51cbc3123a2296fcf04256538883"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/MH_GT.txt": {
+      "sha256": "a8bce860741a9eb0088d608988d0724a611dbc5dc72feb0ae478f00b39381a7b",
+      "retained_before": "a8bce860741a9eb0088d608988d0724a611dbc5dc72feb0ae478f00b39381a7b"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V101_GT.txt": {
+      "sha256": "6e53bff02f60ac49c77041d72f82f282c013fb8b358a85d8649d20c06f7c96f5",
+      "retained_before": "6e53bff02f60ac49c77041d72f82f282c013fb8b358a85d8649d20c06f7c96f5"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V102_GT.txt": {
+      "sha256": "c1adc76f0381f8f783af5d72fef2e7f3d6fd4327328a883b6e659b2832d02043",
+      "retained_before": "c1adc76f0381f8f783af5d72fef2e7f3d6fd4327328a883b6e659b2832d02043"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V103_GT.txt": {
+      "sha256": "c8332e1624f7abef9a0b03159f076c9d87de65817349bad4cdc415527f4087be",
+      "retained_before": "c8332e1624f7abef9a0b03159f076c9d87de65817349bad4cdc415527f4087be"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V1_GT.txt": {
+      "sha256": "3c51ca2b12898156cd2e0b66c90ec6587dc6cb571dc916d0b93e12382e14cfa0",
+      "retained_before": "3c51ca2b12898156cd2e0b66c90ec6587dc6cb571dc916d0b93e12382e14cfa0"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V201_GT.txt": {
+      "sha256": "5eba47b41a33299cd26de1f64d54b652746dcd6d0397d7e37aff357e39660ade",
+      "retained_before": "5eba47b41a33299cd26de1f64d54b652746dcd6d0397d7e37aff357e39660ade"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V202_GT.txt": {
+      "sha256": "33de55835e43b33ba2a8876c92da9a8e3c700627157bbed0d3f46e3a8c99f3ae",
+      "retained_before": "33de55835e43b33ba2a8876c92da9a8e3c700627157bbed0d3f46e3a8c99f3ae"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V203_GT.txt": {
+      "sha256": "240e84ac895603b809d2f5dde9452bc705b7c3f0d61241a5a33649bc32c58760",
+      "retained_before": "240e84ac895603b809d2f5dde9452bc705b7c3f0d61241a5a33649bc32c58760"
+    },
+    "evaluation/Ground_truth/EuRoC_left_cam/V2_GT.txt": {
+      "sha256": "544a7a491e99606baa43ae66b3556f0e941c28e66b41a774c5be3d4a0058522e",
+      "retained_before": "544a7a491e99606baa43ae66b3556f0e941c28e66b41a774c5be3d4a0058522e"
+    },
+    "Examples/Calibration/python_scripts/process_imu.py": {
+      "sha256": "17e8934e8ac15ee78dd2466501f41af39536ebdfe1cdddb79ffae1a3b3baad2d",
+      "retained_before": "17e8934e8ac15ee78dd2466501f41af39536ebdfe1cdddb79ffae1a3b3baad2d"
+    },
+    "Examples/Calibration/recorder_empty/april_6x6_80x80cm_larues.yaml": {
+      "sha256": "3d0f3e4de3598bc87c2232b698ad48cba2e5b5ebabdcf9476228ea4bce917164",
+      "retained_before": "3d0f3e4de3598bc87c2232b698ad48cba2e5b5ebabdcf9476228ea4bce917164"
+    },
+    "Examples/Calibration/recorder_realsense_D435i.cc": {
+      "sha256": "647222a202ead65c669522c2f5f82d226d171cbd012a9452573ddb490b4169ae",
+      "retained_before": "647222a202ead65c669522c2f5f82d226d171cbd012a9452573ddb490b4169ae"
+    },
+    "Examples/Calibration/recorder_realsense_T265.cc": {
+      "sha256": "ffa54be6086063afe65644709845fa4544090914015769dd4e8e5cf87c3e5c5e",
+      "retained_before": "ffa54be6086063afe65644709845fa4544090914015769dd4e8e5cf87c3e5c5e"
+    },
+    "Examples/Monocular/EuRoC.yaml": {
+      "sha256": "ee1368ffde78b889af9ace1646a03b7383eadd5535acd093ab94bc0811108124",
+      "retained_before": "ee1368ffde78b889af9ace1646a03b7383eadd5535acd093ab94bc0811108124"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35",
+      "retained_before": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples/Monocular/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45",
+      "retained_before": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45"
+    },
+    "Examples/Monocular/feature_io_check.cc": {
+      "sha256": "300062669dce671d6eae9f6d57483a6d4b939b7d10bcfd3e7f06170cd2349646",
+      "retained_before": "300062669dce671d6eae9f6d57483a6d4b939b7d10bcfd3e7f06170cd2349646"
+    },
+    "Examples/Monocular/KITTI00-02.yaml": {
+      "sha256": "5dcbc3c79ff5f5ab2bbd4c4160033083201ad0436b742d6b468fa973a41d06f5",
+      "retained_before": "5dcbc3c79ff5f5ab2bbd4c4160033083201ad0436b742d6b468fa973a41d06f5"
+    },
+    "Examples/Monocular/KITTI03.yaml": {
+      "sha256": "aef454029ac304a4661ad34743eea05df2c78b3ece2f90c26d0b163452cd98e2",
+      "retained_before": "aef454029ac304a4661ad34743eea05df2c78b3ece2f90c26d0b163452cd98e2"
+    },
+    "Examples/Monocular/KITTI04-12.yaml": {
+      "sha256": "d525a9b8e08a8b2bcb499c3357f0c8288f673682f1b955dbf8b9277a2f7e1ca3",
+      "retained_before": "d525a9b8e08a8b2bcb499c3357f0c8288f673682f1b955dbf8b9277a2f7e1ca3"
+    },
+    "Examples/Monocular/mono_euroc.cc": {
+      "sha256": "25a152f2458b170bd850693d50ea15414a1a8a452743c811f13b00ed6d635fa3",
+      "retained_before": "eb1a1539a964ffb37d6c364e150912e6ada130abd34a639b3137c5f4e6f892b4"
+    },
+    "Examples/Monocular/mono_kitti.cc": {
+      "sha256": "dd89ad810e839e465ffbbdb0ba10f0a409f2eecb5a2890380b9bb5d6e54edd57",
+      "retained_before": "dd89ad810e839e465ffbbdb0ba10f0a409f2eecb5a2890380b9bb5d6e54edd57"
+    },
+    "Examples/Monocular/mono_kv260.cc": {
+      "sha256": "8812dee0ad48f19a36cae83a704b1a15043089aa0a93a4470cde0f968b4773f1",
+      "retained_before": null
+    },
+    "Examples/Monocular/mono_realsense_D435i.cc": {
+      "sha256": "1865d1dba8a64e4e01d4c4969ae029b462ee74f73598cb0e402940e873ee7123",
+      "retained_before": "1865d1dba8a64e4e01d4c4969ae029b462ee74f73598cb0e402940e873ee7123"
+    },
+    "Examples/Monocular/mono_realsense_t265.cc": {
+      "sha256": "b56d006f22c91bc1645ebf983c20534051f734389c6d0012b0dbe891d3222bb3",
+      "retained_before": "b56d006f22c91bc1645ebf983c20534051f734389c6d0012b0dbe891d3222bb3"
+    },
+    "Examples/Monocular/mono_tum.cc": {
+      "sha256": "0f1776fe4d4a08b90d654849c22f1f2ef79844b86dedbda435fc4c3ee0a73e5f",
+      "retained_before": "0f1776fe4d4a08b90d654849c22f1f2ef79844b86dedbda435fc4c3ee0a73e5f"
+    },
+    "Examples/Monocular/mono_tum_vi.cc": {
+      "sha256": "29c3f3589041b545b462a16cefb4dff2228099e63b6f021256119e3010c1caf4",
+      "retained_before": "29c3f3589041b545b462a16cefb4dff2228099e63b6f021256119e3010c1caf4"
+    },
+    "Examples/Monocular/RealSense_D435i.yaml": {
+      "sha256": "78c0f6a5972f008df2ca8a1f8ee3ad937c0a9cdd651a0c47b7d3de4c5555d128",
+      "retained_before": "78c0f6a5972f008df2ca8a1f8ee3ad937c0a9cdd651a0c47b7d3de4c5555d128"
+    },
+    "Examples/Monocular/RealSense_T265.yaml": {
+      "sha256": "c339efd93ce73fb866ffafea25927127ec67b2003340dc8ab85b786c1de7bf0d",
+      "retained_before": "c339efd93ce73fb866ffafea25927127ec67b2003340dc8ab85b786c1de7bf0d"
+    },
+    "Examples/Monocular/TUM-VI.yaml": {
+      "sha256": "39672fec7f65c1f39e888fc17e302b155af26a6ad2e02b401180762f52a5c7ac",
+      "retained_before": "39672fec7f65c1f39e888fc17e302b155af26a6ad2e02b401180762f52a5c7ac"
+    },
+    "Examples/Monocular/TUM1.yaml": {
+      "sha256": "ed3ed5b1763a75b72df97600960f2f6181522eb5cf6f21abdea53ea0bf5e4714",
+      "retained_before": "ed3ed5b1763a75b72df97600960f2f6181522eb5cf6f21abdea53ea0bf5e4714"
+    },
+    "Examples/Monocular/TUM2.yaml": {
+      "sha256": "19e180c2ae860946f394748463d6253577458ced1cc51ddb2dcaaa13a9a54d4e",
+      "retained_before": "19e180c2ae860946f394748463d6253577458ced1cc51ddb2dcaaa13a9a54d4e"
+    },
+    "Examples/Monocular/TUM3.yaml": {
+      "sha256": "1baeb1b670f1faf87d2938bf2da05889983fc14bf45d522b934ea6aa75ca0847",
+      "retained_before": "1baeb1b670f1faf87d2938bf2da05889983fc14bf45d522b934ea6aa75ca0847"
+    },
+    "Examples/Monocular-Inertial/EuRoC.yaml": {
+      "sha256": "8f3e47fed9ba201f90cc4a79c51da5689a469fc7aa641e46a5136aab7bd6ac60",
+      "retained_before": "8f3e47fed9ba201f90cc4a79c51da5689a469fc7aa641e46a5136aab7bd6ac60"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/MH01.txt": {
+      "sha256": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b",
+      "retained_before": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/MH02.txt": {
+      "sha256": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e",
+      "retained_before": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/MH03.txt": {
+      "sha256": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e",
+      "retained_before": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/MH04.txt": {
+      "sha256": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c",
+      "retained_before": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/MH05.txt": {
+      "sha256": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004",
+      "retained_before": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V101.txt": {
+      "sha256": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e",
+      "retained_before": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V102.txt": {
+      "sha256": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09",
+      "retained_before": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V103.txt": {
+      "sha256": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7",
+      "retained_before": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V201.txt": {
+      "sha256": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633",
+      "retained_before": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V202.txt": {
+      "sha256": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e",
+      "retained_before": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e"
+    },
+    "Examples/Monocular-Inertial/EuRoC_IMU/V203.txt": {
+      "sha256": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6",
+      "retained_before": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35",
+      "retained_before": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples/Monocular-Inertial/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45",
+      "retained_before": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45"
+    },
+    "Examples/Monocular-Inertial/mono_inertial_euroc.cc": {
+      "sha256": "454053a3f94b08f6f5bdbc2a1e57e5353e4eeac583e547994b938f73d02b9d33",
+      "retained_before": "454053a3f94b08f6f5bdbc2a1e57e5353e4eeac583e547994b938f73d02b9d33"
+    },
+    "Examples/Monocular-Inertial/mono_inertial_realsense_D435i.cc": {
+      "sha256": "86697b69170e5ba319deadbc2ac516fff6240a90b77ed03a1a6ccf45bfea8912",
+      "retained_before": "86697b69170e5ba319deadbc2ac516fff6240a90b77ed03a1a6ccf45bfea8912"
+    },
+    "Examples/Monocular-Inertial/mono_inertial_realsense_t265.cc": {
+      "sha256": "4a94fc9ac2243a1eee58a8be39786f2b7f69c9b5d61fda8e934f2d892dbe1995",
+      "retained_before": "4a94fc9ac2243a1eee58a8be39786f2b7f69c9b5d61fda8e934f2d892dbe1995"
+    },
+    "Examples/Monocular-Inertial/mono_inertial_tum_vi.cc": {
+      "sha256": "33a0d756b6ac032f2f685f1bc31e959cdef09b3ee4b501a72532cb7ebb593cf4",
+      "retained_before": "33a0d756b6ac032f2f685f1bc31e959cdef09b3ee4b501a72532cb7ebb593cf4"
+    },
+    "Examples/Monocular-Inertial/RealSense_D435i.yaml": {
+      "sha256": "970111e8862eb8f2267b02d883c115082a22b24b72e31ae862aa717529657785",
+      "retained_before": "970111e8862eb8f2267b02d883c115082a22b24b72e31ae862aa717529657785"
+    },
+    "Examples/Monocular-Inertial/RealSense_T265.yaml": {
+      "sha256": "8c72f3cb3f948d47a5a607bffa7f1f3a7b351ca91b5b96881998df3c2f6d639a",
+      "retained_before": "8c72f3cb3f948d47a5a607bffa7f1f3a7b351ca91b5b96881998df3c2f6d639a"
+    },
+    "Examples/Monocular-Inertial/TUM-VI.yaml": {
+      "sha256": "ef33f698ef5f229735cc8787b94a6dca56ba10afbc0f882f99826e568f6acdbd",
+      "retained_before": "ef33f698ef5f229735cc8787b94a6dca56ba10afbc0f882f99826e568f6acdbd"
+    },
+    "Examples/Monocular-Inertial/TUM-VI_far.yaml": {
+      "sha256": "446c0606123864fa0dbed540b6ca9d4334cd1d943f91bea6c94aeea7f006f475",
+      "retained_before": "446c0606123864fa0dbed540b6ca9d4334cd1d943f91bea6c94aeea7f006f475"
+    },
+    "Examples/REAMDME.md": {
+      "sha256": "e38a8bc46d0b938d236d8a93e35b18bf70e8cbb00947f4f8bc679792036189c6",
+      "retained_before": "e38a8bc46d0b938d236d8a93e35b18bf70e8cbb00947f4f8bc679792036189c6"
+    },
+    "Examples/RGB-D/associations/fr1_desk.txt": {
+      "sha256": "9c0399cb2d0e739a966176bcd4879b2835dbfe7ffe69d9966cec45346e527d1f",
+      "retained_before": "9c0399cb2d0e739a966176bcd4879b2835dbfe7ffe69d9966cec45346e527d1f"
+    },
+    "Examples/RGB-D/associations/fr1_desk2.txt": {
+      "sha256": "db8f3095558aba3040e4243b6b3bab12dcebd81dafb697fedc3fefc76ac8a1d6",
+      "retained_before": "db8f3095558aba3040e4243b6b3bab12dcebd81dafb697fedc3fefc76ac8a1d6"
+    },
+    "Examples/RGB-D/associations/fr1_room.txt": {
+      "sha256": "79addc211eea95e284958c6de95f75b0946ee590b1237ae763b4995f8e47f52d",
+      "retained_before": "79addc211eea95e284958c6de95f75b0946ee590b1237ae763b4995f8e47f52d"
+    },
+    "Examples/RGB-D/associations/fr1_xyz.txt": {
+      "sha256": "4a244712ee967797166139726786d5676a9cb2c6ce1902808bef70335c7f4df5",
+      "retained_before": "4a244712ee967797166139726786d5676a9cb2c6ce1902808bef70335c7f4df5"
+    },
+    "Examples/RGB-D/associations/fr2_desk.txt": {
+      "sha256": "3be5462d8dd7e4023f4847afa4cd1e89ae9e8149d4a20653b41ce25f198eaa1d",
+      "retained_before": "3be5462d8dd7e4023f4847afa4cd1e89ae9e8149d4a20653b41ce25f198eaa1d"
+    },
+    "Examples/RGB-D/associations/fr2_xyz.txt": {
+      "sha256": "50830d2c75ef6e0207d11d2d9d819a74de8ab3d6938091b0f03e4ea016dc5f68",
+      "retained_before": "50830d2c75ef6e0207d11d2d9d819a74de8ab3d6938091b0f03e4ea016dc5f68"
+    },
+    "Examples/RGB-D/associations/fr3_nstr_tex_near.txt": {
+      "sha256": "c7f706e9f1792cb50c5b2d21f2f958ccb6b90647e1804ff75668de3acffffa61",
+      "retained_before": "c7f706e9f1792cb50c5b2d21f2f958ccb6b90647e1804ff75668de3acffffa61"
+    },
+    "Examples/RGB-D/associations/fr3_office.txt": {
+      "sha256": "53676e40a74e3d336d7492c11e099f07016b2629ec1f14e34330534fadb0fa00",
+      "retained_before": "53676e40a74e3d336d7492c11e099f07016b2629ec1f14e34330534fadb0fa00"
+    },
+    "Examples/RGB-D/associations/fr3_office_val.txt": {
+      "sha256": "2f81adef12f1f2b70a29a82b3223fc4483cc53e0eeee7d4a5134ae0a0f131ab5",
+      "retained_before": "2f81adef12f1f2b70a29a82b3223fc4483cc53e0eeee7d4a5134ae0a0f131ab5"
+    },
+    "Examples/RGB-D/associations/fr3_str_tex_far.txt": {
+      "sha256": "33bdcd991bebb6021bf00da273f3e00cdc2ec333d3587b373d864026b3a00747",
+      "retained_before": "33bdcd991bebb6021bf00da273f3e00cdc2ec333d3587b373d864026b3a00747"
+    },
+    "Examples/RGB-D/associations/fr3_str_tex_near.txt": {
+      "sha256": "7031a7597a22de5e53ca264521e6c4ba4424447282583b88b2c037fc2526bdf2",
+      "retained_before": "7031a7597a22de5e53ca264521e6c4ba4424447282583b88b2c037fc2526bdf2"
+    },
+    "Examples/RGB-D/RealSense_D435i.yaml": {
+      "sha256": "7df9e58865b84c0d01cddaa706aec6c9263d989d6666f4e6cbb692322bd0f357",
+      "retained_before": "7df9e58865b84c0d01cddaa706aec6c9263d989d6666f4e6cbb692322bd0f357"
+    },
+    "Examples/RGB-D/rgbd_realsense_D435i.cc": {
+      "sha256": "20816f22743f7f657cd350f02b86d6ae2cd5f4a1e85c0f4ee85f0b1870e1fc1e",
+      "retained_before": "20816f22743f7f657cd350f02b86d6ae2cd5f4a1e85c0f4ee85f0b1870e1fc1e"
+    },
+    "Examples/RGB-D/rgbd_tum.cc": {
+      "sha256": "5e125384577043131c477d99f38a4086b9b7fdffafd071db30de4937d16c7f85",
+      "retained_before": "5e125384577043131c477d99f38a4086b9b7fdffafd071db30de4937d16c7f85"
+    },
+    "Examples/RGB-D/TUM1.yaml": {
+      "sha256": "aa0f6f3bde21d5ed780935f1acc3b7dfd1e2706745694fa5f947562f8270b518",
+      "retained_before": "aa0f6f3bde21d5ed780935f1acc3b7dfd1e2706745694fa5f947562f8270b518"
+    },
+    "Examples/RGB-D/TUM2.yaml": {
+      "sha256": "6113e0743892d81c7c19427b7e1d68ce3c76aa2afca80d2df1c861e46f67d9a4",
+      "retained_before": "6113e0743892d81c7c19427b7e1d68ce3c76aa2afca80d2df1c861e46f67d9a4"
+    },
+    "Examples/RGB-D/TUM3.yaml": {
+      "sha256": "fd00f3c61e00012de0019ec872c54b6001af23772c8039317d5291e6191309cc",
+      "retained_before": "fd00f3c61e00012de0019ec872c54b6001af23772c8039317d5291e6191309cc"
+    },
+    "Examples/RGB-D-Inertial/RealSense_D435i.yaml": {
+      "sha256": "5363ccb80d6b38b89c7ed612beb66a5f2845f11460d021357806ebdf3c2100b1",
+      "retained_before": "5363ccb80d6b38b89c7ed612beb66a5f2845f11460d021357806ebdf3c2100b1"
+    },
+    "Examples/RGB-D-Inertial/rgbd_inertial_realsense_D435i.cc": {
+      "sha256": "af912b47a20721d2c2e8bf6ad0562dff6edc17eade5b83521f57e5d7dd8b1e63",
+      "retained_before": "af912b47a20721d2c2e8bf6ad0562dff6edc17eade5b83521f57e5d7dd8b1e63"
+    },
+    "Examples/Stereo/EuRoC.yaml": {
+      "sha256": "d3e1a993f79e52273afc658a44f6bcd7486616f0e857da1a144cc7f1bef88db4",
+      "retained_before": "d3e1a993f79e52273afc658a44f6bcd7486616f0e857da1a144cc7f1bef88db4"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c",
+      "retained_before": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples/Stereo/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7",
+      "retained_before": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7"
+    },
+    "Examples/Stereo/KITTI00-02.yaml": {
+      "sha256": "8ab82ffd9031ee392a50f3569f956cccedce7475416050dd2add9bab3f461127",
+      "retained_before": "8ab82ffd9031ee392a50f3569f956cccedce7475416050dd2add9bab3f461127"
+    },
+    "Examples/Stereo/KITTI03.yaml": {
+      "sha256": "207b8aee30fcfe4d43616e2609a98f6def139a460d9ee0af51198568bbd52c73",
+      "retained_before": "207b8aee30fcfe4d43616e2609a98f6def139a460d9ee0af51198568bbd52c73"
+    },
+    "Examples/Stereo/KITTI04-12.yaml": {
+      "sha256": "4328aa634a5d8ff63c9320acbe011b93e43152f363de5b6e70ddbb9be7de3246",
+      "retained_before": "4328aa634a5d8ff63c9320acbe011b93e43152f363de5b6e70ddbb9be7de3246"
+    },
+    "Examples/Stereo/RealSense_D435i.yaml": {
+      "sha256": "2cbbfb250f465450d8975d8545a06bda6f2246371855e7dcecee2f09fe23e51d",
+      "retained_before": "2cbbfb250f465450d8975d8545a06bda6f2246371855e7dcecee2f09fe23e51d"
+    },
+    "Examples/Stereo/RealSense_T265.yaml": {
+      "sha256": "5efa68288b8159fa72b34b3c62998a5a66fd2b4eefae014594df00627e9d663c",
+      "retained_before": "5efa68288b8159fa72b34b3c62998a5a66fd2b4eefae014594df00627e9d663c"
+    },
+    "Examples/Stereo/stereo_euroc.cc": {
+      "sha256": "c807044059fcc408d1399c035e7a1ff3e5f68be8f27e1dec7b94f2751f5fd2fb",
+      "retained_before": "c807044059fcc408d1399c035e7a1ff3e5f68be8f27e1dec7b94f2751f5fd2fb"
+    },
+    "Examples/Stereo/stereo_kitti.cc": {
+      "sha256": "d0c2ed243f9cdad2348ba569adb69c85fa3ec56b9a6322c0c75e25b5b04e3e39",
+      "retained_before": "d0c2ed243f9cdad2348ba569adb69c85fa3ec56b9a6322c0c75e25b5b04e3e39"
+    },
+    "Examples/Stereo/stereo_realsense_D435i.cc": {
+      "sha256": "89c7ba1c0d568e0367065560320dc9e9a2bb22b373d41b84671857bd0bae0f81",
+      "retained_before": "89c7ba1c0d568e0367065560320dc9e9a2bb22b373d41b84671857bd0bae0f81"
+    },
+    "Examples/Stereo/stereo_realsense_t265.cc": {
+      "sha256": "f52b08e647b97095b61d44b0ef1c002c9875a80c5f3a69d7d5ac639e0e2e2951",
+      "retained_before": "f52b08e647b97095b61d44b0ef1c002c9875a80c5f3a69d7d5ac639e0e2e2951"
+    },
+    "Examples/Stereo/stereo_tum_vi.cc": {
+      "sha256": "eb1a5add1185804a881a44576cd99b8f236e86e8193d32fd2ed853e17fbe6d18",
+      "retained_before": "eb1a5add1185804a881a44576cd99b8f236e86e8193d32fd2ed853e17fbe6d18"
+    },
+    "Examples/Stereo/TUM-VI.yaml": {
+      "sha256": "bf90360f2d592bd5db8cb7fc8839d93785f43f14a22ad8b3195603b4606427d6",
+      "retained_before": "bf90360f2d592bd5db8cb7fc8839d93785f43f14a22ad8b3195603b4606427d6"
+    },
+    "Examples/Stereo-Inertial/EuRoC.yaml": {
+      "sha256": "3fbff59594aa72a75b28128fc7498b699c39d332c631a9d2f451fc7870768ee5",
+      "retained_before": "3fbff59594aa72a75b28128fc7498b699c39d332c631a9d2f451fc7870768ee5"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/MH01.txt": {
+      "sha256": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b",
+      "retained_before": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/MH02.txt": {
+      "sha256": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e",
+      "retained_before": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/MH03.txt": {
+      "sha256": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e",
+      "retained_before": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/MH04.txt": {
+      "sha256": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c",
+      "retained_before": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/MH05.txt": {
+      "sha256": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004",
+      "retained_before": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V101.txt": {
+      "sha256": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e",
+      "retained_before": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V102.txt": {
+      "sha256": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09",
+      "retained_before": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V103.txt": {
+      "sha256": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7",
+      "retained_before": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V201.txt": {
+      "sha256": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633",
+      "retained_before": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V202.txt": {
+      "sha256": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e",
+      "retained_before": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e"
+    },
+    "Examples/Stereo-Inertial/EuRoC_IMU/V203.txt": {
+      "sha256": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6",
+      "retained_before": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c",
+      "retained_before": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7",
+      "retained_before": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7"
+    },
+    "Examples/Stereo-Inertial/EuRoC_TimeStamps/V203_2.txt": {
+      "sha256": "545b2f8d5997ea855b0c6d1fbe12ea0374357b545580f620f1a711f410b4135b",
+      "retained_before": "545b2f8d5997ea855b0c6d1fbe12ea0374357b545580f620f1a711f410b4135b"
+    },
+    "Examples/Stereo-Inertial/RealSense_D435i.yaml": {
+      "sha256": "3716816136c3ef8917634a2336101fcb7f97d885923f447b296f73d8d32bca65",
+      "retained_before": "3716816136c3ef8917634a2336101fcb7f97d885923f447b296f73d8d32bca65"
+    },
+    "Examples/Stereo-Inertial/RealSense_T265.yaml": {
+      "sha256": "4878733d277c125e3fda63dabdbc78fa8dab22ecfb8b872d1b80f9aaf93b7c72",
+      "retained_before": "4878733d277c125e3fda63dabdbc78fa8dab22ecfb8b872d1b80f9aaf93b7c72"
+    },
+    "Examples/Stereo-Inertial/stereo_inertial_euroc.cc": {
+      "sha256": "7578921b568083db4e590f321586d565172a769b37044969871dbf84aa030308",
+      "retained_before": "7578921b568083db4e590f321586d565172a769b37044969871dbf84aa030308"
+    },
+    "Examples/Stereo-Inertial/stereo_inertial_realsense_D435i.cc": {
+      "sha256": "9aae5c525f368bfcfd35f53dfea45d95c5a5c12726500b4c25535c63d1563141",
+      "retained_before": "9aae5c525f368bfcfd35f53dfea45d95c5a5c12726500b4c25535c63d1563141"
+    },
+    "Examples/Stereo-Inertial/stereo_inertial_realsense_t265.cc": {
+      "sha256": "5bc1dd7a610520c25f4e4a82341b25a8fc71db92a21746d5e8a981305c027b54",
+      "retained_before": "5bc1dd7a610520c25f4e4a82341b25a8fc71db92a21746d5e8a981305c027b54"
+    },
+    "Examples/Stereo-Inertial/stereo_inertial_tum_vi.cc": {
+      "sha256": "bdac6d76fc7fabf6531149fd2d18f0232fa53c755e9565382d2a32a36bfe9e77",
+      "retained_before": "bdac6d76fc7fabf6531149fd2d18f0232fa53c755e9565382d2a32a36bfe9e77"
+    },
+    "Examples/Stereo-Inertial/TUM-VI.yaml": {
+      "sha256": "b6dcec7d2d30abf293c317ebcf0c5c0b9e6c85d361d10c89794e6c4a600b136d",
+      "retained_before": "b6dcec7d2d30abf293c317ebcf0c5c0b9e6c85d361d10c89794e6c4a600b136d"
+    },
+    "Examples/Stereo-Inertial/TUM-VI_far.yaml": {
+      "sha256": "7181f975953dd0d330126795e602eec64a91d6582be9e1a26461e17b557674cf",
+      "retained_before": "7181f975953dd0d330126795e602eec64a91d6582be9e1a26461e17b557674cf"
+    },
+    "Examples_old/Monocular/EuRoC.yaml": {
+      "sha256": "fd4fd39fb89945b3841290e41e743ac911636bd982c6ab9476b4d243569e928a",
+      "retained_before": "fd4fd39fb89945b3841290e41e743ac911636bd982c6ab9476b4d243569e928a"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35",
+      "retained_before": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples_old/Monocular/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45",
+      "retained_before": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45"
+    },
+    "Examples_old/Monocular/KITTI00-02.yaml": {
+      "sha256": "6820e1ce29c89de97c0401f5114372c3ca61161ab083e40c762377a8e18da37e",
+      "retained_before": "6820e1ce29c89de97c0401f5114372c3ca61161ab083e40c762377a8e18da37e"
+    },
+    "Examples_old/Monocular/KITTI03.yaml": {
+      "sha256": "1830c190c23bf5cf123073f50100b571d6b4276fc9aa47fa82aedf481f990a43",
+      "retained_before": "1830c190c23bf5cf123073f50100b571d6b4276fc9aa47fa82aedf481f990a43"
+    },
+    "Examples_old/Monocular/KITTI04-12.yaml": {
+      "sha256": "25f52879f4936abe0fe1a7bf5c8c3900d6d1b9a5fa9498bf2ee18dc571072e89",
+      "retained_before": "25f52879f4936abe0fe1a7bf5c8c3900d6d1b9a5fa9498bf2ee18dc571072e89"
+    },
+    "Examples_old/Monocular/mono_euroc.cc": {
+      "sha256": "f0be554d93d1eb36507da38b118d2f823adcb5bf14de333de8c68d8e08bb0a1c",
+      "retained_before": "f0be554d93d1eb36507da38b118d2f823adcb5bf14de333de8c68d8e08bb0a1c"
+    },
+    "Examples_old/Monocular/mono_kitti.cc": {
+      "sha256": "dd89ad810e839e465ffbbdb0ba10f0a409f2eecb5a2890380b9bb5d6e54edd57",
+      "retained_before": "dd89ad810e839e465ffbbdb0ba10f0a409f2eecb5a2890380b9bb5d6e54edd57"
+    },
+    "Examples_old/Monocular/mono_realsense_D435i.cc": {
+      "sha256": "1865d1dba8a64e4e01d4c4969ae029b462ee74f73598cb0e402940e873ee7123",
+      "retained_before": "1865d1dba8a64e4e01d4c4969ae029b462ee74f73598cb0e402940e873ee7123"
+    },
+    "Examples_old/Monocular/mono_realsense_t265.cc": {
+      "sha256": "b56d006f22c91bc1645ebf983c20534051f734389c6d0012b0dbe891d3222bb3",
+      "retained_before": "b56d006f22c91bc1645ebf983c20534051f734389c6d0012b0dbe891d3222bb3"
+    },
+    "Examples_old/Monocular/mono_tum.cc": {
+      "sha256": "0f1776fe4d4a08b90d654849c22f1f2ef79844b86dedbda435fc4c3ee0a73e5f",
+      "retained_before": "0f1776fe4d4a08b90d654849c22f1f2ef79844b86dedbda435fc4c3ee0a73e5f"
+    },
+    "Examples_old/Monocular/mono_tum_vi.cc": {
+      "sha256": "29c3f3589041b545b462a16cefb4dff2228099e63b6f021256119e3010c1caf4",
+      "retained_before": "29c3f3589041b545b462a16cefb4dff2228099e63b6f021256119e3010c1caf4"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_MH01.yaml": {
+      "sha256": "fd7f8451d822a38d4fc1d18622bb84ceb6a8dbf37f1b4ba049176dcde109abbb",
+      "retained_before": "fd7f8451d822a38d4fc1d18622bb84ceb6a8dbf37f1b4ba049176dcde109abbb"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_MH02.yaml": {
+      "sha256": "2e172ec5146e82372654ba78267b87b2866404db09b88dea07198ae6e5095455",
+      "retained_before": "2e172ec5146e82372654ba78267b87b2866404db09b88dea07198ae6e5095455"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_MH03.yaml": {
+      "sha256": "0d8852354b555fb21ceb0983ed0205fa52b79790a19d82ac73c96a72fd49b4ad",
+      "retained_before": "0d8852354b555fb21ceb0983ed0205fa52b79790a19d82ac73c96a72fd49b4ad"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_MH04.yaml": {
+      "sha256": "dc74220d66202205c8ec2859b38b617da6fc6b93583514fb86acc3b978605eb2",
+      "retained_before": "dc74220d66202205c8ec2859b38b617da6fc6b93583514fb86acc3b978605eb2"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_MH05.yaml": {
+      "sha256": "8f51dc04ecd83e82b69adb645cebae4fdd3dfd43a549c7802a730482dd49b82c",
+      "retained_before": "8f51dc04ecd83e82b69adb645cebae4fdd3dfd43a549c7802a730482dd49b82c"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V101.yaml": {
+      "sha256": "a9cd7839cbf748836b0323a22c05f9b221418d69d383694f64d60050b6fb5450",
+      "retained_before": "a9cd7839cbf748836b0323a22c05f9b221418d69d383694f64d60050b6fb5450"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V102.yaml": {
+      "sha256": "06a2d20a25ca0ce80a54c12d6193b0314c04cd27c4893c4cefa765154028df41",
+      "retained_before": "06a2d20a25ca0ce80a54c12d6193b0314c04cd27c4893c4cefa765154028df41"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V103.yaml": {
+      "sha256": "1fa5ef46ee8e0266555fbaa03798c3a70031ae3af90635b86ffa09e5aeae7246",
+      "retained_before": "1fa5ef46ee8e0266555fbaa03798c3a70031ae3af90635b86ffa09e5aeae7246"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V201.yaml": {
+      "sha256": "e44f4012cd26844a1f2b9fc31138929dcf4a60f4478dffce37e5e909aa5b97db",
+      "retained_before": "e44f4012cd26844a1f2b9fc31138929dcf4a60f4478dffce37e5e909aa5b97db"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V202.yaml": {
+      "sha256": "54191d41956ccd841d0a1f24bb351746afd159d6e730e6e09195732a8d8d97cd",
+      "retained_before": "54191d41956ccd841d0a1f24bb351746afd159d6e730e6e09195732a8d8d97cd"
+    },
+    "Examples_old/Monocular/MultiSession/EuRoC_V203.yaml": {
+      "sha256": "d873d2eb206ad38992be0ff8bec996394b6d5e1c903199fb1ff4ae18793c814e",
+      "retained_before": "d873d2eb206ad38992be0ff8bec996394b6d5e1c903199fb1ff4ae18793c814e"
+    },
+    "Examples_old/Monocular/RealSense_D435i.yaml": {
+      "sha256": "a1201181ff9dcfc744c1a466a1db714d370247d85c7f50de213496d0be8dbac9",
+      "retained_before": "a1201181ff9dcfc744c1a466a1db714d370247d85c7f50de213496d0be8dbac9"
+    },
+    "Examples_old/Monocular/RealSense_T265.yaml": {
+      "sha256": "5d5c305b08a3c988d9af15fecf5423ce6b913bac7208bb501bd192d604602076",
+      "retained_before": "5d5c305b08a3c988d9af15fecf5423ce6b913bac7208bb501bd192d604602076"
+    },
+    "Examples_old/Monocular/TUM-VI.yaml": {
+      "sha256": "d608b41c48455a5d4583fd228f69a8829b55eb287bfde80e4a401a7a67b8c2da",
+      "retained_before": "d608b41c48455a5d4583fd228f69a8829b55eb287bfde80e4a401a7a67b8c2da"
+    },
+    "Examples_old/Monocular/TUM1.yaml": {
+      "sha256": "d2643020c613163f0f87a207599f23e53ae32835490aa2ca41a7a1ddccbf4f23",
+      "retained_before": "d2643020c613163f0f87a207599f23e53ae32835490aa2ca41a7a1ddccbf4f23"
+    },
+    "Examples_old/Monocular/TUM2.yaml": {
+      "sha256": "8dcb13a699f66fda3a12c9d37ce76b5251e175e576d386262726c81b683da605",
+      "retained_before": "8dcb13a699f66fda3a12c9d37ce76b5251e175e576d386262726c81b683da605"
+    },
+    "Examples_old/Monocular/TUM3.yaml": {
+      "sha256": "213670807e16540567d287dcc3b13e53493a0343d6c5a51c786173ae0bc8264f",
+      "retained_before": "213670807e16540567d287dcc3b13e53493a0343d6c5a51c786173ae0bc8264f"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC.yaml": {
+      "sha256": "e7a8e099b0da11bbe3079f03f1cad1663589e8db7e56a54c3e46fd7679761ee9",
+      "retained_before": "e7a8e099b0da11bbe3079f03f1cad1663589e8db7e56a54c3e46fd7679761ee9"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/MH01.txt": {
+      "sha256": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b",
+      "retained_before": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/MH02.txt": {
+      "sha256": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e",
+      "retained_before": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/MH03.txt": {
+      "sha256": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e",
+      "retained_before": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/MH04.txt": {
+      "sha256": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c",
+      "retained_before": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/MH05.txt": {
+      "sha256": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004",
+      "retained_before": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V101.txt": {
+      "sha256": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e",
+      "retained_before": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V102.txt": {
+      "sha256": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09",
+      "retained_before": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V103.txt": {
+      "sha256": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7",
+      "retained_before": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V201.txt": {
+      "sha256": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633",
+      "retained_before": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V202.txt": {
+      "sha256": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e",
+      "retained_before": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_IMU/V203.txt": {
+      "sha256": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6",
+      "retained_before": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35",
+      "retained_before": "64d813b09c6d817e6076629a835debb9ddb40e02e92529a641b2730fa617ff35"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples_old/Monocular-Inertial/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45",
+      "retained_before": "22694a5fff0be2a3e6845bfa6fb57257b8763a652cfad8cf42ca2ef58ea61a45"
+    },
+    "Examples_old/Monocular-Inertial/mono_inertial_euroc.cc": {
+      "sha256": "bd90d824751610ae95a58857e1f26f66c3ec28c75233e73f5921f47acf96cc7d",
+      "retained_before": "bd90d824751610ae95a58857e1f26f66c3ec28c75233e73f5921f47acf96cc7d"
+    },
+    "Examples_old/Monocular-Inertial/mono_inertial_realsense_D435i.cc": {
+      "sha256": "86697b69170e5ba319deadbc2ac516fff6240a90b77ed03a1a6ccf45bfea8912",
+      "retained_before": "86697b69170e5ba319deadbc2ac516fff6240a90b77ed03a1a6ccf45bfea8912"
+    },
+    "Examples_old/Monocular-Inertial/mono_inertial_realsense_t265.cc": {
+      "sha256": "4a94fc9ac2243a1eee58a8be39786f2b7f69c9b5d61fda8e934f2d892dbe1995",
+      "retained_before": "4a94fc9ac2243a1eee58a8be39786f2b7f69c9b5d61fda8e934f2d892dbe1995"
+    },
+    "Examples_old/Monocular-Inertial/mono_inertial_tum_vi.cc": {
+      "sha256": "33a0d756b6ac032f2f685f1bc31e959cdef09b3ee4b501a72532cb7ebb593cf4",
+      "retained_before": "33a0d756b6ac032f2f685f1bc31e959cdef09b3ee4b501a72532cb7ebb593cf4"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_MH01.yaml": {
+      "sha256": "57a50f21177ae1471954341e5cb26392136e5ecff30dfd7d571e468aa179c44f",
+      "retained_before": "57a50f21177ae1471954341e5cb26392136e5ecff30dfd7d571e468aa179c44f"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_MH02.yaml": {
+      "sha256": "4d71ca288d59aa834026c6f0283a061ab92dd44edd1e8920b9e9af5aa126a51f",
+      "retained_before": "4d71ca288d59aa834026c6f0283a061ab92dd44edd1e8920b9e9af5aa126a51f"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_MH03.yaml": {
+      "sha256": "58703d79fd9d59f9ecb5d66de513c88a71705cd90741448a9dd4a8d0fb22c426",
+      "retained_before": "58703d79fd9d59f9ecb5d66de513c88a71705cd90741448a9dd4a8d0fb22c426"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_MH04.yaml": {
+      "sha256": "0dbbb9987b7f5099d2ae6de7d1b3d9ebf839cc7ee8826ec9f429fd319c03c913",
+      "retained_before": "0dbbb9987b7f5099d2ae6de7d1b3d9ebf839cc7ee8826ec9f429fd319c03c913"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_MH05.yaml": {
+      "sha256": "ef26f643f96e9834109e68d4d05f972be90eb22857c0cb627ab5b5b3d193db1d",
+      "retained_before": "ef26f643f96e9834109e68d4d05f972be90eb22857c0cb627ab5b5b3d193db1d"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V101.yaml": {
+      "sha256": "740900107ae5ee536d08fa117cfb4663bb96c7db1bf2cfa25c8b355abcb67d20",
+      "retained_before": "740900107ae5ee536d08fa117cfb4663bb96c7db1bf2cfa25c8b355abcb67d20"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V102.yaml": {
+      "sha256": "defa08e2ba617e309075c2640275af4b617c83bec21c6dda94f72d7ad4c564f4",
+      "retained_before": "defa08e2ba617e309075c2640275af4b617c83bec21c6dda94f72d7ad4c564f4"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V103.yaml": {
+      "sha256": "b59a0da4a136c53d71df6173b2e36684653e8840ad35e7c76791066b89a27402",
+      "retained_before": "b59a0da4a136c53d71df6173b2e36684653e8840ad35e7c76791066b89a27402"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V201.yaml": {
+      "sha256": "562544b91798ecbb4de06623ece6a075e6db6ab1e4214a15a42601d31393dbb0",
+      "retained_before": "562544b91798ecbb4de06623ece6a075e6db6ab1e4214a15a42601d31393dbb0"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V202.yaml": {
+      "sha256": "6bd84f7997f436903041de9b8c881636b2a6b90566d14abb4d77b142a6f7fd02",
+      "retained_before": "6bd84f7997f436903041de9b8c881636b2a6b90566d14abb4d77b142a6f7fd02"
+    },
+    "Examples_old/Monocular-Inertial/MultiSession/EuRoC_V203.yaml": {
+      "sha256": "a00ccf76e56791cddf87f5255a851b70f3c7b23163b18e39f0c69a0c8ba67bec",
+      "retained_before": "a00ccf76e56791cddf87f5255a851b70f3c7b23163b18e39f0c69a0c8ba67bec"
+    },
+    "Examples_old/Monocular-Inertial/RealSense_D435i.yaml": {
+      "sha256": "fa725d525a8cde517c3ea6b6547463f6b2e931176c209d07c128f494b4a84c29",
+      "retained_before": "fa725d525a8cde517c3ea6b6547463f6b2e931176c209d07c128f494b4a84c29"
+    },
+    "Examples_old/Monocular-Inertial/RealSense_T265.yaml": {
+      "sha256": "18c0998d836c85d48e4dab29f800d5c33553d66f32e9200a46258a8e864811d2",
+      "retained_before": "18c0998d836c85d48e4dab29f800d5c33553d66f32e9200a46258a8e864811d2"
+    },
+    "Examples_old/Monocular-Inertial/TUM-VI.yaml": {
+      "sha256": "6632b9093651a753600fae33cf3657928c681155cb66384820f95603b3de1dcf",
+      "retained_before": "6632b9093651a753600fae33cf3657928c681155cb66384820f95603b3de1dcf"
+    },
+    "Examples_old/Monocular-Inertial/TUM-VI_far.yaml": {
+      "sha256": "84bbb68a74e2457f479c575c49df3d74c85c7e5d46ba1c59cdbc7dffe98491d2",
+      "retained_before": "84bbb68a74e2457f479c575c49df3d74c85c7e5d46ba1c59cdbc7dffe98491d2"
+    },
+    "Examples_old/REAMDME.md": {
+      "sha256": "edbaf797978825a76a2c773eb56106a24413eecba014115124ef40f2168c2364",
+      "retained_before": "edbaf797978825a76a2c773eb56106a24413eecba014115124ef40f2168c2364"
+    },
+    "Examples_old/RGB-D/associations/fr1_desk.txt": {
+      "sha256": "9c0399cb2d0e739a966176bcd4879b2835dbfe7ffe69d9966cec45346e527d1f",
+      "retained_before": "9c0399cb2d0e739a966176bcd4879b2835dbfe7ffe69d9966cec45346e527d1f"
+    },
+    "Examples_old/RGB-D/associations/fr1_desk2.txt": {
+      "sha256": "db8f3095558aba3040e4243b6b3bab12dcebd81dafb697fedc3fefc76ac8a1d6",
+      "retained_before": "db8f3095558aba3040e4243b6b3bab12dcebd81dafb697fedc3fefc76ac8a1d6"
+    },
+    "Examples_old/RGB-D/associations/fr1_room.txt": {
+      "sha256": "79addc211eea95e284958c6de95f75b0946ee590b1237ae763b4995f8e47f52d",
+      "retained_before": "79addc211eea95e284958c6de95f75b0946ee590b1237ae763b4995f8e47f52d"
+    },
+    "Examples_old/RGB-D/associations/fr1_xyz.txt": {
+      "sha256": "4a244712ee967797166139726786d5676a9cb2c6ce1902808bef70335c7f4df5",
+      "retained_before": "4a244712ee967797166139726786d5676a9cb2c6ce1902808bef70335c7f4df5"
+    },
+    "Examples_old/RGB-D/associations/fr2_desk.txt": {
+      "sha256": "3be5462d8dd7e4023f4847afa4cd1e89ae9e8149d4a20653b41ce25f198eaa1d",
+      "retained_before": "3be5462d8dd7e4023f4847afa4cd1e89ae9e8149d4a20653b41ce25f198eaa1d"
+    },
+    "Examples_old/RGB-D/associations/fr2_xyz.txt": {
+      "sha256": "50830d2c75ef6e0207d11d2d9d819a74de8ab3d6938091b0f03e4ea016dc5f68",
+      "retained_before": "50830d2c75ef6e0207d11d2d9d819a74de8ab3d6938091b0f03e4ea016dc5f68"
+    },
+    "Examples_old/RGB-D/associations/fr3_nstr_tex_near.txt": {
+      "sha256": "c7f706e9f1792cb50c5b2d21f2f958ccb6b90647e1804ff75668de3acffffa61",
+      "retained_before": "c7f706e9f1792cb50c5b2d21f2f958ccb6b90647e1804ff75668de3acffffa61"
+    },
+    "Examples_old/RGB-D/associations/fr3_office.txt": {
+      "sha256": "53676e40a74e3d336d7492c11e099f07016b2629ec1f14e34330534fadb0fa00",
+      "retained_before": "53676e40a74e3d336d7492c11e099f07016b2629ec1f14e34330534fadb0fa00"
+    },
+    "Examples_old/RGB-D/associations/fr3_office_val.txt": {
+      "sha256": "2f81adef12f1f2b70a29a82b3223fc4483cc53e0eeee7d4a5134ae0a0f131ab5",
+      "retained_before": "2f81adef12f1f2b70a29a82b3223fc4483cc53e0eeee7d4a5134ae0a0f131ab5"
+    },
+    "Examples_old/RGB-D/associations/fr3_str_tex_far.txt": {
+      "sha256": "33bdcd991bebb6021bf00da273f3e00cdc2ec333d3587b373d864026b3a00747",
+      "retained_before": "33bdcd991bebb6021bf00da273f3e00cdc2ec333d3587b373d864026b3a00747"
+    },
+    "Examples_old/RGB-D/associations/fr3_str_tex_near.txt": {
+      "sha256": "7031a7597a22de5e53ca264521e6c4ba4424447282583b88b2c037fc2526bdf2",
+      "retained_before": "7031a7597a22de5e53ca264521e6c4ba4424447282583b88b2c037fc2526bdf2"
+    },
+    "Examples_old/RGB-D/RealSense_D435i.yaml": {
+      "sha256": "5df3696893d7aecdce0d89b6e9410dfa3e900eac7b42fa2951bb5017a05fa56f",
+      "retained_before": "5df3696893d7aecdce0d89b6e9410dfa3e900eac7b42fa2951bb5017a05fa56f"
+    },
+    "Examples_old/RGB-D/rgbd_realsense_D435i.cc": {
+      "sha256": "20816f22743f7f657cd350f02b86d6ae2cd5f4a1e85c0f4ee85f0b1870e1fc1e",
+      "retained_before": "20816f22743f7f657cd350f02b86d6ae2cd5f4a1e85c0f4ee85f0b1870e1fc1e"
+    },
+    "Examples_old/RGB-D/rgbd_tum.cc": {
+      "sha256": "5e125384577043131c477d99f38a4086b9b7fdffafd071db30de4937d16c7f85",
+      "retained_before": "5e125384577043131c477d99f38a4086b9b7fdffafd071db30de4937d16c7f85"
+    },
+    "Examples_old/RGB-D/TUM1.yaml": {
+      "sha256": "0953d59cd7a0dbdcd62a16b21fb5be1acbd37155cf0ecd50efa29262129cd9eb",
+      "retained_before": "0953d59cd7a0dbdcd62a16b21fb5be1acbd37155cf0ecd50efa29262129cd9eb"
+    },
+    "Examples_old/RGB-D/TUM2.yaml": {
+      "sha256": "a90afd7bd4cd218fc5249028ee94addff6153afea41d88b4f66cc8c35779b0fc",
+      "retained_before": "a90afd7bd4cd218fc5249028ee94addff6153afea41d88b4f66cc8c35779b0fc"
+    },
+    "Examples_old/RGB-D/TUM3.yaml": {
+      "sha256": "09a200eb22e5b71ecd3633a8bf0580252ea4a1ff4148ee4c667c6e72a11d69e1",
+      "retained_before": "09a200eb22e5b71ecd3633a8bf0580252ea4a1ff4148ee4c667c6e72a11d69e1"
+    },
+    "Examples_old/RGB-D-Inertial/RealSense_D435i.yaml": {
+      "sha256": "718ed644c37601a97f088b8623ece900b0c0c4cd6b41ad2ae0a95daaf8d1fca4",
+      "retained_before": "718ed644c37601a97f088b8623ece900b0c0c4cd6b41ad2ae0a95daaf8d1fca4"
+    },
+    "Examples_old/RGB-D-Inertial/rgbd_inertial_realsense_D435i.cc": {
+      "sha256": "af912b47a20721d2c2e8bf6ad0562dff6edc17eade5b83521f57e5d7dd8b1e63",
+      "retained_before": "af912b47a20721d2c2e8bf6ad0562dff6edc17eade5b83521f57e5d7dd8b1e63"
+    },
+    "Examples_old/ROS/ORB_SLAM3/Asus.yaml": {
+      "sha256": "92df00b1e3281b819e3f74395755e10d12253ffd0e5fb2388cb6a7ec4656e602",
+      "retained_before": "92df00b1e3281b819e3f74395755e10d12253ffd0e5fb2388cb6a7ec4656e602"
+    },
+    "Examples_old/ROS/ORB_SLAM3/CMakeLists.txt": {
+      "sha256": "c513989ac4a5072ba174a4b49a9faedd83d7279ef630ac4ed30bd5cc0c7ba7c7",
+      "retained_before": "c513989ac4a5072ba174a4b49a9faedd83d7279ef630ac4ed30bd5cc0c7ba7c7"
+    },
+    "Examples_old/ROS/ORB_SLAM3/manifest.xml": {
+      "sha256": "c3dcd4eb554bc6c965df59b9b8e23085a01ccfbf3570387d1b63f6e141cab1cc",
+      "retained_before": "c3dcd4eb554bc6c965df59b9b8e23085a01ccfbf3570387d1b63f6e141cab1cc"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/AR/ros_mono_ar.cc": {
+      "sha256": "4c02d3eebcdc948ea282fa237a08193ce7db41c47b842b1260eb923da3adbd88",
+      "retained_before": "4c02d3eebcdc948ea282fa237a08193ce7db41c47b842b1260eb923da3adbd88"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/AR/ViewerAR.cc": {
+      "sha256": "93bce53ed7a749a04ec42d331030f0dbba9fa58963e0ebc51fe9f62fdb94acd9",
+      "retained_before": "93bce53ed7a749a04ec42d331030f0dbba9fa58963e0ebc51fe9f62fdb94acd9"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/AR/ViewerAR.h": {
+      "sha256": "b616c2d16b41c39dda791cf6ba8a2e8b0e268dfdd90e177e51f4260b7100beb3",
+      "retained_before": "b616c2d16b41c39dda791cf6ba8a2e8b0e268dfdd90e177e51f4260b7100beb3"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/ros_mono.cc": {
+      "sha256": "ccd3098c8f08f39dbfc31d60dad6b6134ad1c8e3d723fa0a2a301669eda3264d",
+      "retained_before": "ccd3098c8f08f39dbfc31d60dad6b6134ad1c8e3d723fa0a2a301669eda3264d"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/ros_mono_inertial.cc": {
+      "sha256": "f036621a5331024f9ce1737b4beda682f8206e28d2aa493a3a7a14ec15b0aa7d",
+      "retained_before": "f036621a5331024f9ce1737b4beda682f8206e28d2aa493a3a7a14ec15b0aa7d"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/ros_rgbd.cc": {
+      "sha256": "614609193a2d36dc8d72aed2081277e6014ed368999036cddd58d4e721fa1aee",
+      "retained_before": "614609193a2d36dc8d72aed2081277e6014ed368999036cddd58d4e721fa1aee"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/ros_stereo.cc": {
+      "sha256": "5225ce4afc55f065bc8dca49cb3a898de35b91b14c88564d29b34e198dc2057b",
+      "retained_before": "5225ce4afc55f065bc8dca49cb3a898de35b91b14c88564d29b34e198dc2057b"
+    },
+    "Examples_old/ROS/ORB_SLAM3/src/ros_stereo_inertial.cc": {
+      "sha256": "81565aa450b5a0728b736790f5cd29f8175abe8dbbc98761d6e44de3b636380b",
+      "retained_before": "81565aa450b5a0728b736790f5cd29f8175abe8dbbc98761d6e44de3b636380b"
+    },
+    "Examples_old/Stereo/EuRoC.yaml": {
+      "sha256": "ff8e051900b187d0677110d60adf97fe2db1692019f19cc7e136f4d1063bfa5d",
+      "retained_before": "ff8e051900b187d0677110d60adf97fe2db1692019f19cc7e136f4d1063bfa5d"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c",
+      "retained_before": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples_old/Stereo/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7",
+      "retained_before": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7"
+    },
+    "Examples_old/Stereo/KITTI00-02.yaml": {
+      "sha256": "702117b17363f3803f645806313c2c814dcab2754841adbffbffaec79041b475",
+      "retained_before": "702117b17363f3803f645806313c2c814dcab2754841adbffbffaec79041b475"
+    },
+    "Examples_old/Stereo/KITTI03.yaml": {
+      "sha256": "1ade4cc6853885e2982ae2183cdd637ea388e7cbdb35c29fd82c089b01190ec2",
+      "retained_before": "1ade4cc6853885e2982ae2183cdd637ea388e7cbdb35c29fd82c089b01190ec2"
+    },
+    "Examples_old/Stereo/KITTI04-12.yaml": {
+      "sha256": "78d1fb8324072a2f349d946ea28c50e1b00fadd73acd4473998e4f46b5371d04",
+      "retained_before": "78d1fb8324072a2f349d946ea28c50e1b00fadd73acd4473998e4f46b5371d04"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_MH01.yaml": {
+      "sha256": "78c18960fcafea7933e5599581038e07d9c9136940a67752b442b6d965360c76",
+      "retained_before": "78c18960fcafea7933e5599581038e07d9c9136940a67752b442b6d965360c76"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_MH02.yaml": {
+      "sha256": "7d0ab970aacc447e8c69761659d11bb3e1ee1930337e5100915eb8f9f7f0a0b9",
+      "retained_before": "7d0ab970aacc447e8c69761659d11bb3e1ee1930337e5100915eb8f9f7f0a0b9"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_MH03.yaml": {
+      "sha256": "baa07ce6c0ae1fe701701de7a3d31647ad9260a40263d39ace2389f0e1f9327a",
+      "retained_before": "baa07ce6c0ae1fe701701de7a3d31647ad9260a40263d39ace2389f0e1f9327a"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_MH04.yaml": {
+      "sha256": "57ee7d33a4efa679d2169682f9f9d2f0f16a48e6e9cc79a933f20a5b6fc1ff60",
+      "retained_before": "57ee7d33a4efa679d2169682f9f9d2f0f16a48e6e9cc79a933f20a5b6fc1ff60"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_MH05.yaml": {
+      "sha256": "851aa91ba3b1f429e77026124e32cf4f4467b39e4bb561efb7244a7ea592df2d",
+      "retained_before": "851aa91ba3b1f429e77026124e32cf4f4467b39e4bb561efb7244a7ea592df2d"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V101.yaml": {
+      "sha256": "4bf894ba62634d72d89982f0b47af8bbc6e4a92dfd48dfd2cfcb07f777f98b42",
+      "retained_before": "4bf894ba62634d72d89982f0b47af8bbc6e4a92dfd48dfd2cfcb07f777f98b42"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V102.yaml": {
+      "sha256": "7d7359e4974c888f2bbb87a0cd8c20e1ecf35d4140a52a4888339e18cab25bde",
+      "retained_before": "7d7359e4974c888f2bbb87a0cd8c20e1ecf35d4140a52a4888339e18cab25bde"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V103.yaml": {
+      "sha256": "aeabf9625c036d3415477b7aa84e326bc7db6a445b44fafc7be501e1ef7aba6f",
+      "retained_before": "aeabf9625c036d3415477b7aa84e326bc7db6a445b44fafc7be501e1ef7aba6f"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V201.yaml": {
+      "sha256": "80183b4d07b4ac381014c11fd7adb4a5193fdc19f4c4774df53cd29da010520a",
+      "retained_before": "80183b4d07b4ac381014c11fd7adb4a5193fdc19f4c4774df53cd29da010520a"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V202.yaml": {
+      "sha256": "9788f4117c4cbd5ab722ec8c611d2b7bd95b6ad6e97852b3c4f5f15d4d6392ea",
+      "retained_before": "9788f4117c4cbd5ab722ec8c611d2b7bd95b6ad6e97852b3c4f5f15d4d6392ea"
+    },
+    "Examples_old/Stereo/MultiSession/EuRoC_V203.yaml": {
+      "sha256": "19048134f382ec17dda4d303d487e169df3f2c80d0a2cf6444f3360f3edb7f11",
+      "retained_before": "19048134f382ec17dda4d303d487e169df3f2c80d0a2cf6444f3360f3edb7f11"
+    },
+    "Examples_old/Stereo/RealSense_D435i.yaml": {
+      "sha256": "63133cf8af64f4e7e2104d7eebadb2ebed976de9a4c0da3f613f6c163983e537",
+      "retained_before": "63133cf8af64f4e7e2104d7eebadb2ebed976de9a4c0da3f613f6c163983e537"
+    },
+    "Examples_old/Stereo/RealSense_T265.yaml": {
+      "sha256": "7dfa5db54625f6a7da540d06e793f4b42aad6b8f34736f2f0b3ac85340837dd2",
+      "retained_before": "7dfa5db54625f6a7da540d06e793f4b42aad6b8f34736f2f0b3ac85340837dd2"
+    },
+    "Examples_old/Stereo/stereo_euroc.cc": {
+      "sha256": "f1336b4b265edac6302cf4a701afae2ae50636b37b511c299ccf6cebe9b90122",
+      "retained_before": "f1336b4b265edac6302cf4a701afae2ae50636b37b511c299ccf6cebe9b90122"
+    },
+    "Examples_old/Stereo/stereo_kitti.cc": {
+      "sha256": "d0c2ed243f9cdad2348ba569adb69c85fa3ec56b9a6322c0c75e25b5b04e3e39",
+      "retained_before": "d0c2ed243f9cdad2348ba569adb69c85fa3ec56b9a6322c0c75e25b5b04e3e39"
+    },
+    "Examples_old/Stereo/stereo_realsense_D435i.cc": {
+      "sha256": "89c7ba1c0d568e0367065560320dc9e9a2bb22b373d41b84671857bd0bae0f81",
+      "retained_before": "89c7ba1c0d568e0367065560320dc9e9a2bb22b373d41b84671857bd0bae0f81"
+    },
+    "Examples_old/Stereo/stereo_realsense_t265.cc": {
+      "sha256": "f52b08e647b97095b61d44b0ef1c002c9875a80c5f3a69d7d5ac639e0e2e2951",
+      "retained_before": "f52b08e647b97095b61d44b0ef1c002c9875a80c5f3a69d7d5ac639e0e2e2951"
+    },
+    "Examples_old/Stereo/stereo_tum_vi.cc": {
+      "sha256": "05fd06aaf5df526e801f50148f6bc275e2c4deac5e3e8bccd7338f8fbf70009d",
+      "retained_before": "05fd06aaf5df526e801f50148f6bc275e2c4deac5e3e8bccd7338f8fbf70009d"
+    },
+    "Examples_old/Stereo/TUM-VI.yaml": {
+      "sha256": "c3852749c4693e4d991f9e097db020b5e124dd5ffb0f78e1eacd467c36da273b",
+      "retained_before": "c3852749c4693e4d991f9e097db020b5e124dd5ffb0f78e1eacd467c36da273b"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC.yaml": {
+      "sha256": "bd167fa8b00355f31fb55d7408c0e86b7f3943b677772f38410e98b951cc3892",
+      "retained_before": "bd167fa8b00355f31fb55d7408c0e86b7f3943b677772f38410e98b951cc3892"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/MH01.txt": {
+      "sha256": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b",
+      "retained_before": "226470999dc8ba758c838982fd7eb2bc9f3f2b489e85a38d0ecf8b9d40785a5b"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/MH02.txt": {
+      "sha256": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e",
+      "retained_before": "7add4feaa342c6b6874996058b6b5679d908eca25b7e063eae46fec49558cc8e"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/MH03.txt": {
+      "sha256": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e",
+      "retained_before": "5defd7c9770344df34ebbd5805264341f8a4920c13a22e1b9ef8607168cad02e"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/MH04.txt": {
+      "sha256": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c",
+      "retained_before": "330c25e4532c1f27853d0eeee06968d5c4c00c16be1187fdcfd909cfe060360c"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/MH05.txt": {
+      "sha256": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004",
+      "retained_before": "e6498fb86f0b618abb07b256b1822957bb4bcf158d07cc82d3b43ca8166ec004"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V101.txt": {
+      "sha256": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e",
+      "retained_before": "4cef78a5cf7c8ee52016a160de4b50184da2a216d615feb7ebbbb3bc99efa89e"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V102.txt": {
+      "sha256": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09",
+      "retained_before": "51804ce6362dc200fff3ed6a3aba1df769528badf1a877d19d5cac976a544c09"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V103.txt": {
+      "sha256": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7",
+      "retained_before": "543835f7b7dd9d1287c9052955e030ade113c51dc97ec2c15d13a318521ad0d7"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V201.txt": {
+      "sha256": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633",
+      "retained_before": "d8df41e85c12761104043264a61054ad4bfa19087886e847f4e0412a19cd1633"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V202.txt": {
+      "sha256": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e",
+      "retained_before": "7f1028007d030a38e5c7e2cee19ca773015b2fecbbbe80794f5c34e900b2ee8e"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_IMU/V203.txt": {
+      "sha256": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6",
+      "retained_before": "55911f078feea76eb5bdeb97c9ebbebb679de39c4dd44c50e81064d5d8cf77f6"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/MH01.txt": {
+      "sha256": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a",
+      "retained_before": "d422d8567ae69b313086124a5e711a3deaf85e60b46d1eaedbc0ce53e8ee0f5a"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/MH02.txt": {
+      "sha256": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094",
+      "retained_before": "15b5f42e68c2b395b060ec11c065878f66094185837bd98791af5f781f199094"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/MH03.txt": {
+      "sha256": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f",
+      "retained_before": "87ebff9c54c7728ef8ae714e675762bd5af1d8955225a6becdac2072c0d9d84f"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/MH04.txt": {
+      "sha256": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c",
+      "retained_before": "c5c963f584d0acb678ea040cecca078a9b3cd2ef198a1bc736216cb44d682c5c"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/MH05.txt": {
+      "sha256": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5",
+      "retained_before": "ff3ff06367380104e32c3ad65b16db4f186161d97814099641175ef57f1b89a5"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V101.txt": {
+      "sha256": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072",
+      "retained_before": "ea25c15d85a622f0ef0642e034d55b4a50de055139ea06753c06c7e3c4be4072"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V102.txt": {
+      "sha256": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e",
+      "retained_before": "352af294dc5edf7fbf1f39888a45787da4740dd41846f71705d640798ea6326e"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V103.txt": {
+      "sha256": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c",
+      "retained_before": "75046dedb27a84b6efaaa0c188f44c32d5febfe10c3697ec3d71a4f47c6b866c"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V201.txt": {
+      "sha256": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9",
+      "retained_before": "4d8bc4fc8d97ed55e696d47b1f86c5b017f90efbcd3eb23d4e76319a49f591d9"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V202.txt": {
+      "sha256": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f",
+      "retained_before": "be9efad044d439075170a250ed617299a3104a6eb75cd7053a7ee4f52c872c0f"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V203.txt": {
+      "sha256": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7",
+      "retained_before": "f159c96a6710661cc62475dbbce401a6a1e10c5ed3f835a7926cb306c170fcf7"
+    },
+    "Examples_old/Stereo-Inertial/EuRoC_TimeStamps/V203_2.txt": {
+      "sha256": "545b2f8d5997ea855b0c6d1fbe12ea0374357b545580f620f1a711f410b4135b",
+      "retained_before": "545b2f8d5997ea855b0c6d1fbe12ea0374357b545580f620f1a711f410b4135b"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_MH01.yaml": {
+      "sha256": "004909202756b2df526987a388e03e82c98b0cac350e8323f677a32d716ab3f0",
+      "retained_before": "004909202756b2df526987a388e03e82c98b0cac350e8323f677a32d716ab3f0"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_MH02.yaml": {
+      "sha256": "3575e83fec67cfee61b589a06a3ea6246178909233c977b09c8cc96cfe0ed1c6",
+      "retained_before": "3575e83fec67cfee61b589a06a3ea6246178909233c977b09c8cc96cfe0ed1c6"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_MH03.yaml": {
+      "sha256": "2316a4d5567e15a57203e98bb542f13dfc5c30286ffd22a18f175b009f97a7d8",
+      "retained_before": "2316a4d5567e15a57203e98bb542f13dfc5c30286ffd22a18f175b009f97a7d8"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_MH04.yaml": {
+      "sha256": "587e1d5378f9e0ef216008b8d7e953b4554561dca8a10923a6f9199de029864a",
+      "retained_before": "587e1d5378f9e0ef216008b8d7e953b4554561dca8a10923a6f9199de029864a"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_MH05.yaml": {
+      "sha256": "661d91f8376fa00c802e44e4eb5a4f0cbac36be0bcae79aa62b4a2580e8d2f8b",
+      "retained_before": "661d91f8376fa00c802e44e4eb5a4f0cbac36be0bcae79aa62b4a2580e8d2f8b"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V101.yaml": {
+      "sha256": "abd7ce6a3f11688b0d3f36104b33b8a840ec1ddd548f9ecf3396a546275e9151",
+      "retained_before": "abd7ce6a3f11688b0d3f36104b33b8a840ec1ddd548f9ecf3396a546275e9151"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V102.yaml": {
+      "sha256": "629b83b0b2167bf48da41d1caca1f507d35b8298bb6c2d25bcd1800a1b5a4511",
+      "retained_before": "629b83b0b2167bf48da41d1caca1f507d35b8298bb6c2d25bcd1800a1b5a4511"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V103.yaml": {
+      "sha256": "6ec6fe904f87526b6cd96fa86d6b0dbf96a38463f589c0b55f6ffa4a7a52df65",
+      "retained_before": "6ec6fe904f87526b6cd96fa86d6b0dbf96a38463f589c0b55f6ffa4a7a52df65"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V201.yaml": {
+      "sha256": "ebef14cf69ebdf9219412c1a8be268a8197b9b353a72f3739b4176206b438f90",
+      "retained_before": "ebef14cf69ebdf9219412c1a8be268a8197b9b353a72f3739b4176206b438f90"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V202.yaml": {
+      "sha256": "7e6a70b8b884c2a6fb20482f43b1d355734a84a380597e0e4a2ac2e1c596ea02",
+      "retained_before": "7e6a70b8b884c2a6fb20482f43b1d355734a84a380597e0e4a2ac2e1c596ea02"
+    },
+    "Examples_old/Stereo-Inertial/MultiSession/EuRoC_V203.yaml": {
+      "sha256": "7e264afcdb859bd83ae5f2280e3740382405a4974df2900721d42ae2ba62cf01",
+      "retained_before": "7e264afcdb859bd83ae5f2280e3740382405a4974df2900721d42ae2ba62cf01"
+    },
+    "Examples_old/Stereo-Inertial/RealSense_D435i.yaml": {
+      "sha256": "dff88b94b6f44c5e06ac37a9540ad5adaf1e716e84d62471e896be2d30778ee7",
+      "retained_before": "dff88b94b6f44c5e06ac37a9540ad5adaf1e716e84d62471e896be2d30778ee7"
+    },
+    "Examples_old/Stereo-Inertial/RealSense_T265.yaml": {
+      "sha256": "b4ee3b3e535af07eb1e68b6edb8b910ebeba41ff2f3957e660290cfdbe26ac9a",
+      "retained_before": "b4ee3b3e535af07eb1e68b6edb8b910ebeba41ff2f3957e660290cfdbe26ac9a"
+    },
+    "Examples_old/Stereo-Inertial/stereo_inertial_euroc.cc": {
+      "sha256": "453da758d9cc30fe0ee84002665652a4ba9ab2297881a5ff86c743b1803250cd",
+      "retained_before": "453da758d9cc30fe0ee84002665652a4ba9ab2297881a5ff86c743b1803250cd"
+    },
+    "Examples_old/Stereo-Inertial/stereo_inertial_realsense_D435i.cc": {
+      "sha256": "9aae5c525f368bfcfd35f53dfea45d95c5a5c12726500b4c25535c63d1563141",
+      "retained_before": "9aae5c525f368bfcfd35f53dfea45d95c5a5c12726500b4c25535c63d1563141"
+    },
+    "Examples_old/Stereo-Inertial/stereo_inertial_realsense_t265.cc": {
+      "sha256": "5bc1dd7a610520c25f4e4a82341b25a8fc71db92a21746d5e8a981305c027b54",
+      "retained_before": "5bc1dd7a610520c25f4e4a82341b25a8fc71db92a21746d5e8a981305c027b54"
+    },
+    "Examples_old/Stereo-Inertial/stereo_inertial_tum_vi.cc": {
+      "sha256": "bdac6d76fc7fabf6531149fd2d18f0232fa53c755e9565382d2a32a36bfe9e77",
+      "retained_before": "bdac6d76fc7fabf6531149fd2d18f0232fa53c755e9565382d2a32a36bfe9e77"
+    },
+    "Examples_old/Stereo-Inertial/TUM-VI.yaml": {
+      "sha256": "516f4c6f6222542ed870561bdcac54186b117b19096435d4ea07d55f2bf5d305",
+      "retained_before": "516f4c6f6222542ed870561bdcac54186b117b19096435d4ea07d55f2bf5d305"
+    },
+    "Examples_old/Stereo-Inertial/TUM-VI_far.yaml": {
+      "sha256": "bbda769b1d9898043171ec1389fc3041b7290ce9ddfe4316639d7a30684ad839",
+      "retained_before": "bbda769b1d9898043171ec1389fc3041b7290ce9ddfe4316639d7a30684ad839"
+    },
+    "include/Atlas.h": {
+      "sha256": "7d7ff9d61befbedad2b92f9087cd741c62181b6c65dd0a4d5967cdde93fb31d3",
+      "retained_before": "7d7ff9d61befbedad2b92f9087cd741c62181b6c65dd0a4d5967cdde93fb31d3"
+    },
+    "include/bridge_wire.hpp": {
+      "sha256": "1b76211d092b7ca26bf1faf7211b34265a046397fd109da27f4a3f6a0f941f87",
+      "retained_before": null
+    },
+    "include/BridgeDisplay.h": {
+      "sha256": "eb3ba1e9e51cff1fb9f7c268d15c284a89d3f99605f3fb314ebe6e51b177fb29",
+      "retained_before": null
+    },
+    "include/BridgeExport.h": {
+      "sha256": "e51a1284052f76d7c4fd676a4d6ada6153e6880ece3eb340d94438dd53506c4d",
+      "retained_before": null
+    },
+    "include/BridgeFeatures.h": {
+      "sha256": "092d6fce54634b4367984214db6bac08d9a9a74bb2909e6e45f79620d1a4dbef",
+      "retained_before": null
+    },
+    "include/BridgeFinalFrames.h": {
+      "sha256": "17b43dda5c1f05b56fc98c4a105394c115e640c367fdc7f3d40f4b99956946a1",
+      "retained_before": null
+    },
+    "include/BridgeFrame.h": {
+      "sha256": "8a245414331b90ea426f3d7ce9d1bfdb2055432ab8fba24eb6be26e4c249e09b",
+      "retained_before": null
+    },
+    "include/BridgeTrackingDiagnostics.h": {
+      "sha256": "7e31f3d35a61d7ba750b32af1560818dfa7ba48e02a0a710afcace9a09bf91cb",
+      "retained_before": null
+    },
+    "include/BridgeTrackingDiagnosticsImpl.h": {
+      "sha256": "7b0fac39ec5d4c89148aad2bf99765350c5a5b6d36e88cea8017e8ff84df480b",
+      "retained_before": null
+    },
+    "include/CameraModels/GeometricCamera.h": {
+      "sha256": "02ba038955c5e1367db48479c22d3cdb184cb8fb7481b67b91002814492869b7",
+      "retained_before": "02ba038955c5e1367db48479c22d3cdb184cb8fb7481b67b91002814492869b7"
+    },
+    "include/CameraModels/KannalaBrandt8.h": {
+      "sha256": "7d31dd9851bc9350f943a064d57dca6840e8bae73b3c9e0601bdeeaaf5f1526a",
+      "retained_before": "7d31dd9851bc9350f943a064d57dca6840e8bae73b3c9e0601bdeeaaf5f1526a"
+    },
+    "include/CameraModels/Pinhole.h": {
+      "sha256": "dc34bc748468aa366406962cbeda33181d6c8166c237f6ac72d2ee895ca49286",
+      "retained_before": "dc34bc748468aa366406962cbeda33181d6c8166c237f6ac72d2ee895ca49286"
+    },
+    "include/Config.h": {
+      "sha256": "e9e9c6c4b84445de66ec39fb5a91120689856f179d8e4af80f7a0de5dfc06bb4",
+      "retained_before": "e9e9c6c4b84445de66ec39fb5a91120689856f179d8e4af80f7a0de5dfc06bb4"
+    },
+    "include/Converter.h": {
+      "sha256": "a42b523c74b43d1b079f08357504ba248a0363bbc95b5aba7f389f5945206dd2",
+      "retained_before": "a42b523c74b43d1b079f08357504ba248a0363bbc95b5aba7f389f5945206dd2"
+    },
+    "include/DenseExport.h": {
+      "sha256": "529d5a9d90c03b0c040436869a1147a0efa37a08cd0c0a7703ce2bc5283c49ee",
+      "retained_before": null
+    },
+    "include/DenseFrameTelemetry.h": {
+      "sha256": "1151b9801ce3f52be5e8b39fec2567538a3af32bd6e11256c845a0345a27d132",
+      "retained_before": null
+    },
+    "include/FeatureIO.h": {
+      "sha256": "a04cafd31c8fdac69d8aa60b8c07010732408c934dfe71f87053ca883a394305",
+      "retained_before": "32ca1a54fb68eb03f0d4b651ef5526992e07ab3ae1ef7b54e46b9020fe582459"
+    },
+    "include/FpgaORB.h": {
+      "sha256": "47db475626c52e9aa209fdd2071817adcf58939aa59031a645703714a75bd80a",
+      "retained_before": null
+    },
+    "include/FpgaPipeline.h": {
+      "sha256": "0e4c8c5ccfafa79e86e16a207b6042fb02aa1909d19e67460940c07a7bbaf642",
+      "retained_before": null
+    },
+    "include/FpgaReplayInput.h": {
+      "sha256": "a6d42fd6f35eaec6ef8247f483ccf63b017cd59a86fa192740f686874aa40f98",
+      "retained_before": null
+    },
+    "include/Frame.h": {
+      "sha256": "8e789448de6e26169962acf1f42a15206ed687953fee02386052e64665daf9dd",
+      "retained_before": "8e789448de6e26169962acf1f42a15206ed687953fee02386052e64665daf9dd"
+    },
+    "include/FrameDrawer.h": {
+      "sha256": "1d0bdc3a414d57a462c5203a5ce2620a14ad17042e0885d9dabcfd555b0c91c1",
+      "retained_before": "1d0bdc3a414d57a462c5203a5ce2620a14ad17042e0885d9dabcfd555b0c91c1"
+    },
+    "include/G2oTypes.h": {
+      "sha256": "9bc1eca55ebb151d119e3def91c5544496463919ea79825c6fc9161329ade614",
+      "retained_before": "9bc1eca55ebb151d119e3def91c5544496463919ea79825c6fc9161329ade614"
+    },
+    "include/GeometricTools.h": {
+      "sha256": "ceb88b8ca1bb4366b24dda20a018faf56087edca3835986408a7a76dc7b921dc",
+      "retained_before": "ceb88b8ca1bb4366b24dda20a018faf56087edca3835986408a7a76dc7b921dc"
+    },
+    "include/ImuTypes.h": {
+      "sha256": "33bd15160ea7a7dc7afef976cd4df211c72735381f7ee8b1f83c3bc52ec11da0",
+      "retained_before": "33bd15160ea7a7dc7afef976cd4df211c72735381f7ee8b1f83c3bc52ec11da0"
+    },
+    "include/KeyFrame.h": {
+      "sha256": "a0e146cd27a4cc2aa791133899ddd7a437a4503f94a71a0c20fcdb337103f6d7",
+      "retained_before": "a0e146cd27a4cc2aa791133899ddd7a437a4503f94a71a0c20fcdb337103f6d7"
+    },
+    "include/KeyFrameDatabase.h": {
+      "sha256": "28414b687d3c182f8ba1d022850a61dfb14693995e832aefe51981dd50034891",
+      "retained_before": "28414b687d3c182f8ba1d022850a61dfb14693995e832aefe51981dd50034891"
+    },
+    "include/LocalMapping.h": {
+      "sha256": "204c003f43b85cf93c2043560a57a2b951164db39e4760a5e9aaacab6c315aee",
+      "retained_before": "204c003f43b85cf93c2043560a57a2b951164db39e4760a5e9aaacab6c315aee"
+    },
+    "include/LoopClosing.h": {
+      "sha256": "4c73b05ac2982233854ffa4f3c30cbbcb8faba1131527186de6c9c925bbbbf25",
+      "retained_before": "4c73b05ac2982233854ffa4f3c30cbbcb8faba1131527186de6c9c925bbbbf25"
+    },
+    "include/Map.h": {
+      "sha256": "95664e7d4c71fa37e1ef32c8fb1a3587f8552f3b902d8222371eb45be6516e8c",
+      "retained_before": "34af884ae8f222b19b54d298cfb368eafe38f3f80730fb2c257169667d9fd3ef"
+    },
+    "include/MapDrawer.h": {
+      "sha256": "8549a0802b6adbbf520ffc2a783fac6cf0691e81805c1ca98ca67c2d31dd3a4c",
+      "retained_before": "be56f43249d8f496cae3183ae07337658814334aed977916c77071d54b2783d5"
+    },
+    "include/MapPoint.h": {
+      "sha256": "6d80d371078222541a8ea4131f353578ed6b0f606fff8aa71f0a615b923ef38a",
+      "retained_before": "6d80d371078222541a8ea4131f353578ed6b0f606fff8aa71f0a615b923ef38a"
+    },
+    "include/MLPnPsolver.h": {
+      "sha256": "7fc8fc1639ae5c5d5c57074e001c221bf2280a992e77be701d5495321c495280",
+      "retained_before": "7fc8fc1639ae5c5d5c57074e001c221bf2280a992e77be701d5495321c495280"
+    },
+    "include/OptimizableTypes.h": {
+      "sha256": "873c559d42f14840ee1b6704ba26659e5a8a17cd591d82bf5923f3428a33ce03",
+      "retained_before": "873c559d42f14840ee1b6704ba26659e5a8a17cd591d82bf5923f3428a33ce03"
+    },
+    "include/Optimizer.h": {
+      "sha256": "e6c6a4ee26ccadb38a61653eb368cd1fd5c943b2fb04f064e2ec0fca470d8c5b",
+      "retained_before": "e6c6a4ee26ccadb38a61653eb368cd1fd5c943b2fb04f064e2ec0fca470d8c5b"
+    },
+    "include/Orb60Protocol.h": {
+      "sha256": "c68cc73e4d3a4f0c2bf4675e9bccc61efec6c50298826668c64e3e0a2b831851",
+      "retained_before": null
+    },
+    "include/ORBextractor.h": {
+      "sha256": "dc7b6a4ba893db0a821ea9b3996a66bd746bd02c0588a2bf0bd1f9041ed35a96",
+      "retained_before": "dc7b6a4ba893db0a821ea9b3996a66bd746bd02c0588a2bf0bd1f9041ed35a96"
+    },
+    "include/ORBmatcher.h": {
+      "sha256": "a98085aa7cdd17fdeb1b2d009b52078ef745bdf25a4e77b37ecd8cd66c7839cb",
+      "retained_before": "a98085aa7cdd17fdeb1b2d009b52078ef745bdf25a4e77b37ecd8cd66c7839cb"
+    },
+    "include/OrbTelemetry.h": {
+      "sha256": "77fc7c8cee5fe06e4d284b5a7b739266b707b16375d678a58d0656bd7f64c657",
+      "retained_before": null
+    },
+    "include/ORBVocabulary.h": {
+      "sha256": "ad1381993e44af7ee7e062f2bbb33bb48a1d5de849289c6ff4d9b325da38ec2c",
+      "retained_before": "ad1381993e44af7ee7e062f2bbb33bb48a1d5de849289c6ff4d9b325da38ec2c"
+    },
+    "include/SerializationUtils.h": {
+      "sha256": "49bc1413401be7f1c70bc4d7df5f143c0384a2eadd41edcb4dbe655704eceab7",
+      "retained_before": "49bc1413401be7f1c70bc4d7df5f143c0384a2eadd41edcb4dbe655704eceab7"
+    },
+    "include/Settings.h": {
+      "sha256": "d8576f19b1760ce4d64b526c05071eda03a2b53d0165ab81fd4b010ddb88df7c",
+      "retained_before": "d8576f19b1760ce4d64b526c05071eda03a2b53d0165ab81fd4b010ddb88df7c"
+    },
+    "include/Sim3Solver.h": {
+      "sha256": "49e25bc2442442b39742d11f9c26b0c5cd329fac6109e5c469dc86bf2163ad5d",
+      "retained_before": "49e25bc2442442b39742d11f9c26b0c5cd329fac6109e5c469dc86bf2163ad5d"
+    },
+    "include/System.h": {
+      "sha256": "e34811ca6af6428db2f4c27dc1d7663813ca9c9101f50bd94e317f91e49a1589",
+      "retained_before": "42e3959d0a3c7960f67128dd1f94290ad43cd07e75ee56057fdba5fb5ea116e0"
+    },
+    "include/Tracking.h": {
+      "sha256": "fbf9cce07b18b92668cbf070d07e7ac0f31510289642ecc30d454c7fec75c5a6",
+      "retained_before": "fbf9cce07b18b92668cbf070d07e7ac0f31510289642ecc30d454c7fec75c5a6"
+    },
+    "include/TwoViewReconstruction.h": {
+      "sha256": "8143c89f1a86a6064b245fcaecf27f23b192f1b39052f3f38c38ef3481bf4d85",
+      "retained_before": "8143c89f1a86a6064b245fcaecf27f23b192f1b39052f3f38c38ef3481bf4d85"
+    },
+    "include/Viewer.h": {
+      "sha256": "7574c1293f37ee782fea25e7e702861f85b02956421675f9a6365b5da46837bc",
+      "retained_before": "8905029b6168170430401c59015a9588f86ad6a57b8c6d7833052a6cfb1b3cba"
+    },
+    "LICENSE": {
+      "sha256": "53927bd0b739d38c87a0a82236fd9b070c2dfff11c0c119be50372005d5047ad",
+      "retained_before": "53927bd0b739d38c87a0a82236fd9b070c2dfff11c0c119be50372005d5047ad"
+    },
+    "README.md": {
+      "sha256": "7258921d1244eead4b4c982bb172df4026294168bcee87628acf2b425c84a82d",
+      "retained_before": "7258921d1244eead4b4c982bb172df4026294168bcee87628acf2b425c84a82d"
+    },
+    "src/Atlas.cc": {
+      "sha256": "e21f879fc9e811280c6158fe85fc955c6df8fd0597a050664c3b1bbd2a788cf2",
+      "retained_before": "e21f879fc9e811280c6158fe85fc955c6df8fd0597a050664c3b1bbd2a788cf2"
+    },
+    "src/CameraModels/KannalaBrandt8.cpp": {
+      "sha256": "b3cc4b8e25bf3948f0cab68cf25ef36c6cca7de2d8aabf9e7dbb958b9aac1370",
+      "retained_before": "b3cc4b8e25bf3948f0cab68cf25ef36c6cca7de2d8aabf9e7dbb958b9aac1370"
+    },
+    "src/CameraModels/Pinhole.cpp": {
+      "sha256": "716ca78c4f3c8c1edd30d1d7a6d211d0ff26d8345440adb158269a2336834b4a",
+      "retained_before": "716ca78c4f3c8c1edd30d1d7a6d211d0ff26d8345440adb158269a2336834b4a"
+    },
+    "src/Config.cc": {
+      "sha256": "02894ce63d0806ccc82cc676363e9239a8bc95435d50c01c81509f7751816012",
+      "retained_before": "02894ce63d0806ccc82cc676363e9239a8bc95435d50c01c81509f7751816012"
+    },
+    "src/Converter.cc": {
+      "sha256": "49ba273af11884ef2fc16bf8edea7889f1d7f8b185c84a8e130949b9d085892f",
+      "retained_before": "49ba273af11884ef2fc16bf8edea7889f1d7f8b185c84a8e130949b9d085892f"
+    },
+    "src/FeatureIO.cc": {
+      "sha256": "fd132da2e20a4267a4c2d9abd13287d966339f4791b331add6b8ab59d6363a17",
+      "retained_before": "76cf9c9e74229526fcd0255afd26537bac7a9eb05efae7c573f989de41eb23e8"
+    },
+    "src/Frame.cc": {
+      "sha256": "0e8c60b2c3cd7d5605f5da858aaa16e8c4b8a968e1ad98f6a973c4eebe669e26",
+      "retained_before": "0e8c60b2c3cd7d5605f5da858aaa16e8c4b8a968e1ad98f6a973c4eebe669e26"
+    },
+    "src/FrameDrawer.cc": {
+      "sha256": "1f2e01b9ea7f41aee07d5b58aaa17297380bef4ddee326bca374f7a37497ba2f",
+      "retained_before": "1f2e01b9ea7f41aee07d5b58aaa17297380bef4ddee326bca374f7a37497ba2f"
+    },
+    "src/G2oTypes.cc": {
+      "sha256": "b3ab3e6f8c7b4c78e4face22deefbb40ba9b3abea35ef51541a286b134ff7c12",
+      "retained_before": "b3ab3e6f8c7b4c78e4face22deefbb40ba9b3abea35ef51541a286b134ff7c12"
+    },
+    "src/GeometricTools.cc": {
+      "sha256": "2306547ec791ae80ade6fc5bbf10c8eef2a9a7768a93879bf952d4c39ce6299e",
+      "retained_before": "2306547ec791ae80ade6fc5bbf10c8eef2a9a7768a93879bf952d4c39ce6299e"
+    },
+    "src/ImuTypes.cc": {
+      "sha256": "0d062e75b9367d8c93978f309504849bff00e7bad1bb34503a8bbace2e74ff36",
+      "retained_before": "0d062e75b9367d8c93978f309504849bff00e7bad1bb34503a8bbace2e74ff36"
+    },
+    "src/KeyFrame.cc": {
+      "sha256": "355507e1b35ff3eb30f75567c0bc2b3adb96c93d81b4e147d31696083a4b25f0",
+      "retained_before": "355507e1b35ff3eb30f75567c0bc2b3adb96c93d81b4e147d31696083a4b25f0"
+    },
+    "src/KeyFrameDatabase.cc": {
+      "sha256": "d8f0bd96b0c6377c24e7d12d9d87aba8013d5a3fcbc55f3428019fd1e124b457",
+      "retained_before": "d8f0bd96b0c6377c24e7d12d9d87aba8013d5a3fcbc55f3428019fd1e124b457"
+    },
+    "src/LocalMapping.cc": {
+      "sha256": "2ffef78466e12a36c36819fdd5916f974a75e4231e7b28b8acba94dad6f09bed",
+      "retained_before": "2ffef78466e12a36c36819fdd5916f974a75e4231e7b28b8acba94dad6f09bed"
+    },
+    "src/LoopClosing.cc": {
+      "sha256": "b17be9d654564603a409fc92213f6ccc889f6969426c04b8cd74bacbfeaf3b00",
+      "retained_before": "b17be9d654564603a409fc92213f6ccc889f6969426c04b8cd74bacbfeaf3b00"
+    },
+    "src/Map.cc": {
+      "sha256": "e90d237a2e80c961b4a05ef2a416806560a0c5038a1758438d557509872ca2a4",
+      "retained_before": "76a46fd4a39075c53f730485a5301311fa5095273e01fd1f7a91caee00e90068"
+    },
+    "src/MapDrawer.cc": {
+      "sha256": "533e4507458863b7c806ef795e99413ad83cc182eee8dabfe62ff17dbf32e798",
+      "retained_before": "533e4507458863b7c806ef795e99413ad83cc182eee8dabfe62ff17dbf32e798"
+    },
+    "src/MapPoint.cc": {
+      "sha256": "f8e86159e88c22ce226e5eb69952cad0b2d3f517c8f87a5e472881d40ec5ba8f",
+      "retained_before": "f8e86159e88c22ce226e5eb69952cad0b2d3f517c8f87a5e472881d40ec5ba8f"
+    },
+    "src/MLPnPsolver.cpp": {
+      "sha256": "641b65bda630643ef2df34654ec26dd4c68475aa74e035eeaadd3423839d22ac",
+      "retained_before": "641b65bda630643ef2df34654ec26dd4c68475aa74e035eeaadd3423839d22ac"
+    },
+    "src/OptimizableTypes.cpp": {
+      "sha256": "3113a26c12c04579e23c8b628355742dce7e27b14f03963897b8838b655cc895",
+      "retained_before": "3113a26c12c04579e23c8b628355742dce7e27b14f03963897b8838b655cc895"
+    },
+    "src/Optimizer.cc": {
+      "sha256": "215ff5908e7c34272ab86c9386f0496bd1bd3daa770076e3270915b5f189f408",
+      "retained_before": "215ff5908e7c34272ab86c9386f0496bd1bd3daa770076e3270915b5f189f408"
+    },
+    "src/ORBextractor.cc": {
+      "sha256": "9488d13b71a1e303e1b6c891d632c369b4c7adf2bc2b6d0dc15b2df6b1365fd2",
+      "retained_before": "9488d13b71a1e303e1b6c891d632c369b4c7adf2bc2b6d0dc15b2df6b1365fd2"
+    },
+    "src/ORBmatcher.cc": {
+      "sha256": "5a457052f34a08bcc723574efe72d8d4f1ea49aa4c9f6b756ecb8d60c3aeed18",
+      "retained_before": "c28d83d33c0aecd476d229821fd8e6d76ea7cc71174f50af3e775868c329c9be"
+    },
+    "src/Settings.cc": {
+      "sha256": "431f04d5f4f68870d7b1ca8558bec45d092753bd582cddfbb7928271163c9d2c",
+      "retained_before": "431f04d5f4f68870d7b1ca8558bec45d092753bd582cddfbb7928271163c9d2c"
+    },
+    "src/Sim3Solver.cc": {
+      "sha256": "95859d9994d9f9e6139613ae75fd5b2b47b2448bdc182001e7a72ded3b5d1960",
+      "retained_before": "95859d9994d9f9e6139613ae75fd5b2b47b2448bdc182001e7a72ded3b5d1960"
+    },
+    "src/System.cc": {
+      "sha256": "ec121e37e10e1ab925e3b5e133463626c966ed9577a98fbdd2c03a402cca7148",
+      "retained_before": "c49bb0ea5278d31239d18fa43094dcd16637c52122ef290bef1a6a302bd888ad"
+    },
+    "src/Tracking.cc": {
+      "sha256": "225b65deb39a8c6d8b087665392eb2f21f04e0609782e004a658195735c17fc4",
+      "retained_before": "4584330706210671efa7c77b3202c4dda8c6edbcb3c89a61240ae93653dc6ff9"
+    },
+    "src/TwoViewReconstruction.cc": {
+      "sha256": "d5dab968e29e6d063a2d04d4a545fe5acd674596a4559aa975c50b754ed54f55",
+      "retained_before": "d5dab968e29e6d063a2d04d4a545fe5acd674596a4559aa975c50b754ed54f55"
+    },
+    "src/Viewer.cc": {
+      "sha256": "3b0192b9e010986941196e605b184af1a2910a5422d839668d60a1e4ccf2d445",
+      "retained_before": "3b0192b9e010986941196e605b184af1a2910a5422d839668d60a1e4ccf2d445"
+    },
+    "Thirdparty/DBoW2/CMakeLists.txt": {
+      "sha256": "e0675e6f29552981c8bbfdb02f9c75fe287d966b1c3d8940d0fb317e6c020734",
+      "retained_before": "e0675e6f29552981c8bbfdb02f9c75fe287d966b1c3d8940d0fb317e6c020734"
+    },
+    "Thirdparty/DBoW2/DBoW2/BowVector.cpp": {
+      "sha256": "e1b46ae9ccd07aedec5422de145815c2c1bed138ba8e60a65f282d55004faf33",
+      "retained_before": "e1b46ae9ccd07aedec5422de145815c2c1bed138ba8e60a65f282d55004faf33"
+    },
+    "Thirdparty/DBoW2/DBoW2/BowVector.h": {
+      "sha256": "0960e1e72d254e820079b491b13a49c1ef32c2dbef1372f5de4e5bc67e7c589a",
+      "retained_before": "0960e1e72d254e820079b491b13a49c1ef32c2dbef1372f5de4e5bc67e7c589a"
+    },
+    "Thirdparty/DBoW2/DBoW2/FClass.h": {
+      "sha256": "510b42e073672beb870db53c82bd10b9124b315ddf742ef70edaec5ed29275ea",
+      "retained_before": "510b42e073672beb870db53c82bd10b9124b315ddf742ef70edaec5ed29275ea"
+    },
+    "Thirdparty/DBoW2/DBoW2/FeatureVector.cpp": {
+      "sha256": "e8cf8b402baadb79391744d530551f2af9b26e6d3007ad3c0d0676cde04a9bbd",
+      "retained_before": "e8cf8b402baadb79391744d530551f2af9b26e6d3007ad3c0d0676cde04a9bbd"
+    },
+    "Thirdparty/DBoW2/DBoW2/FeatureVector.h": {
+      "sha256": "f63aa8b741dda4141de5d3049b97c4a753ee00c934a90fb1c8ec14b104546e97",
+      "retained_before": "f63aa8b741dda4141de5d3049b97c4a753ee00c934a90fb1c8ec14b104546e97"
+    },
+    "Thirdparty/DBoW2/DBoW2/FORB.cpp": {
+      "sha256": "635cfdda9ce23edcaae0a803bae83ae327043e657282b73e8a85f7ad80c5cebf",
+      "retained_before": "635cfdda9ce23edcaae0a803bae83ae327043e657282b73e8a85f7ad80c5cebf"
+    },
+    "Thirdparty/DBoW2/DBoW2/FORB.h": {
+      "sha256": "06b0c15b0741e6911960cad15982aa8a0945c48033a0256fea306d8dbaf3cdd6",
+      "retained_before": "06b0c15b0741e6911960cad15982aa8a0945c48033a0256fea306d8dbaf3cdd6"
+    },
+    "Thirdparty/DBoW2/DBoW2/ScoringObject.cpp": {
+      "sha256": "8d8007d7ddd76cf28963371e919ab11ba7e1561c6d345d2a19c10a2569828404",
+      "retained_before": "8d8007d7ddd76cf28963371e919ab11ba7e1561c6d345d2a19c10a2569828404"
+    },
+    "Thirdparty/DBoW2/DBoW2/ScoringObject.h": {
+      "sha256": "577f151b73bb4fe087594c8b767406da3b71f96bf7603d1063bf7bdd8fe410f0",
+      "retained_before": "577f151b73bb4fe087594c8b767406da3b71f96bf7603d1063bf7bdd8fe410f0"
+    },
+    "Thirdparty/DBoW2/DBoW2/TemplatedVocabulary.h": {
+      "sha256": "b225c46b232e2051c01bdd2b2bf179c5ab020e9309e36fea192530bbf2ab6451",
+      "retained_before": "b225c46b232e2051c01bdd2b2bf179c5ab020e9309e36fea192530bbf2ab6451"
+    },
+    "Thirdparty/DBoW2/DUtils/Random.cpp": {
+      "sha256": "7c7e5f675e7b13bb8769f0fc0292a30e34d577179254ac1954ca8c8f610078ec",
+      "retained_before": "7c7e5f675e7b13bb8769f0fc0292a30e34d577179254ac1954ca8c8f610078ec"
+    },
+    "Thirdparty/DBoW2/DUtils/Random.h": {
+      "sha256": "e783ed86f5b5c22ba749134d323c2e9e62b6549610483d5e691286c7b8c2ee79",
+      "retained_before": "e783ed86f5b5c22ba749134d323c2e9e62b6549610483d5e691286c7b8c2ee79"
+    },
+    "Thirdparty/DBoW2/DUtils/Timestamp.cpp": {
+      "sha256": "886a1d8c20e196602a78a12c8664d524a2822652e8dbd9197393f9770d646f3a",
+      "retained_before": "886a1d8c20e196602a78a12c8664d524a2822652e8dbd9197393f9770d646f3a"
+    },
+    "Thirdparty/DBoW2/DUtils/Timestamp.h": {
+      "sha256": "dca8a1acb1135d2411ec6008766eb1a0e7b8c2f5b95175b134608bf7247e524c",
+      "retained_before": "dca8a1acb1135d2411ec6008766eb1a0e7b8c2f5b95175b134608bf7247e524c"
+    },
+    "Thirdparty/DBoW2/README.txt": {
+      "sha256": "3ae6fbc6001f9c696dcfa873be066fe3dae6b95d066cbf3822708432dcbf58e0",
+      "retained_before": "3ae6fbc6001f9c696dcfa873be066fe3dae6b95d066cbf3822708432dcbf58e0"
+    },
+    "Thirdparty/g2o/CMakeLists.txt": {
+      "sha256": "776735f37d93da008df7b9f4009dcec00c322b2ea4f93c5b80caf00cec05b36f",
+      "retained_before": "776735f37d93da008df7b9f4009dcec00c322b2ea4f93c5b80caf00cec05b36f"
+    },
+    "Thirdparty/g2o/config.h.in": {
+      "sha256": "10061c8b66b13754c4772d3644c3e7d0e3c6b26c1af0200d800fd7fd84aa128a",
+      "retained_before": "10061c8b66b13754c4772d3644c3e7d0e3c6b26c1af0200d800fd7fd84aa128a"
+    },
+    "Thirdparty/g2o/g2o/core/base_binary_edge.h": {
+      "sha256": "5c9a683aa269d53c27b70c2274b3e70b35e350e24044cc6057490eec703cb432",
+      "retained_before": "5c9a683aa269d53c27b70c2274b3e70b35e350e24044cc6057490eec703cb432"
+    },
+    "Thirdparty/g2o/g2o/core/base_binary_edge.hpp": {
+      "sha256": "7061a892909ed4d67e936a17314d7362d56ebce3bdf1d2d0aa98995a5b5eea6c",
+      "retained_before": "7061a892909ed4d67e936a17314d7362d56ebce3bdf1d2d0aa98995a5b5eea6c"
+    },
+    "Thirdparty/g2o/g2o/core/base_edge.h": {
+      "sha256": "64135a84dd2686a225a83c1e13525961496e9e925d9d1de7d4249366a33b600f",
+      "retained_before": "64135a84dd2686a225a83c1e13525961496e9e925d9d1de7d4249366a33b600f"
+    },
+    "Thirdparty/g2o/g2o/core/base_multi_edge.h": {
+      "sha256": "03ddad423048db3d98f477e3a4929f8c014ed5ecaaeeb5cb236b9eb8d57cbbf9",
+      "retained_before": "03ddad423048db3d98f477e3a4929f8c014ed5ecaaeeb5cb236b9eb8d57cbbf9"
+    },
+    "Thirdparty/g2o/g2o/core/base_multi_edge.hpp": {
+      "sha256": "9059233a054999b0011065977637a1851d0d7db4cc08241cd0dd89916642dc3a",
+      "retained_before": "9059233a054999b0011065977637a1851d0d7db4cc08241cd0dd89916642dc3a"
+    },
+    "Thirdparty/g2o/g2o/core/base_unary_edge.h": {
+      "sha256": "7f449ebfd386b8a10392d0cda72ab2297c251e149da43fd208c53f404fb76b28",
+      "retained_before": "7f449ebfd386b8a10392d0cda72ab2297c251e149da43fd208c53f404fb76b28"
+    },
+    "Thirdparty/g2o/g2o/core/base_unary_edge.hpp": {
+      "sha256": "9c13bf46af0f72a117d2586930e8b6b5dc9462001b87a1067de5d7bae2586981",
+      "retained_before": "9c13bf46af0f72a117d2586930e8b6b5dc9462001b87a1067de5d7bae2586981"
+    },
+    "Thirdparty/g2o/g2o/core/base_vertex.h": {
+      "sha256": "744d189bcd3898aa75c981b1781451454af7e238cb599f334834102e6ef490c7",
+      "retained_before": "744d189bcd3898aa75c981b1781451454af7e238cb599f334834102e6ef490c7"
+    },
+    "Thirdparty/g2o/g2o/core/base_vertex.hpp": {
+      "sha256": "26ef16e29000a619269cf4d0899911c46f5e7abbd84c45e9b84ade2ef3705fb8",
+      "retained_before": "26ef16e29000a619269cf4d0899911c46f5e7abbd84c45e9b84ade2ef3705fb8"
+    },
+    "Thirdparty/g2o/g2o/core/batch_stats.cpp": {
+      "sha256": "905deec645cdd775f5e65bcbd82c68ef91d49ba74cc961389f6e800dd5d71ad5",
+      "retained_before": "905deec645cdd775f5e65bcbd82c68ef91d49ba74cc961389f6e800dd5d71ad5"
+    },
+    "Thirdparty/g2o/g2o/core/batch_stats.h": {
+      "sha256": "2ad5c6cf83c127c0185763d54a1cbe23e88881a4f18417a579828bd84920ee00",
+      "retained_before": "2ad5c6cf83c127c0185763d54a1cbe23e88881a4f18417a579828bd84920ee00"
+    },
+    "Thirdparty/g2o/g2o/core/block_solver.h": {
+      "sha256": "b1fc8773f3daab5b427cb00fe773314eb929d5d70b9a80386439c50378d14e62",
+      "retained_before": "b1fc8773f3daab5b427cb00fe773314eb929d5d70b9a80386439c50378d14e62"
+    },
+    "Thirdparty/g2o/g2o/core/block_solver.hpp": {
+      "sha256": "c116d830e33b0e102d5038fb8b47a3d8e19933a89df228ea30b36bb0ad1783e2",
+      "retained_before": "c116d830e33b0e102d5038fb8b47a3d8e19933a89df228ea30b36bb0ad1783e2"
+    },
+    "Thirdparty/g2o/g2o/core/cache.cpp": {
+      "sha256": "b56ea71ea2917bc363f6e19a89427f97e1322dac54bff9050cd8ad353d07109d",
+      "retained_before": "b56ea71ea2917bc363f6e19a89427f97e1322dac54bff9050cd8ad353d07109d"
+    },
+    "Thirdparty/g2o/g2o/core/cache.h": {
+      "sha256": "ced3fc76344e9b473921b8a59a5e24224ceacc85bfd74d1a520d7c1c0abd237a",
+      "retained_before": "ced3fc76344e9b473921b8a59a5e24224ceacc85bfd74d1a520d7c1c0abd237a"
+    },
+    "Thirdparty/g2o/g2o/core/creators.h": {
+      "sha256": "088d1ee05cec671d9f3b81829f2ddd382454b9845becdeb8dc80b9f09d4aa6f0",
+      "retained_before": "088d1ee05cec671d9f3b81829f2ddd382454b9845becdeb8dc80b9f09d4aa6f0"
+    },
+    "Thirdparty/g2o/g2o/core/eigen_types.h": {
+      "sha256": "432728904e29867e299e78232cbe74f1f7f86a7997f5091f46f177a475b166dd",
+      "retained_before": "432728904e29867e299e78232cbe74f1f7f86a7997f5091f46f177a475b166dd"
+    },
+    "Thirdparty/g2o/g2o/core/estimate_propagator.cpp": {
+      "sha256": "e0030bb8e4e5c16b46042b3110ab81be977b7a60f89695fed6b767bc443d49c4",
+      "retained_before": "e0030bb8e4e5c16b46042b3110ab81be977b7a60f89695fed6b767bc443d49c4"
+    },
+    "Thirdparty/g2o/g2o/core/estimate_propagator.h": {
+      "sha256": "c505092c5abc81ab51ac253e64155beafb0e4328ca2c49cefad7417d6d0ebedc",
+      "retained_before": "c505092c5abc81ab51ac253e64155beafb0e4328ca2c49cefad7417d6d0ebedc"
+    },
+    "Thirdparty/g2o/g2o/core/factory.cpp": {
+      "sha256": "9cd6fa8e4855a480687d472a59f55b71280b8a6bf45990ba8f29ef73279571ee",
+      "retained_before": "9cd6fa8e4855a480687d472a59f55b71280b8a6bf45990ba8f29ef73279571ee"
+    },
+    "Thirdparty/g2o/g2o/core/factory.h": {
+      "sha256": "4480ed5fcb63b874a2deaffc4b2636f4b15515d62491b68d4685d6085a66851f",
+      "retained_before": "4480ed5fcb63b874a2deaffc4b2636f4b15515d62491b68d4685d6085a66851f"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_dijkstra.cpp": {
+      "sha256": "644cca13e652910dfff391390f1302d6e76346d748244463a89017adb3e8cf5a",
+      "retained_before": "644cca13e652910dfff391390f1302d6e76346d748244463a89017adb3e8cf5a"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_dijkstra.h": {
+      "sha256": "887732cf4670dc1afa85a26a9d7a35b140a76420bb867a1e1588e3fefef9d462",
+      "retained_before": "887732cf4670dc1afa85a26a9d7a35b140a76420bb867a1e1588e3fefef9d462"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_graph.cpp": {
+      "sha256": "48c2f8ec32d27087dc674e0ac114de7a1ec09301672acb7b268139c840326ff6",
+      "retained_before": "48c2f8ec32d27087dc674e0ac114de7a1ec09301672acb7b268139c840326ff6"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_graph.h": {
+      "sha256": "d380dfc69bd7ddfad3144a2d0273f38be853fa874a336185f22f598a992f85e1",
+      "retained_before": "d380dfc69bd7ddfad3144a2d0273f38be853fa874a336185f22f598a992f85e1"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_graph_action.cpp": {
+      "sha256": "15a7ca98d609ae2139a26afe1331da4b7061f566405f04d446bf4b7d7e14fdd4",
+      "retained_before": "15a7ca98d609ae2139a26afe1331da4b7061f566405f04d446bf4b7d7e14fdd4"
+    },
+    "Thirdparty/g2o/g2o/core/hyper_graph_action.h": {
+      "sha256": "0cd8d5e93a17d4ae542b1de8e97ab99e6397b31b6092486c8f5650d22b18372f",
+      "retained_before": "0cd8d5e93a17d4ae542b1de8e97ab99e6397b31b6092486c8f5650d22b18372f"
+    },
+    "Thirdparty/g2o/g2o/core/jacobian_workspace.cpp": {
+      "sha256": "4e584d846ba703367ff23ce2ebc25317eb252e1276b13ce7f5b6809a07629248",
+      "retained_before": "4e584d846ba703367ff23ce2ebc25317eb252e1276b13ce7f5b6809a07629248"
+    },
+    "Thirdparty/g2o/g2o/core/jacobian_workspace.h": {
+      "sha256": "9331005ab4977e9db1573566d18084a4ef22904a7fff6cc1255407862d666999",
+      "retained_before": "9331005ab4977e9db1573566d18084a4ef22904a7fff6cc1255407862d666999"
+    },
+    "Thirdparty/g2o/g2o/core/linear_solver.h": {
+      "sha256": "daba4a76dd02479b5d023895342bf84cb1e2d87e56a339e6100bc8b08c530e96",
+      "retained_before": "daba4a76dd02479b5d023895342bf84cb1e2d87e56a339e6100bc8b08c530e96"
+    },
+    "Thirdparty/g2o/g2o/core/marginal_covariance_cholesky.cpp": {
+      "sha256": "4a16347ff94c5a2dacf12cd23585b891bd8edb88143ecd1bdea953328007f86b",
+      "retained_before": "4a16347ff94c5a2dacf12cd23585b891bd8edb88143ecd1bdea953328007f86b"
+    },
+    "Thirdparty/g2o/g2o/core/marginal_covariance_cholesky.h": {
+      "sha256": "2fdd57ef092fe0972f0fd2c46aac3f81a3401da94f4a3d71e39abeb4cd7b47d5",
+      "retained_before": "2fdd57ef092fe0972f0fd2c46aac3f81a3401da94f4a3d71e39abeb4cd7b47d5"
+    },
+    "Thirdparty/g2o/g2o/core/matrix_operations.h": {
+      "sha256": "5ecff263b6d059bd0c463296a81450e15859719a36b6a40d3ce36c80eddea62a",
+      "retained_before": "5ecff263b6d059bd0c463296a81450e15859719a36b6a40d3ce36c80eddea62a"
+    },
+    "Thirdparty/g2o/g2o/core/matrix_structure.cpp": {
+      "sha256": "4f891121352cd2a48608205a35ebe9fa47b12bbea1eb426218ab78af72baa392",
+      "retained_before": "4f891121352cd2a48608205a35ebe9fa47b12bbea1eb426218ab78af72baa392"
+    },
+    "Thirdparty/g2o/g2o/core/matrix_structure.h": {
+      "sha256": "7449961a961bdaa9e38ad60766fc1d28f08f27c93e2b80847647b5f30c614e1c",
+      "retained_before": "7449961a961bdaa9e38ad60766fc1d28f08f27c93e2b80847647b5f30c614e1c"
+    },
+    "Thirdparty/g2o/g2o/core/openmp_mutex.h": {
+      "sha256": "8d18c12cef99f6ab5f371cd55bd02d49447e2c3ae857616c45bfef46bd97677c",
+      "retained_before": "8d18c12cef99f6ab5f371cd55bd02d49447e2c3ae857616c45bfef46bd97677c"
+    },
+    "Thirdparty/g2o/g2o/core/optimizable_graph.cpp": {
+      "sha256": "598c095b6a33b590e585ab3f5da7583bddc9b173ff50db9057399814aa2362a3",
+      "retained_before": "598c095b6a33b590e585ab3f5da7583bddc9b173ff50db9057399814aa2362a3"
+    },
+    "Thirdparty/g2o/g2o/core/optimizable_graph.h": {
+      "sha256": "33d490f9188ee4fe87e8fa098725d846c995fdce984b3c62ce3d3541142b3cb9",
+      "retained_before": "33d490f9188ee4fe87e8fa098725d846c995fdce984b3c62ce3d3541142b3cb9"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm.cpp": {
+      "sha256": "9728406db4c4a978d14fc9711a7ca4ec6976842948229f186119c29b160ba5be",
+      "retained_before": "9728406db4c4a978d14fc9711a7ca4ec6976842948229f186119c29b160ba5be"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm.h": {
+      "sha256": "02052734bf06d852f384bf3ed77885869a2a78fd0b47084eef37ad206333396c",
+      "retained_before": "02052734bf06d852f384bf3ed77885869a2a78fd0b47084eef37ad206333396c"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_dogleg.cpp": {
+      "sha256": "78b9b6dcc1ab5cc3c85b322464ca57a01c558a3d5f9f06a081883a56f63b5085",
+      "retained_before": "78b9b6dcc1ab5cc3c85b322464ca57a01c558a3d5f9f06a081883a56f63b5085"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_dogleg.h": {
+      "sha256": "0dc449f56883423afbfb3b8642f468fce48a40acbb8820f9c5538e7fad182bfa",
+      "retained_before": "0dc449f56883423afbfb3b8642f468fce48a40acbb8820f9c5538e7fad182bfa"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_factory.cpp": {
+      "sha256": "eed7263667a62745ccab3248529c9a3bc4476f03e11b27b5766d8f448bfd2be6",
+      "retained_before": "eed7263667a62745ccab3248529c9a3bc4476f03e11b27b5766d8f448bfd2be6"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_factory.h": {
+      "sha256": "1185c8a54f7b6c6f9f008b8a7c0817d08cab2f23a8236472072b31ab23b3d25e",
+      "retained_before": "1185c8a54f7b6c6f9f008b8a7c0817d08cab2f23a8236472072b31ab23b3d25e"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_gauss_newton.cpp": {
+      "sha256": "a156640b7924ae512bc457ded47df18b7f3995a6c08adf7c8086be59668e95e8",
+      "retained_before": "a156640b7924ae512bc457ded47df18b7f3995a6c08adf7c8086be59668e95e8"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_gauss_newton.h": {
+      "sha256": "bd6e094f767856c23543ed2dfd7ec6a5bf14464e2275e9a7e42f4d673e3a26bd",
+      "retained_before": "bd6e094f767856c23543ed2dfd7ec6a5bf14464e2275e9a7e42f4d673e3a26bd"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.cpp": {
+      "sha256": "3fb6602166185974f1c23df3a50c08ced20d9f5e3905932992088a42870a77db",
+      "retained_before": "3fb6602166185974f1c23df3a50c08ced20d9f5e3905932992088a42870a77db"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_levenberg.h": {
+      "sha256": "1e204d4ef75c4e96e3ca86911c5a97f3869504237db6607b68628137228ea746",
+      "retained_before": "1e204d4ef75c4e96e3ca86911c5a97f3869504237db6607b68628137228ea746"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_property.h": {
+      "sha256": "7216b7216ea551727e6c868a664242f509938a731fafd073cfb96087242b6c79",
+      "retained_before": "7216b7216ea551727e6c868a664242f509938a731fafd073cfb96087242b6c79"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.cpp": {
+      "sha256": "582c8fc93d7d0736bd542ee07e29f1bec1ad220e78a27e158a76437654db3d62",
+      "retained_before": "582c8fc93d7d0736bd542ee07e29f1bec1ad220e78a27e158a76437654db3d62"
+    },
+    "Thirdparty/g2o/g2o/core/optimization_algorithm_with_hessian.h": {
+      "sha256": "5157bdd34535b484886502ce23b663a3e75242c218b34f505452db4e629cc778",
+      "retained_before": "5157bdd34535b484886502ce23b663a3e75242c218b34f505452db4e629cc778"
+    },
+    "Thirdparty/g2o/g2o/core/parameter.cpp": {
+      "sha256": "98b9724e1416eacd8b61427e641c22d5c22af906a75c4f892d8960479c158dc6",
+      "retained_before": "98b9724e1416eacd8b61427e641c22d5c22af906a75c4f892d8960479c158dc6"
+    },
+    "Thirdparty/g2o/g2o/core/parameter.h": {
+      "sha256": "52c8157d37af498b3bf4f9e013ee1fc1cb82bc307c8d80edd7ee1c4ecc3dc800",
+      "retained_before": "52c8157d37af498b3bf4f9e013ee1fc1cb82bc307c8d80edd7ee1c4ecc3dc800"
+    },
+    "Thirdparty/g2o/g2o/core/parameter_container.cpp": {
+      "sha256": "5a7135de3f3bac46cf5ec73e3133d0ec343b178ecf7e9218c7e0471cb9a9af37",
+      "retained_before": "5a7135de3f3bac46cf5ec73e3133d0ec343b178ecf7e9218c7e0471cb9a9af37"
+    },
+    "Thirdparty/g2o/g2o/core/parameter_container.h": {
+      "sha256": "3eddac4f4d10b74aab72e8bfda9eb156458a3f8ad490300d8bcb50ac876db83b",
+      "retained_before": "3eddac4f4d10b74aab72e8bfda9eb156458a3f8ad490300d8bcb50ac876db83b"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel.cpp": {
+      "sha256": "46869c0a2dd02e13af179901f0873008135cf4599c7f98f880f2cc39039689f5",
+      "retained_before": "46869c0a2dd02e13af179901f0873008135cf4599c7f98f880f2cc39039689f5"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel.h": {
+      "sha256": "5f7f41e98bad0282adfe605c74dc80a7b9d82a6fd9da9df9c7b745f4dddb71eb",
+      "retained_before": "5f7f41e98bad0282adfe605c74dc80a7b9d82a6fd9da9df9c7b745f4dddb71eb"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel_factory.cpp": {
+      "sha256": "fd7d5ca70c5aa996ff40e8147381f353524fc71ac5d2d7d0851d181f5a9aad19",
+      "retained_before": "fd7d5ca70c5aa996ff40e8147381f353524fc71ac5d2d7d0851d181f5a9aad19"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel_factory.h": {
+      "sha256": "66c17fdd265735db018c8d2bfa4db0699646a918a92506c16e167a0fad405979",
+      "retained_before": "66c17fdd265735db018c8d2bfa4db0699646a918a92506c16e167a0fad405979"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel_impl.cpp": {
+      "sha256": "50c11121f7d83bca88126c9dca0891ae3fd6e46a4cb123a88434400af06d4d86",
+      "retained_before": "50c11121f7d83bca88126c9dca0891ae3fd6e46a4cb123a88434400af06d4d86"
+    },
+    "Thirdparty/g2o/g2o/core/robust_kernel_impl.h": {
+      "sha256": "4a18d357ab048afb84bfa12edab57651d57b69faa08dc4e5d988f0f2307aca5a",
+      "retained_before": "4a18d357ab048afb84bfa12edab57651d57b69faa08dc4e5d988f0f2307aca5a"
+    },
+    "Thirdparty/g2o/g2o/core/solver.cpp": {
+      "sha256": "458d0428879349c568e70f792de5143318e152bff3fb9f889d15e4e47a388d61",
+      "retained_before": "458d0428879349c568e70f792de5143318e152bff3fb9f889d15e4e47a388d61"
+    },
+    "Thirdparty/g2o/g2o/core/solver.h": {
+      "sha256": "1f86a87b8e54b08693f147e9d72eaf70822ff57c4dfa89c67f62759c1868b7e3",
+      "retained_before": "1f86a87b8e54b08693f147e9d72eaf70822ff57c4dfa89c67f62759c1868b7e3"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_block_matrix.h": {
+      "sha256": "d94b94d2502a4e59ced25eaf206af2fe48642b9aea4a2d7806672c895950f1f8",
+      "retained_before": "d94b94d2502a4e59ced25eaf206af2fe48642b9aea4a2d7806672c895950f1f8"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_block_matrix.hpp": {
+      "sha256": "6a7ad215af2dc318c502a7ee1f7208a7b44ae1b3cce5b20f0bd6e0d82fedb8d2",
+      "retained_before": "6a7ad215af2dc318c502a7ee1f7208a7b44ae1b3cce5b20f0bd6e0d82fedb8d2"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_block_matrix_ccs.h": {
+      "sha256": "00404f65fab8f63fd0572fac7fed331bd50b1a8e9fc9e35b07ef5ac9d882ba81",
+      "retained_before": "00404f65fab8f63fd0572fac7fed331bd50b1a8e9fc9e35b07ef5ac9d882ba81"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_block_matrix_diagonal.h": {
+      "sha256": "4d8f26608e144758e08813327b10dfb753fda697cf7295b532e08e4e4e6fbeb1",
+      "retained_before": "4d8f26608e144758e08813327b10dfb753fda697cf7295b532e08e4e4e6fbeb1"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_block_matrix_test.cpp": {
+      "sha256": "ba5007290b17b083f4f36efd698e47f6d784c294ace7ade0a2340e23fa770f8b",
+      "retained_before": "ba5007290b17b083f4f36efd698e47f6d784c294ace7ade0a2340e23fa770f8b"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_optimizer.cpp": {
+      "sha256": "47a50878610f0fb4b79e81f6d73855e4ee895b07994949147e3857f5f7b57704",
+      "retained_before": "47a50878610f0fb4b79e81f6d73855e4ee895b07994949147e3857f5f7b57704"
+    },
+    "Thirdparty/g2o/g2o/core/sparse_optimizer.h": {
+      "sha256": "b4d54554b70c75e44be58aad7bf40f0a605c71b4f1dda5d99ea30470d15d8fbb",
+      "retained_before": "b4d54554b70c75e44be58aad7bf40f0a605c71b4f1dda5d99ea30470d15d8fbb"
+    },
+    "Thirdparty/g2o/g2o/solvers/linear_solver_dense.h": {
+      "sha256": "6c13ff1b2b31247ad265b0e00b8a1b2633c56b5b7108fa538d641753253b2d64",
+      "retained_before": "6c13ff1b2b31247ad265b0e00b8a1b2633c56b5b7108fa538d641753253b2d64"
+    },
+    "Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h": {
+      "sha256": "473a35f66199f4faa8633771c5281f5fd0362bd1686d76722672df8cbf100ab0",
+      "retained_before": "473a35f66199f4faa8633771c5281f5fd0362bd1686d76722672df8cbf100ab0"
+    },
+    "Thirdparty/g2o/g2o/stuff/color_macros.h": {
+      "sha256": "c25af9121c2cf9629f65e5e0decafdc89e6d25f2d66f2a83837e58140431ae96",
+      "retained_before": "c25af9121c2cf9629f65e5e0decafdc89e6d25f2d66f2a83837e58140431ae96"
+    },
+    "Thirdparty/g2o/g2o/stuff/macros.h": {
+      "sha256": "b1503df5cf8f52b876bb8b48e92ba2faca12a15d7c63dae2ad1a008a19e3822f",
+      "retained_before": "b1503df5cf8f52b876bb8b48e92ba2faca12a15d7c63dae2ad1a008a19e3822f"
+    },
+    "Thirdparty/g2o/g2o/stuff/misc.h": {
+      "sha256": "0d406a253a9c19fa973c5da6bc44e5a44a2bafc84005a579a81aaa19330f6730",
+      "retained_before": "0d406a253a9c19fa973c5da6bc44e5a44a2bafc84005a579a81aaa19330f6730"
+    },
+    "Thirdparty/g2o/g2o/stuff/os_specific.c": {
+      "sha256": "89857285377df00d453521ee750b244ca8467c67fd9d19b061b837a6fe4b27ca",
+      "retained_before": "89857285377df00d453521ee750b244ca8467c67fd9d19b061b837a6fe4b27ca"
+    },
+    "Thirdparty/g2o/g2o/stuff/os_specific.h": {
+      "sha256": "62d52648bbcbc0846a858ef20be1c2a14601c80fa5e2593caf2975e6e866bcce",
+      "retained_before": "62d52648bbcbc0846a858ef20be1c2a14601c80fa5e2593caf2975e6e866bcce"
+    },
+    "Thirdparty/g2o/g2o/stuff/property.cpp": {
+      "sha256": "5fb388181df699ca80e5f8c111b61cf2efcac78b6c7476262a01a900e34ad679",
+      "retained_before": "5fb388181df699ca80e5f8c111b61cf2efcac78b6c7476262a01a900e34ad679"
+    },
+    "Thirdparty/g2o/g2o/stuff/property.h": {
+      "sha256": "4a77e85e1aaf7c74d8ee0ab5deb27a73e1f5831f46f88e0493792f56950e1a03",
+      "retained_before": "4a77e85e1aaf7c74d8ee0ab5deb27a73e1f5831f46f88e0493792f56950e1a03"
+    },
+    "Thirdparty/g2o/g2o/stuff/string_tools.cpp": {
+      "sha256": "a5338dfc19a763e2e6aaa5edb25156597aaeacc6b0f84920417debe9b85b5076",
+      "retained_before": "a5338dfc19a763e2e6aaa5edb25156597aaeacc6b0f84920417debe9b85b5076"
+    },
+    "Thirdparty/g2o/g2o/stuff/string_tools.h": {
+      "sha256": "c6c50ee2f4b881491e8912c8d09aa30e7b5cd06c0e26282c17b3acbf962d49e3",
+      "retained_before": "c6c50ee2f4b881491e8912c8d09aa30e7b5cd06c0e26282c17b3acbf962d49e3"
+    },
+    "Thirdparty/g2o/g2o/stuff/timeutil.cpp": {
+      "sha256": "caabc0fcc8da3de3766c3a5477636f87769a68f46b51e910f5253033d3118b2f",
+      "retained_before": "caabc0fcc8da3de3766c3a5477636f87769a68f46b51e910f5253033d3118b2f"
+    },
+    "Thirdparty/g2o/g2o/stuff/timeutil.h": {
+      "sha256": "313351bd4895e53ad7d36e96167cf7e0d58656d7dd3795e6278b69368d39649b",
+      "retained_before": "313351bd4895e53ad7d36e96167cf7e0d58656d7dd3795e6278b69368d39649b"
+    },
+    "Thirdparty/g2o/g2o/types/se3_ops.h": {
+      "sha256": "22ec6de9cd2da920e7a75f8aad7d66faef4a963eb5243528f4ce46dd87853298",
+      "retained_before": "22ec6de9cd2da920e7a75f8aad7d66faef4a963eb5243528f4ce46dd87853298"
+    },
+    "Thirdparty/g2o/g2o/types/se3_ops.hpp": {
+      "sha256": "e63fc280ca2ce9758906936fa8c745c503f9b1aef787073a398574f2836c8bab",
+      "retained_before": "e63fc280ca2ce9758906936fa8c745c503f9b1aef787073a398574f2836c8bab"
+    },
+    "Thirdparty/g2o/g2o/types/se3mat.cpp": {
+      "sha256": "2532acfd56a29c44ad32de330c956dfb4f92bb7ca5f12441b25126f810707bfc",
+      "retained_before": "2532acfd56a29c44ad32de330c956dfb4f92bb7ca5f12441b25126f810707bfc"
+    },
+    "Thirdparty/g2o/g2o/types/se3mat.h": {
+      "sha256": "c464e57c3217f436e851331a8b12f111b8191def56ee8a7b0a4d53570452cc3a",
+      "retained_before": "c464e57c3217f436e851331a8b12f111b8191def56ee8a7b0a4d53570452cc3a"
+    },
+    "Thirdparty/g2o/g2o/types/se3quat.h": {
+      "sha256": "c70d6bf4998f013e27af4ef1aca727c2d82a6fe14303626c4241a0fa79227d34",
+      "retained_before": "c70d6bf4998f013e27af4ef1aca727c2d82a6fe14303626c4241a0fa79227d34"
+    },
+    "Thirdparty/g2o/g2o/types/sim3.h": {
+      "sha256": "b467c49cdac02a89f798c683bc69b5f9d3224627d25a4f0050f5da0f9c8600bf",
+      "retained_before": "b467c49cdac02a89f798c683bc69b5f9d3224627d25a4f0050f5da0f9c8600bf"
+    },
+    "Thirdparty/g2o/g2o/types/types_sba.cpp": {
+      "sha256": "3f65c3c68445934fdaa2516a8792ef6687b3a33da7016f24ac117a12631e6bd3",
+      "retained_before": "3f65c3c68445934fdaa2516a8792ef6687b3a33da7016f24ac117a12631e6bd3"
+    },
+    "Thirdparty/g2o/g2o/types/types_sba.h": {
+      "sha256": "60ff3c3c64790068d0ec2f9f924884cbe33d69887a868ad742423bf1794c79fa",
+      "retained_before": "60ff3c3c64790068d0ec2f9f924884cbe33d69887a868ad742423bf1794c79fa"
+    },
+    "Thirdparty/g2o/g2o/types/types_seven_dof_expmap.cpp": {
+      "sha256": "12176063ab7c12cdd60114ace7471ad5a1d3f9691b9828208ee372b2ac94ec44",
+      "retained_before": "12176063ab7c12cdd60114ace7471ad5a1d3f9691b9828208ee372b2ac94ec44"
+    },
+    "Thirdparty/g2o/g2o/types/types_seven_dof_expmap.h": {
+      "sha256": "896b8e38ee485c7cec2500f46480ddd86a7be773adf26b37e7b909a9b3e4df22",
+      "retained_before": "896b8e38ee485c7cec2500f46480ddd86a7be773adf26b37e7b909a9b3e4df22"
+    },
+    "Thirdparty/g2o/g2o/types/types_six_dof_expmap.cpp": {
+      "sha256": "c9bc7eaf98ab4d8b83acaf801c518bb214d749055dd4e0f9ac9ed0b11f6cc753",
+      "retained_before": "c9bc7eaf98ab4d8b83acaf801c518bb214d749055dd4e0f9ac9ed0b11f6cc753"
+    },
+    "Thirdparty/g2o/g2o/types/types_six_dof_expmap.h": {
+      "sha256": "d2a5f69bcd14cb9cebcc9e49b67f57415548d931f6c22bb4b7e441c324093372",
+      "retained_before": "d2a5f69bcd14cb9cebcc9e49b67f57415548d931f6c22bb4b7e441c324093372"
+    },
+    "Thirdparty/g2o/license-bsd.txt": {
+      "sha256": "3e5e395274f90ed45ce71ceef986de4c9ac1df6d296ec16f066feaf7916a195a",
+      "retained_before": "3e5e395274f90ed45ce71ceef986de4c9ac1df6d296ec16f066feaf7916a195a"
+    },
+    "Thirdparty/g2o/README.txt": {
+      "sha256": "096d45bbac4bce5f1e5d21b14e2a6afda36b2024311bef2f7c41a9c3bfafeaf0",
+      "retained_before": "096d45bbac4bce5f1e5d21b14e2a6afda36b2024311bef2f7c41a9c3bfafeaf0"
+    },
+    "Thirdparty/Sophus/.clang-format": {
+      "sha256": "f9340ef282eab96a631c800c1d87c4fba1f1195bf4805af13ce08a59f1c303d0",
+      "retained_before": "f9340ef282eab96a631c800c1d87c4fba1f1195bf4805af13ce08a59f1c303d0"
+    },
+    "Thirdparty/Sophus/.gitignore": {
+      "sha256": "47ca6e3ec66889266a009c37166f52902c90020850764f78acb26e28114af389",
+      "retained_before": "47ca6e3ec66889266a009c37166f52902c90020850764f78acb26e28114af389"
+    },
+    "Thirdparty/Sophus/.travis.yml": {
+      "sha256": "f63b06e27134c43a45a49f1ba5874856f18f679c77990bc5c3b73f5f2ea661e2",
+      "retained_before": "f63b06e27134c43a45a49f1ba5874856f18f679c77990bc5c3b73f5f2ea661e2"
+    },
+    "Thirdparty/Sophus/appveyor.yml": {
+      "sha256": "7ae12cbd22904cbfda4e34664ca9b0e2fd49855bb64f21d8524adc5c4a52d778",
+      "retained_before": "7ae12cbd22904cbfda4e34664ca9b0e2fd49855bb64f21d8524adc5c4a52d778"
+    },
+    "Thirdparty/Sophus/CMakeLists.txt": {
+      "sha256": "55e358a8e553e83e1f92666ef00426d6f32e133fd3e9c7b5a2f0a38954ebf58b",
+      "retained_before": "55e358a8e553e83e1f92666ef00426d6f32e133fd3e9c7b5a2f0a38954ebf58b"
+    },
+    "Thirdparty/Sophus/doxyrest-config.lua": {
+      "sha256": "875ce414b0d9b71cca4f56a578ab3b364f0dda8f481e047f41147f733cb46f65",
+      "retained_before": "875ce414b0d9b71cca4f56a578ab3b364f0dda8f481e047f41147f733cb46f65"
+    },
+    "Thirdparty/Sophus/examples/CMakeLists.txt": {
+      "sha256": "93f5c57af8a30bc16740df96bdc4852a55b2f8c5a556db67f5e8991cc38c6c65",
+      "retained_before": "93f5c57af8a30bc16740df96bdc4852a55b2f8c5a556db67f5e8991cc38c6c65"
+    },
+    "Thirdparty/Sophus/examples/HelloSO3.cpp": {
+      "sha256": "64eca135e0742e62aa968cbf72f0202253f15735a12496050102c4b0abb07120",
+      "retained_before": "64eca135e0742e62aa968cbf72f0202253f15735a12496050102c4b0abb07120"
+    },
+    "Thirdparty/Sophus/LICENSE.txt": {
+      "sha256": "ea4a1526f8a00c651d2303dc97b999200840e8f5fd891f689dd3103f2247149a",
+      "retained_before": "ea4a1526f8a00c651d2303dc97b999200840e8f5fd891f689dd3103f2247149a"
+    },
+    "Thirdparty/Sophus/make_docs.sh": {
+      "sha256": "45d4e85fd48371915fe2b69cac231073d1cbe8f3ed60e937e85eb97bd988be87",
+      "retained_before": "45d4e85fd48371915fe2b69cac231073d1cbe8f3ed60e937e85eb97bd988be87"
+    },
+    "Thirdparty/Sophus/package.xml": {
+      "sha256": "f8d43f2dfc024521231405c7fd241876ba230c81bc73ce209d1ff6627d8c5b69",
+      "retained_before": "f8d43f2dfc024521231405c7fd241876ba230c81bc73ce209d1ff6627d8c5b69"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/Se2_Dx_exp_x.cpp": {
+      "sha256": "205933196a84270c0d56f96b452285ba6a10e6560b46416d94f67b89ab050706",
+      "retained_before": "205933196a84270c0d56f96b452285ba6a10e6560b46416d94f67b89ab050706"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/Se2_Dx_this_mul_exp_x_at_0.cpp": {
+      "sha256": "7064440c695aec8a45b397bf53dfda1fe0cca9a00d5bc699c3a6d6df498c98c5",
+      "retained_before": "7064440c695aec8a45b397bf53dfda1fe0cca9a00d5bc699c3a6d6df498c98c5"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/Se3_Dx_exp_x.cpp": {
+      "sha256": "05b0a7e68d024f2d73f03a2cdd226f1363d96c2f5cfcbb1e69fc6a389fd9d72a",
+      "retained_before": "05b0a7e68d024f2d73f03a2cdd226f1363d96c2f5cfcbb1e69fc6a389fd9d72a"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/Se3_Dx_this_mul_exp_x_at_0.cpp": {
+      "sha256": "6d8cd37a7e5c9492e630ab6094cbedb2bfebfb537e595a49d847defdd2eda2e2",
+      "retained_before": "6d8cd37a7e5c9492e630ab6094cbedb2bfebfb537e595a49d847defdd2eda2e2"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/So2_Dx_exp_x.cpp": {
+      "sha256": "901103dc0f82b8af07297d41f6d85e662b22b5350381544f8e2799feaa983381",
+      "retained_before": "901103dc0f82b8af07297d41f6d85e662b22b5350381544f8e2799feaa983381"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/So2_Dx_this_mul_exp_x_at_0.cpp": {
+      "sha256": "b41a948a8c746efc6611aac81872b27c66c137414f29e39b01e34fa03df8340d",
+      "retained_before": "b41a948a8c746efc6611aac81872b27c66c137414f29e39b01e34fa03df8340d"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/So3_Dx_exp_x.cpp": {
+      "sha256": "539296b3caa77ca9da8f3ffc06866426eee29a417bad5520d17cf837b95702f6",
+      "retained_before": "539296b3caa77ca9da8f3ffc06866426eee29a417bad5520d17cf837b95702f6"
+    },
+    "Thirdparty/Sophus/py/cpp_gencode/So3_Dx_this_mul_exp_x_at_0.cpp": {
+      "sha256": "0eb42bb7249f9b9e7e6a13b86e20a0c5bf152ce5c29606ee323a7fd9336e718a",
+      "retained_before": "0eb42bb7249f9b9e7e6a13b86e20a0c5bf152ce5c29606ee323a7fd9336e718a"
+    },
+    "Thirdparty/Sophus/py/run_tests.sh": {
+      "sha256": "11557e1f5c4517f2691364ced22edb106529665dad82a06cebdac4c044d5c44f",
+      "retained_before": "11557e1f5c4517f2691364ced22edb106529665dad82a06cebdac4c044d5c44f"
+    },
+    "Thirdparty/Sophus/py/sophus/__init__.py": {
+      "sha256": "9d06635e0ec87b6fb6fdb866c46ae3e832cf839d852e20332e1fe40acb3b5e2a",
+      "retained_before": "9d06635e0ec87b6fb6fdb866c46ae3e832cf839d852e20332e1fe40acb3b5e2a"
+    },
+    "Thirdparty/Sophus/py/sophus/complex.py": {
+      "sha256": "c676b83fc1dfeb6dafcf5b3ede707e6d67929e87ad167aa352e1fad2a5a776e4",
+      "retained_before": "c676b83fc1dfeb6dafcf5b3ede707e6d67929e87ad167aa352e1fad2a5a776e4"
+    },
+    "Thirdparty/Sophus/py/sophus/cse_codegen.py": {
+      "sha256": "11aabaa7ba47510081a3d983b1faddd2708abc5e8748ea62f8bab285b8795543",
+      "retained_before": "11aabaa7ba47510081a3d983b1faddd2708abc5e8748ea62f8bab285b8795543"
+    },
+    "Thirdparty/Sophus/py/sophus/dual_quaternion.py": {
+      "sha256": "9ea42b6a8b47b8dd21563c5198f2162b907549fee8bc2034fb20e74cb627a9e1",
+      "retained_before": "9ea42b6a8b47b8dd21563c5198f2162b907549fee8bc2034fb20e74cb627a9e1"
+    },
+    "Thirdparty/Sophus/py/sophus/matrix.py": {
+      "sha256": "1eb40b454b48bb923e1456a87330a36d8597a1a41e2d526b552ff6df3ab620d9",
+      "retained_before": "1eb40b454b48bb923e1456a87330a36d8597a1a41e2d526b552ff6df3ab620d9"
+    },
+    "Thirdparty/Sophus/py/sophus/quaternion.py": {
+      "sha256": "a84367aad633b513aeb0a2d531196f30fb76c35198729138d1d1512256c3c612",
+      "retained_before": "a84367aad633b513aeb0a2d531196f30fb76c35198729138d1d1512256c3c612"
+    },
+    "Thirdparty/Sophus/py/sophus/se2.py": {
+      "sha256": "43ba18d3a41398704700b3495cb16f37ad49e905221fb060d030447a59a57b2c",
+      "retained_before": "43ba18d3a41398704700b3495cb16f37ad49e905221fb060d030447a59a57b2c"
+    },
+    "Thirdparty/Sophus/py/sophus/se3.py": {
+      "sha256": "6ec052970a835f10b5590307b5805c25159a99434f26f92cb1922a75d61c7bc0",
+      "retained_before": "6ec052970a835f10b5590307b5805c25159a99434f26f92cb1922a75d61c7bc0"
+    },
+    "Thirdparty/Sophus/py/sophus/so2.py": {
+      "sha256": "74685223b3a69bf199e1a36c4c3b0f8196537fe05affc51fa1483e842819bc7f",
+      "retained_before": "74685223b3a69bf199e1a36c4c3b0f8196537fe05affc51fa1483e842819bc7f"
+    },
+    "Thirdparty/Sophus/py/sophus/so3.py": {
+      "sha256": "87d649a02a7277fc95610e303888a869b7b83d3285f20a562746b665786aa0bd",
+      "retained_before": "87d649a02a7277fc95610e303888a869b7b83d3285f20a562746b665786aa0bd"
+    },
+    "Thirdparty/Sophus/py/sophus/so3_codegen.py": {
+      "sha256": "4d12f924f8d958990bd5f04313eb7ca4900828addb6b61edb9988b2d927e93d7",
+      "retained_before": "4d12f924f8d958990bd5f04313eb7ca4900828addb6b61edb9988b2d927e93d7"
+    },
+    "Thirdparty/Sophus/README.rst": {
+      "sha256": "652f83ac54769e62eb957da118fe4dad05363fcf92ca20e080dafadded653a39",
+      "retained_before": "652f83ac54769e62eb957da118fe4dad05363fcf92ca20e080dafadded653a39"
+    },
+    "Thirdparty/Sophus/rst-dir/conf.py": {
+      "sha256": "2a8c8145601c9a87e142e27261d101476f18549572e03ed753e3b481855c63c0",
+      "retained_before": "2a8c8145601c9a87e142e27261d101476f18549572e03ed753e3b481855c63c0"
+    },
+    "Thirdparty/Sophus/rst-dir/page_index.rst": {
+      "sha256": "8277d9c91e2fadda23a41f4733dd40fd4b65a1e072adf3f89a35a9acffd5ec2e",
+      "retained_before": "8277d9c91e2fadda23a41f4733dd40fd4b65a1e072adf3f89a35a9acffd5ec2e"
+    },
+    "Thirdparty/Sophus/rst-dir/pysophus.rst": {
+      "sha256": "aba5e072da594ab47ab768e19e2291ff23bdeff6a92d4a183c04b2e91afcda88",
+      "retained_before": "aba5e072da594ab47ab768e19e2291ff23bdeff6a92d4a183c04b2e91afcda88"
+    },
+    "Thirdparty/Sophus/run_format.sh": {
+      "sha256": "6d2a6663918ee76e7eace2f529a77fc4bcdc88005199f833b1051a449318df52",
+      "retained_before": "6d2a6663918ee76e7eace2f529a77fc4bcdc88005199f833b1051a449318df52"
+    },
+    "Thirdparty/Sophus/scripts/install_docs_deps.sh": {
+      "sha256": "ab7b12741c7f17b7212bc0a90396f0754321b5d73fb04843c8f94e8205741d0e",
+      "retained_before": "ab7b12741c7f17b7212bc0a90396f0754321b5d73fb04843c8f94e8205741d0e"
+    },
+    "Thirdparty/Sophus/scripts/install_linux_deps.sh": {
+      "sha256": "0d08d97ac0be4c7fa5eb7cdf58737d1bd5fbc3a559f27f3e654a007d73c80fde",
+      "retained_before": "0d08d97ac0be4c7fa5eb7cdf58737d1bd5fbc3a559f27f3e654a007d73c80fde"
+    },
+    "Thirdparty/Sophus/scripts/install_osx_deps.sh": {
+      "sha256": "3105dd83881bd94da9fb8d440042202a0a47890730c1e5137c91373fd659889c",
+      "retained_before": "3105dd83881bd94da9fb8d440042202a0a47890730c1e5137c91373fd659889c"
+    },
+    "Thirdparty/Sophus/scripts/run_cpp_tests.sh": {
+      "sha256": "52e38c4f836d212b6ef243cbce87ca977aae4fecca1eb614143e04d6f40d06f6",
+      "retained_before": "52e38c4f836d212b6ef243cbce87ca977aae4fecca1eb614143e04d6f40d06f6"
+    },
+    "Thirdparty/Sophus/sophus/average.hpp": {
+      "sha256": "e53f380c837484d5966ab3f6e5752f905a6d3777f32657582e563ce4ce8a234e",
+      "retained_before": "e53f380c837484d5966ab3f6e5752f905a6d3777f32657582e563ce4ce8a234e"
+    },
+    "Thirdparty/Sophus/sophus/common.hpp": {
+      "sha256": "1e0b17756b810aa6d4368d8377eb43a41b85162b450669d477a8f1817b33fac5",
+      "retained_before": "1e0b17756b810aa6d4368d8377eb43a41b85162b450669d477a8f1817b33fac5"
+    },
+    "Thirdparty/Sophus/sophus/example_ensure_handler.cpp": {
+      "sha256": "f18e22b3b79e5bdb4f11db32dc3fc1a87da5415770af234c57406937524f4dd2",
+      "retained_before": "f18e22b3b79e5bdb4f11db32dc3fc1a87da5415770af234c57406937524f4dd2"
+    },
+    "Thirdparty/Sophus/sophus/formatstring.hpp": {
+      "sha256": "76c2a328b5dad8f7477418fa990b30c56ddde48482564c2499dd8bb72fd7491d",
+      "retained_before": "76c2a328b5dad8f7477418fa990b30c56ddde48482564c2499dd8bb72fd7491d"
+    },
+    "Thirdparty/Sophus/sophus/geometry.hpp": {
+      "sha256": "7bd5f4c3f5580b5f15b7117385926a2502f39aac822a58cea64af11354e306af",
+      "retained_before": "7bd5f4c3f5580b5f15b7117385926a2502f39aac822a58cea64af11354e306af"
+    },
+    "Thirdparty/Sophus/sophus/interpolate.hpp": {
+      "sha256": "0ef5c27d9190d73c51eef7dbdeef8bd65a8d204579a8a399d853bd700a2628e7",
+      "retained_before": "0ef5c27d9190d73c51eef7dbdeef8bd65a8d204579a8a399d853bd700a2628e7"
+    },
+    "Thirdparty/Sophus/sophus/interpolate_details.hpp": {
+      "sha256": "baf0fc7aeb338684182c809aee97ff03872a4a9a267309dc1a7e87f4aae6a6ab",
+      "retained_before": "baf0fc7aeb338684182c809aee97ff03872a4a9a267309dc1a7e87f4aae6a6ab"
+    },
+    "Thirdparty/Sophus/sophus/num_diff.hpp": {
+      "sha256": "64a32e6d425767a843a4939deedf43e719153d707dabccd35699261d2cdee517",
+      "retained_before": "64a32e6d425767a843a4939deedf43e719153d707dabccd35699261d2cdee517"
+    },
+    "Thirdparty/Sophus/sophus/rotation_matrix.hpp": {
+      "sha256": "c3ab583873ba0ab78d791c1e0a4c91935445e5edbb8a0aba1b52d9744511bff7",
+      "retained_before": "c3ab583873ba0ab78d791c1e0a4c91935445e5edbb8a0aba1b52d9744511bff7"
+    },
+    "Thirdparty/Sophus/sophus/rxso2.hpp": {
+      "sha256": "2f457d88bed12dfd42a8eb1f4c55acb25b10489321c7313af2c93345f2efbee9",
+      "retained_before": "2f457d88bed12dfd42a8eb1f4c55acb25b10489321c7313af2c93345f2efbee9"
+    },
+    "Thirdparty/Sophus/sophus/rxso3.hpp": {
+      "sha256": "90abcfc97f155c95522f583a8f94a9ee939f49139e78092e15cc5ce4eb9be8f9",
+      "retained_before": "90abcfc97f155c95522f583a8f94a9ee939f49139e78092e15cc5ce4eb9be8f9"
+    },
+    "Thirdparty/Sophus/sophus/se2.hpp": {
+      "sha256": "1ff61c4bd6ffee6e4b3c288a11f235cae5139654921e8e9e171604da975424a7",
+      "retained_before": "1ff61c4bd6ffee6e4b3c288a11f235cae5139654921e8e9e171604da975424a7"
+    },
+    "Thirdparty/Sophus/sophus/se3.hpp": {
+      "sha256": "49cd73c27df57b6202585f5a103758524b949da00441e15fb38a61ac3c8eb48e",
+      "retained_before": "49cd73c27df57b6202585f5a103758524b949da00441e15fb38a61ac3c8eb48e"
+    },
+    "Thirdparty/Sophus/sophus/sim2.hpp": {
+      "sha256": "d9b469f0c066fa3aea7f2deeaca45537354cb4a950275bf49d930278460b65b8",
+      "retained_before": "d9b469f0c066fa3aea7f2deeaca45537354cb4a950275bf49d930278460b65b8"
+    },
+    "Thirdparty/Sophus/sophus/sim3.hpp": {
+      "sha256": "998c9319c256a58347cb86be242226a8568902a958e90361c4a64a24a12e0e24",
+      "retained_before": "998c9319c256a58347cb86be242226a8568902a958e90361c4a64a24a12e0e24"
+    },
+    "Thirdparty/Sophus/sophus/sim_details.hpp": {
+      "sha256": "e7dce58b07ed63399bf91df9a7e9246a80b0c06df1d75fa5053c69358ee4d8d6",
+      "retained_before": "e7dce58b07ed63399bf91df9a7e9246a80b0c06df1d75fa5053c69358ee4d8d6"
+    },
+    "Thirdparty/Sophus/sophus/so2.hpp": {
+      "sha256": "c99360f74fab951003bd45ca5ee6b693e9532746ba09fc9e97caa581a59972d1",
+      "retained_before": "c99360f74fab951003bd45ca5ee6b693e9532746ba09fc9e97caa581a59972d1"
+    },
+    "Thirdparty/Sophus/sophus/so3.hpp": {
+      "sha256": "31e43007d0e659c8804d2cfe17ebe867b5836b85a314007e4fe49bcc173f590a",
+      "retained_before": "31e43007d0e659c8804d2cfe17ebe867b5836b85a314007e4fe49bcc173f590a"
+    },
+    "Thirdparty/Sophus/sophus/test_macros.hpp": {
+      "sha256": "fe4c7993f6da64c42c974adcf5fe3b92ddb605525aa277791d0a4f09470a484e",
+      "retained_before": "fe4c7993f6da64c42c974adcf5fe3b92ddb605525aa277791d0a4f09470a484e"
+    },
+    "Thirdparty/Sophus/sophus/types.hpp": {
+      "sha256": "6dde8555b1eaa7e0a8b61bf06b783e0e433afc8cd8d3abe6ea969f60c7f00128",
+      "retained_before": "6dde8555b1eaa7e0a8b61bf06b783e0e433afc8cd8d3abe6ea969f60c7f00128"
+    },
+    "Thirdparty/Sophus/sophus/velocities.hpp": {
+      "sha256": "f7d455bb11a10e359eadf62a0b7c21c44709592362654acbae209f3a59de41a9",
+      "retained_before": "f7d455bb11a10e359eadf62a0b7c21c44709592362654acbae209f3a59de41a9"
+    },
+    "Thirdparty/Sophus/SophusConfig.cmake.in": {
+      "sha256": "f32539864ee8b222f1dcaa65563305f25490ecb43506fba562819c4108533faf",
+      "retained_before": "f32539864ee8b222f1dcaa65563305f25490ecb43506fba562819c4108533faf"
+    },
+    "Thirdparty/Sophus/test/ceres/CMakeLists.txt": {
+      "sha256": "b70f07ee8053a580a80afdba6451323e1baba094bd2335fec7b0b28cdd955ce0",
+      "retained_before": "b70f07ee8053a580a80afdba6451323e1baba094bd2335fec7b0b28cdd955ce0"
+    },
+    "Thirdparty/Sophus/test/ceres/local_parameterization_se3.hpp": {
+      "sha256": "d58efb44e5ddfc5c2dff836659c559f68c25878da19d06b9b87be6e920dcd416",
+      "retained_before": "d58efb44e5ddfc5c2dff836659c559f68c25878da19d06b9b87be6e920dcd416"
+    },
+    "Thirdparty/Sophus/test/ceres/test_ceres_se3.cpp": {
+      "sha256": "4e87e37357f6e7f2ee64590c33645cc0e1929e239bf52895f87a5d1997b3d993",
+      "retained_before": "4e87e37357f6e7f2ee64590c33645cc0e1929e239bf52895f87a5d1997b3d993"
+    },
+    "Thirdparty/Sophus/test/CMakeLists.txt": {
+      "sha256": "5ead363753d154d4de39e1250012c214f0327934e372e151b39d5d49569113de",
+      "retained_before": "5ead363753d154d4de39e1250012c214f0327934e372e151b39d5d49569113de"
+    },
+    "Thirdparty/Sophus/test/core/CMakeLists.txt": {
+      "sha256": "ecd2ac848dd912e0301867f53b96a9bebfa13d4fe9f17e3d4ad52c895ee5cec0",
+      "retained_before": "ecd2ac848dd912e0301867f53b96a9bebfa13d4fe9f17e3d4ad52c895ee5cec0"
+    },
+    "Thirdparty/Sophus/test/core/test_common.cpp": {
+      "sha256": "aaf7ebaca031e5d91af5fbce94bdfc25ba69d0e8c80fa2f336788140fa6cc8dd",
+      "retained_before": "aaf7ebaca031e5d91af5fbce94bdfc25ba69d0e8c80fa2f336788140fa6cc8dd"
+    },
+    "Thirdparty/Sophus/test/core/test_geometry.cpp": {
+      "sha256": "d48d221309c5bcf563fcc6f3d4778db90a46b46009668e00eb9d8e48db8c7886",
+      "retained_before": "d48d221309c5bcf563fcc6f3d4778db90a46b46009668e00eb9d8e48db8c7886"
+    },
+    "Thirdparty/Sophus/test/core/test_rxso2.cpp": {
+      "sha256": "7e611eb4ac3ae3872cca62db0b725ba668c82d492e861764aaea82a35fe405b9",
+      "retained_before": "7e611eb4ac3ae3872cca62db0b725ba668c82d492e861764aaea82a35fe405b9"
+    },
+    "Thirdparty/Sophus/test/core/test_rxso3.cpp": {
+      "sha256": "4c82f6a0bc64d9b5c568a3d5df9f5588c44a48b5cc20ab9a1043250113109d0d",
+      "retained_before": "4c82f6a0bc64d9b5c568a3d5df9f5588c44a48b5cc20ab9a1043250113109d0d"
+    },
+    "Thirdparty/Sophus/test/core/test_se2.cpp": {
+      "sha256": "d882725929a6b91e843bdf12c05f48e5926a9534a475db4a75c7a601d7dcc783",
+      "retained_before": "d882725929a6b91e843bdf12c05f48e5926a9534a475db4a75c7a601d7dcc783"
+    },
+    "Thirdparty/Sophus/test/core/test_se3.cpp": {
+      "sha256": "be2f96786a03b4f2e347a40a0dcad2908c05e55b8c75e07b70af0c8402bbf98b",
+      "retained_before": "be2f96786a03b4f2e347a40a0dcad2908c05e55b8c75e07b70af0c8402bbf98b"
+    },
+    "Thirdparty/Sophus/test/core/test_sim2.cpp": {
+      "sha256": "8bbeb3c43f6e271b97735dd9be1c0c026a55d7d478112704dcbce10be420dcc4",
+      "retained_before": "8bbeb3c43f6e271b97735dd9be1c0c026a55d7d478112704dcbce10be420dcc4"
+    },
+    "Thirdparty/Sophus/test/core/test_sim3.cpp": {
+      "sha256": "0a4966db057ac1e9fe83f1e5395a596ab00a75e5e3e948b40db1020b2372a650",
+      "retained_before": "0a4966db057ac1e9fe83f1e5395a596ab00a75e5e3e948b40db1020b2372a650"
+    },
+    "Thirdparty/Sophus/test/core/test_so2.cpp": {
+      "sha256": "a605b78aa91c7ee456258b7dfeaa40898dcd620a36553ae64e9872043b9877da",
+      "retained_before": "a605b78aa91c7ee456258b7dfeaa40898dcd620a36553ae64e9872043b9877da"
+    },
+    "Thirdparty/Sophus/test/core/test_so3.cpp": {
+      "sha256": "38d25c21a231a941dd9594b9f618436f46aa21e1fa03ffb048d7d2ec3155db54",
+      "retained_before": "38d25c21a231a941dd9594b9f618436f46aa21e1fa03ffb048d7d2ec3155db54"
+    },
+    "Thirdparty/Sophus/test/core/test_velocities.cpp": {
+      "sha256": "68cf4e93666aac7c48030107587ffccf63587d8f79353eb480ac4342484c7817",
+      "retained_before": "68cf4e93666aac7c48030107587ffccf63587d8f79353eb480ac4342484c7817"
+    },
+    "Thirdparty/Sophus/test/core/tests.hpp": {
+      "sha256": "d96c1e152b98c75dbcc242f96666c46a672a8fdadd0c0e013e98d6b4a355bd9a",
+      "retained_before": "d96c1e152b98c75dbcc242f96666c46a672a8fdadd0c0e013e98d6b4a355bd9a"
+    }
+  }
+}

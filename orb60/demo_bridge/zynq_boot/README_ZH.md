@@ -24,7 +24,10 @@
 tail -20 /run/orb-demo-service.log
 ```
 
-PS 版本：`/opt/orb-demo/releases/demo_20261026_handover_quiescent`。
+当前板端启动修复版本：`/opt/orb-demo/releases/demo_20261101_startup_v1`。
+它沿用 `demo_20261026_handover_quiescent` 的全部二进制和标定，只更新
+`run_zynq.sh`；原版本保留。配套 boot 目录为
+`/opt/orb-demo/boot-20261101-startup-v1`，只修正 `start_camera.sh`。
 源码容量上限保留 1024 关键帧、30000 稀疏点。
 旧发布包及原 `/etc/init.d/zynq-slam` 保留；仅取消旧录像服务的 SysV 自动启动链接。
 安装前的 init、链接清单、地图指针、boot_id 和 SD 固件哈希保存在
@@ -33,3 +36,18 @@ PS 版本：`/opt/orb-demo/releases/demo_20261026_handover_quiescent`。
 恢复旧录像开机启动时，先停止 `orb-demo`，取消指向 `../init.d/orb-demo` 的 SysV
 链接，再依据上述备份恢复旧 `S99zynq-slam` / `K01zynq-slam` 链接。不得同时运行两者。
 安装脚本不主动重启；实际重启验收结果另保存在本机 `sd_autostart_acceptance.json`。
+
+## 2026-11-01：重复开机离线修复
+
+板上没有 RTC，开机时钟会回到 2021 年。旧脚本以时间戳加 PID 命名运行目录；
+两者在重复开机时都可能相同，`mkdir` 因旧目录已存在而退出，TCP5601–5604
+随之全部不可用。摄像头仍被识别，RK 的 FPGA 地址配置也正确。
+
+`run_zynq.sh` 改为 boot ID 加 `mktemp -d` 原子分配独立目录，不覆盖旧记录，
+不依赖 RK 或联网校时。`start_camera.sh` 按实际内核模块目录
+`/sys/module/videobuf2-vmalloc` 检查，避免服务重启时重复 insmod 退出。
+
+板端 BusyBox 下固定时间与 PID 的 32 次目录分配、一次服务重启、两次实际软件
+重启均通过；每次重启后检查了新的 boot ID、自动启动、摄像头处理记录增长和
+真实 FPGA 状态。固件、地图指针和原发布目录的校验保持一致。本轮未执行断电冷启动。
+完整日志和回退位置见 `orb60/build/demo_bridge/startup_repair_20261101/`。

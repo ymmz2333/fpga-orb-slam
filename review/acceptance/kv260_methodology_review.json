@@ -1,0 +1,149 @@
+{
+  "status": "COMPARISON_ONLY_NOT_CDC_WAIVER",
+  "reports": {
+    "dpu_only_baseline": {
+      "methodology.rpt": {
+        "path": "D:/pld/orb60/build/kv260_system/dpu_only_b4096_250_20261102_a/methodology.rpt",
+        "sha256": "2308f475671ac1e2c1fe137d1deb50e435e5113dd81e329197f7e027399e8493",
+        "findings": [
+          [
+            "TIMING-54",
+            "Critical Warning",
+            "2"
+          ],
+          [
+            "TIMING-9",
+            "Warning",
+            "1"
+          ],
+          [
+            "TIMING-46",
+            "Warning",
+            "1"
+          ],
+          [
+            "TIMING-47",
+            "Warning",
+            "2"
+          ],
+          [
+            "CLKC-56",
+            "Advisory",
+            "1"
+          ]
+        ]
+      },
+      "cdc.rpt": {
+        "path": "D:/pld/orb60/build/kv260_system/dpu_only_b4096_250_20261102_a/cdc.rpt",
+        "sha256": "f30eff01568a20a647ed33fb3405b13ebf01327056f1541bf7989de2c3d69e58",
+        "findings": [
+          [
+            "CDC-1",
+            "Critical",
+            "41"
+          ],
+          [
+            "CDC-3",
+            "Info",
+            "2"
+          ],
+          [
+            "CDC-4",
+            "Critical",
+            "4"
+          ],
+          [
+            "CDC-10",
+            "Critical",
+            "1"
+          ],
+          [
+            "CDC-11",
+            "Critical",
+            "2"
+          ],
+          [
+            "CDC-15",
+            "Warning",
+            "62"
+          ]
+        ]
+      }
+    },
+    "dpu_points": {
+      "methodology.rpt": {
+        "path": "D:/pld/orb60/build/kv260_system/dpu_points_250_150_20261103_a/methodology.rpt",
+        "sha256": "33c8813e882ceae1ba229629c893bce74b55ec1b51bf1e59793fc36c81e2c9e6",
+        "findings": [
+          [
+            "TIMING-54",
+            "Critical Warning",
+            "2"
+          ],
+          [
+            "TIMING-9",
+            "Warning",
+            "1"
+          ],
+          [
+            "TIMING-46",
+            "Warning",
+            "1"
+          ],
+          [
+            "TIMING-47",
+            "Warning",
+            "2"
+          ],
+          [
+            "ULMTCS-1",
+            "Warning",
+            "1"
+          ],
+          [
+            "CLKC-56",
+            "Advisory",
+            "1"
+          ]
+        ]
+      },
+      "cdc.rpt": {
+        "path": "D:/pld/orb60/build/kv260_system/dpu_points_250_150_20261103_a/cdc.rpt",
+        "sha256": "ef540fdd376c28e6da5475bd84d7b7da8c96c0ca65bd9b9609ee7d92b09c7738",
+        "findings": [
+          [
+            "CDC-1",
+            "Critical",
+            "41"
+          ],
+          [
+            "CDC-3",
+            "Info",
+            "2"
+          ],
+          [
+            "CDC-4",
+            "Critical",
+            "4"
+          ],
+          [
+            "CDC-10",
+            "Critical",
+            "1"
+          ],
+          [
+            "CDC-11",
+            "Critical",
+            "2"
+          ],
+          [
+            "CDC-15",
+            "Warning",
+            "62"
+          ]
+        ]
+      }
+    }
+  },
+  "cdc_counts_equal": true
+}

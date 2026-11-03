@@ -35,7 +35,9 @@ def fingerprint(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def generate(source, output):
+def generate(source, output, fps=30.0):
+    if not math.isfinite(fps) or not 0 < fps <= 120:
+        raise ValueError('Invalid explicit camera frame rate')
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     camera = cropped(read(Path(source).read_bytes()))
@@ -46,7 +48,7 @@ def generate(source, output):
         yaml.append('Camera.' + key + ': ' + format(camera[key], '.17g'))
     for key, index in [('k1', 0), ('k2', 1), ('p1', 2), ('p2', 3), ('k3', 4)]:
         yaml.append('Camera.' + key + ': ' + format(camera['d' + str(index)], '.17g'))
-    yaml += ['Camera.width: 960', 'Camera.height: 720', 'Camera.fps: 30.0', 'Camera.RGB: 0',
+    yaml += ['Camera.width: 960', 'Camera.height: 720', 'Camera.fps: '+str(float(fps)), 'Camera.RGB: 0',
              'ORBextractor.nFeatures: 1000', 'ORBextractor.scaleFactor: 1.2', 'ORBextractor.nLevels: 8',
              'ORBextractor.iniThFAST: 20', 'ORBextractor.minThFAST: 7',
              'Viewer.KeyFrameSize: 0.05', 'Viewer.KeyFrameLineWidth: 1.0', 'Viewer.GraphLineWidth: 0.9',
@@ -61,5 +63,6 @@ if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--source', type=Path, default=Path(__file__).parent / 'config/camera_source.csv')
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--fps', type=float, default=30.0)
     a = p.parse_args()
-    print(generate(a.source, a.output))
+    print(generate(a.source, a.output, a.fps))

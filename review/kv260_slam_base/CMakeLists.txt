@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.16)
+project(ORB_SLAM3_KV260 LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
+find_package(OpenCV 4.4 REQUIRED)
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+find_package(Boost REQUIRED COMPONENTS serialization)
+find_package(OpenSSL REQUIRED)
+find_package(Threads REQUIRED)
+add_definitions(-DCOMPILEDWITHC11)
+add_subdirectory(Thirdparty/DBoW2)
+add_subdirectory(Thirdparty/g2o)
+file(GLOB SLAM_SOURCES CONFIGURE_DEPENDS src/*.cc src/*.cpp src/CameraModels/*.cpp)
+list(REMOVE_ITEM SLAM_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/Viewer.cc" "${CMAKE_CURRENT_SOURCE_DIR}/src/MapDrawer.cc")
+add_library(ORB_SLAM3 SHARED ${SLAM_SOURCES})
+target_include_directories(ORB_SLAM3 PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/CameraModels"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Thirdparty/Sophus" ${OpenCV_INCLUDE_DIRS})
+target_compile_definitions(ORB_SLAM3 PUBLIC REGISTER_TIMES)
+target_link_libraries(ORB_SLAM3 PUBLIC DBoW2 g2o Eigen3::Eigen ${OpenCV_LIBS}
+    Boost::serialization OpenSSL::Crypto Threads::Threads)
+set_target_properties(ORB_SLAM3 PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
+add_executable(mono_kv260 Examples/Monocular/mono_kv260.cc)
+target_link_libraries(mono_kv260 PRIVATE ORB_SLAM3)
+set_target_properties(mono_kv260 PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")

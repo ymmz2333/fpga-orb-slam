@@ -1,42 +1,50 @@
-# FPGA ORB 加速与双模式视觉建图定位系统
+# KV260 + XC7Z015 联合视觉建图与彩色定位系统
 
-比赛工程的公开源码快照，更新于 2026-10-30。Zynq XC7Z015 的 PL 提取 ORB 特征，联合 RK3588 建图；地图交接后由 Zynq PS 在固定地图上定位。
+2026-11-03 源码审阅快照。**当前版本是两块板协同：摄像头接 KV260，7015 PL 执行 ORB；KV260 PS 建图、DPU 推理深度、PL 反投影、PS 融合彩色点云、Mali 显示；保存后 7015 PS 在固定地图上定位，HDMI 显示彩色背景与轨迹。**
 
-## 两种运行模式
+这是独立审阅分支 `kv260-7015-final-20261103`。仓库 `main` 中的 RK3588 方案作为历史参考；当前两板运行不需要 RK3588。KV260 的 ORB-only / ORB+DPU 候选平台也保留在源码中，不能把它们当成当前实际运行平台。
 
-1. 联合建图：USB / 视频输入 → Zynq PS 准备灰度图 → PL ORB → 网络桥接 → RK3588 ORB-SLAM3 → 导出地图。
-2. 本地定位：输入 → PL ORB → Zynq PS 地图匹配与 PnP → HDMI 图像和轨迹显示。
+## 从这里开始审阅
 
-稠密点云用于环境显示；稀疏地图用于定位。匹配、几何估计和地图优化运行在处理器上，PL 加速 ORB 前端。
+| 范围 | 入口 |
+|---|---|
+| 手动操作与状态机 | `orb60/kv260/manual_gui.py`, `manual_control.py` |
+| 手动重启与地图复用 | `manual_restart.py`, `install_camera_map_7015.py` |
+| 开机自启动与当前启动预检 | `orb60/kv260/startup/` |
+| 两板换线与断线恢复 | `peer_link.py`, `run_7015_network_localization.py` |
+| 摄像头建图完整编排 | `run_camera_system.py`, `camera_input.py`, `camera/v4l2_capture.c` |
+| KV260 原生 PS 建图 | `orb60/kv260/ps/`, `review/kv260_slam_base/` |
+| 保留的实际编译输入 | `review/retained_native_mapping/`, `review/final_native_sources/` |
+| 7015 ORB 特征服务 | `orb60/linux/`, `zynq7015_demo/vendor/orb_engine/` |
+| 7015 PS 固定地图匹配 / 定位 | `zynq7015_demo/src/slam.cpp`, `pnp.cpp`, `demo_main.cpp` |
+| 7015 彩色背景与轨迹显示 | `zynq7015_demo/src/ui.cpp`, `src/display*`, `rtl/` |
+| DPU 执行及算子边界 | `orb60/dense/kv260/worker.py`, `orb60/kv260/depth/` |
+| 关键帧选择 / 点云融合 | `orb60/kv260/dense_service.py`, `dense_fusion.py`, `voxel.py` |
+| KV260 DPU + 点投影平台 | `orb60/kv260/point_pl/`, `review/kv260_hardware_source/` |
+| GPU 3D 显示 | `orb60/kv260/gles2_view.py`, `gui_worker.py`, `orb60/viewer/` |
+| 7015 HLS 与 HDMI 集成 | `orb60/optimized/FPGA_ORB_HLS/`, `zynq7015_demo/scripts/` |
+| 上板与时序结果 | `review/acceptance/` |
 
-## 阅读源码的起点
+## 正常操作
 
-| 部分 | 路径 | 内容 |
-| --- | --- | --- |
-| Zynq PS 主程序 | `zynq7015_demo/src/demo_main.cpp` | 比赛桥接与双模式应用入口 |
-| PS 定位 | `zynq7015_demo/src/slam.cpp`, `pnp.cpp`, `map_store.cpp` | 匹配、位姿求解、地图管理 |
-| PS 调度与显示 | `zynq7015_demo/include/zslam/pipeline.hpp`, `src/ui.cpp` | 帧缓冲所有权、流水和显示 |
-| PL 算法 | `orb60/optimized/FPGA_ORB_HLS/fastv2/next/src/` | 图像流水、描述子等自定义 HLS 源码 |
-| PL 系统连接 | `orb60/vivado/`, `zynq7015_demo/rtl/` | PS7/AXI/时钟复位、显示 RTL 与集成脚本 |
-| 冻结 PL 发布输入 | `zynq7015_localization_handoff_20261022/` | 已保存的 HLS 输入与导出 IP，区别于实验候选 |
-| RK ORB-SLAM3 | `rk3588/orbslam3_cpu_baseline/vendor/ORB_SLAM3/` | 本地完整源码、第三方源码和许可证 |
-| 跨板协议及地图交接 | `orb60/demo_bridge/`, `orb60/linux/` | 特征传输、建图接入、地图交接、构建部署 |
-| RK 图形界面 | `orb60/viewer/` | Qt / EGL / GPU 显示 |
-| 稠密重建 | `orb60/dense/` | 深度、NPU 调用和点云处理，模型权重未包含 |
-| 开发说明 | `README_FIRST_ZH.md`, `DEVELOPMENT_GUIDE.md` | 构建入口、工具条件及历史版本边界 |
+开机自动登录并显示面板。点击“开始建图”，缓慢平移摄像头；点击“结束并保存”，等待导出、下发后自动持续定位。采用停止时 Atlas 当前／最近更新的地图，不合并不同地图坐标。“重启程序”通过独立 user service 安全结束并重启应用；关闭面板仅隐藏。两板直连换线时等待网络恢复。
 
-## 版本范围
+地图分两层：稀疏点及 ORB 观测用于几何定位；彩色稠密点云用于环境展示。7015 的彩色环境使用固定视角背景，轨迹更新；KV260 的建图显示使用 Mali GLES2。
 
-- 原工程相对目录保持不变；这是一份源码快照，未导入私人本地 Git 历史。
-- RK3588 当前无法连接，本仓库的 RK 部分来自电脑本地副本，未确认板上是否另有未同步修改。
-- `baseline` 是历史参考，`next` 下有候选代码；不能把目录名称或当前工作树等同于已验收固件。配套冻结目录保留原始发布输入。
-- 历史文档内的工具路径和实验指标对应各自版本，移植时需重新配置和验证。不同集成范围、工具版本的资源和时序不可混用。
-- 本次公开发布只检查文件完整性和敏感内容，不代表重新完成构建或上板验收。
+## 本次变更与证据
 
-## 构建与依赖
+- 修复 7015 存储满导致 `mktemp: No space left on device` 后前端无法启动的问题。
+- 同一份已安装地图经版本、标定、二进制与文件清单验证后直接复用，重连不再复制一套地图。
+- 加入空间预检与“重启程序”按钮，已保存独立的实际重启、DPU、Mali 检查证据。
+- 与此版本相关的电脑测试为 416 项通过、4 项平台相关跳过；这些数字不代表本次 GitHub 发布重新进行综合或完整硬件验收。
+- 完整 SD 视频链已有 2297 帧建图和后续 2273 帧定位记录；实际相机重定位另有 2400 帧记录。不同输入、不同地图与失败运行不能混用。
+- 最新保存的 508,943 点地图保留在板上；本次板子暂不接电脑，未抓取该地图或声称同步了后续板端修改。源码来自电脑已保存版本，核心控制文件与上次实板快照哈希匹配。
+- MiDaS 量化相对原浮点模型的原始门槛存在未通过项；后续使用经用户视觉接受的模型。不要将 DPU 执行成功等同原量化数值门槛通过。
 
-先阅读 [交接说明](README_FIRST_ZH.md)。PS 使用 C++17 与 ARM hard-float 工具链；PL 保留 Vivado/Vitis HLS 2024.2 和复用导出 RTL 的 2018.3 路径；RK 构建与依赖见 `rk3588/orbslam3_cpu_baseline/README.md`。本机路径和板地址自行配置。
+## 审阅重点
 
-工具缓存、系统镜像、视频/大型测试数据、NPU 权重、SSH 私钥、本机配置不公开。保留已有第三方许可证、版权说明与源码；未给整个仓库额外套用统一许可证，各部分使用条件以其 LICENSE / NOTICE 为准。
+请沿调用链检查：资源所有权和退出收尾；换线与断线恢复；最新地图选择和同图绑定；DPU/PS/PL 的实际边界；异常与真实失败记录；共享内存/缓存一致性；时间戳、帧身份和坐标一致性。不要仅依据旧 README 的历史段落推断当前运行版本。
 
-网页端 AI 可从本 README 开始，按目录读取具体源码。大型词典与 IP ZIP 是配套输入，不是可直接浏览的源文件。
+当前运行依赖已配置的 ARM64 Ubuntu 22.04、VART/Vitis AI 2.5、原生 DPU 驱动及匹配的硬件资产。此分支以完整源码审阅为目的，未包含机器环境、SSH 私钥、账号密码、大型模型/视频、板卡系统镜像和 Vivado 缓存，也不声称任意机器一条命令即可复现。已有第三方 LICENSE/NOTICE 保持各自效力。
+
+`SOURCE_SNAPSHOT_SHA256.json` 用于核对这次分支中的源文件。`review/acceptance/effective_source_coverage.json` 明确列出实际编译输入的本地取证覆盖情况；未找到的文件不伪造。

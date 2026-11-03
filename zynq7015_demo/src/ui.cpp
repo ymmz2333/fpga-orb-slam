@@ -76,13 +76,14 @@ void Dashboard::draw(const GrayFrame *gray,const Frame &frame,const SceneSnapsho
     if(timing.preview&&(s.pose_valid||s.points||s.keyframes||!frame.features.empty()||!scene.points.empty()||!scene.trajectory.empty()))throw std::runtime_error("Uncalibrated preview cannot show features, map or pose");
     double profile_start=threadCpuMs();
     profile_.trajectory_hits=profile_.trajectory_misses=0;
+    profile_.background_builds=profile_.background_hits=0;
     if(!initialized_||preview_mode_!=timing.preview){
         rect(0,0,1280,64,panel);text(24,17,"ZYNQ / SPATIAL",white,3);
         rect(16,80,736,576,panel);rect(768,80,496,576,panel);
         text(32,94,timing.preview?"CAMERA / FOCUS":"CAMERA / FPGA ORB",muted,2);text(784,94,timing.preview?"FOCUS CHECK / NO SLAM":"3D MAP + CAMERA TRAJECTORY",muted,2);
         initialized_=true;preview_mode_=timing.preview;
     }
-    rect(412,12,844,44,panel);rect(780,124,471,402,panel);
+    rect(412,12,844,44,panel);
     text(420,20,timing.preview?"FOCUS PREVIEW":(s.mapping?"LIVE MAPPING":"LOCALIZATION"),cyan,2);
     text(750,24,timing.preview?"CAMERA ONLY / NO POSE":(timing.recorded?"RECORDING / RELATIVE SCALE":(timing.physical?"LIVE / RELATIVE SCALE":"REPLAY / RELATIVE SCALE")),muted,1);
     text(1020,20,timing.preview?"UNCALIBRATED":stateName(s.state),s.pose_valid?green:yellow,2);
@@ -123,7 +124,8 @@ void Dashboard::draw(const GrayFrame *gray,const Frame &frame,const SceneSnapsho
     const auto &cloud=scene.points;bool same_cloud=cloud_valid_&&cloud.size()==cloud_cache_.size();
     if(same_cloud)for(std::size_t i=0;i<cloud.size();i++){
         const auto &a=cloud[i],&b=cloud_cache_[i];
-        if(a.id!=b.id||a.xyz.x!=b.xyz.x||a.xyz.y!=b.xyz.y||a.xyz.z!=b.xyz.z||(a.observations>5)!=(b.observations>5)){same_cloud=false;break;}
+        if(a.id!=b.id||a.xyz.x!=b.xyz.x||a.xyz.y!=b.xyz.y||a.xyz.z!=b.xyz.z||
+           (dense_environment_.empty()&&(a.observations>5)!=(b.observations>5))){same_cloud=false;break;}
     }
     if(!same_cloud){
         if(++projection_generation_==0){for(auto &entry:trajectory_pixels_)entry.generation=0;projection_generation_=1;}
@@ -135,21 +137,24 @@ void Dashboard::draw(const GrayFrame *gray,const Frame &frame,const SceneSnapsho
     auto project=[&](V3 p,int &x,int &y){V3 q=p-eye_;double z=dot(q,forward_);if(z<radius_*.05)return false;double xx=1016+420*dot(q,right_)/z,yy=345-420*dot(q,up_)/z;
         if(!std::isfinite(xx)||!std::isfinite(yy)||xx<780||xx>1250||yy<124||yy>525)return false;x=static_cast<int>(xx);y=static_cast<int>(yy);return true;};
     if(!same_cloud){
-        cloud_pixels_.clear();unsigned stride=static_cast<unsigned>(std::max<std::size_t>(1,cloud.size()/5000));
+        constexpr unsigned w=471,h=402;
+        cloud_background_.assign(w*h,panel);profile_.background_builds=1;
+        unsigned stride=static_cast<unsigned>(std::max<std::size_t>(1,cloud.size()/5000));
         if(dense_environment_.empty()){
-            for(unsigned i=0;i<cloud.size();i+=stride){int x,y;if(project(cloud[i].xyz,x,y))cloud_pixels_.push_back({x,y,cloud[i].observations>5?cyan:muted});}
+            for(unsigned i=0;i<cloud.size();i+=stride){int x,y;if(project(cloud[i].xyz,x,y))cloud_background_[unsigned(y-124)*w+unsigned(x-780)]=cloud[i].observations>5?cyan:muted;}
         }else {
             // Static environment projects once. Sparse geometry still defines
             // this view and all localization inputs; dense points never reach SLAM.
-            constexpr unsigned w=471,h=402;std::vector<double> depth(w*h,std::numeric_limits<double>::infinity());std::vector<uint16_t> color(w*h);
+            std::vector<double> depth(w*h,std::numeric_limits<double>::infinity());
             for(const auto &p:dense_environment_){V3 v{p.x,p.y,p.z};int x,y;if(!project(v,x,y))continue;
                 unsigned at=unsigned(y-124)*w+unsigned(x-780);double z=dot(v-eye_,forward_);
-                if(z<depth[at]){depth[at]=z;color[at]=uint16_t((p.r>>3)<<11|(p.g>>2)<<5|(p.b>>3));}}
-            for(unsigned i=0;i<depth.size();i++)if(std::isfinite(depth[i]))cloud_pixels_.push_back({int(i%w)+780,int(i/w)+124,color[i]});
+                if(z<depth[at]){depth[at]=z;cloud_background_[at]=uint16_t((p.r>>3)<<11|(p.g>>2)<<5|(p.b>>3));}}
         }
         cloud_cache_=cloud;cloud_valid_=true;
-    }
-    for(const auto &p:cloud_pixels_)pixel(p.x,p.y,p.color);
+    }else profile_.background_hits=1;
+    // A contiguous row copy is also the eraser for the previous live overlays.
+    // This preserves exact RGB565 pixels and avoids per-point bounds checks.
+    for(unsigned y=0;y<402;y++)std::copy_n(cloud_background_.data()+y*471,471,pixels.data()+(y+124)*width+780);
     const auto &trajectory=scene.trajectory;int old_x=0,old_y=0;bool previous=false;
     for(const auto &p:trajectory){int x=0,y=0;bool visible=false;
         if(!trajectory_pixels_.empty()){

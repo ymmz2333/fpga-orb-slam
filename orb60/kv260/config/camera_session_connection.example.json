@@ -1,0 +1,20 @@
+{
+  "host": "fe80::20a:35ff:fe00:122%eth0",
+  "identity": "runtime/ssh_7015/id_rsa",
+  "known_hosts": "runtime/ssh_7015/known_hosts",
+  "kv_deployment_receipt": "platform_dpu_points/deployment_tagged_20261103_e/deployment_receipt.json",
+  "frontend_release": "/opt/orb-demo/kv260_orb_frontend_20261103_b",
+  "frontend_sha256": "b433953a6faa98dd2c36db24fc96e5c855e6ea0bbe6c5b56f5476c22d6aa60d8",
+  "localization_template": "/opt/orb-demo/kv260_migration_20261103_static_background",
+  "localizer_sha256": "48c50126d7111ee10e2915df11c0e0951dc9dc43a1b5a01c372ee5806320a530",
+  "release_parent": "/opt/orb-demo/kv260_session",
+  "raw": "/opt/zynq-slam/data/video_inputs_20261023/gray8.bin",
+  "raw_index": "/opt/zynq-slam/data/video_inputs_20261023/frames.csv",
+  "raw_sha256": "4bc70b950796a237c57059ae709f2c0d1aca20a01223ee6eee8bcdd113bdc8fc",
+  "index_sha256": "602825454b8cd0fcabc3ca9184a78811a7907c1eae2f8ee09f77cec649cf2f6a",
+  "localization_frames": 2273,
+  "network_localization_template": "/opt/orb-demo/kv260_network_camera_multiview_20261103_a",
+  "network_localizer_sha256": "9ae26de1d4c733bef890487be838dc96bef6231d66091378ef0258d22dc095d8",
+  "map_importer_sha256": "a6271c2211ed765fc06b43fec7436f5ea9913a2f28c1831caecdfa7c6f0d5e4f",
+  "fixed_map_multiview": true
+}

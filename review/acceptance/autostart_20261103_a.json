@@ -1,0 +1,27 @@
+{
+  "status": "HOST_REBOOT_AUTOSTART_EVIDENCE_VERIFIED",
+  "archive_sha256": "5747afef0a200b48053402f357787312929711149e02a0211fc5cbfc74811c07",
+  "files_verified": 20,
+  "source_files_verified": 9,
+  "host_tests": {
+    "passed": 395,
+    "skipped": 4
+  },
+  "boot_before": "fbac9835-760f-4dec-aaaf-6434d7240dbb",
+  "boot_after": "fc0a530b-c65b-4ca7-9367-0b61cf7e9b8f",
+  "autologin": true,
+  "platform_ready": true,
+  "user_confirmed_desktop_and_panel": true,
+  "dpms_disabled": true,
+  "resolution": "1024x768@60",
+  "latest_map_version": "4b7bebceedc404a863102ee23309ffab4c3e3bc25199f067329826c43dac7dd0",
+  "localization_stream": [
+    652,
+    675
+  ],
+  "automatic_mapping": false,
+  "automatic_localization": true,
+  "no_kernel_or_boot_image_change": true,
+  "tracking_accuracy_acceptance": false,
+  "scope": "Actual OS reboot, automatic desktop login and current camera/manual workflow startup; no new mapping-speed or trajectory-accuracy claim"
+}

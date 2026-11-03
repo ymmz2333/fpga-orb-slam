@@ -1,0 +1,37 @@
+// Driver-only transition for the already loaded native DPU-only bitstream.
+// No firmware-name, FPGA reload, PS clock change or automatic recovery.
+/dts-v1/;
+/plugin/;
+
+&zocl_dpu {
+    status = "disabled";
+};
+
+&amba {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    dpu_control_clock: dpu-control-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <150000000>;
+    };
+    dpu_data_clock: dpu-data-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <250000000>;
+    };
+    dpu_dsp_clock: dpu-dsp-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <500000000>;
+    };
+    dpu_vivado: dpu@a1000000 {
+        compatible = "xlnx,dpuczdx8g-4.0", "xlnx,dpuczdx8g-3.4";
+        reg = <0 0xa1000000 0 0x1000000>;
+        interrupt-parent = <&gic>;
+        interrupts = <0 89 4>;
+        clocks = <&dpu_control_clock>, <&dpu_data_clock>, <&dpu_dsp_clock>;
+        clock-names = "s_axi_aclk", "m_axi_dpu_aclk", "dpu_2x_clk";
+        status = "okay";
+    };
+};

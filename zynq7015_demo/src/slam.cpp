@@ -115,10 +115,26 @@ std::vector<Observation> Slam::matchMap(const Frame &f,Pose prediction,bool glob
     constexpr unsigned tables=16,bits=10,buckets=1u<<bits;
     auto hash=[&](const Descriptor &d,unsigned table){unsigned result=0;
         for(unsigned k=0;k<bits;k++){unsigned bit=retrieval_bits_[table*bits+k];result|=unsigned((d[bit/8]>>(bit%8))&1)<<k;}return result;};
-    if(global&&!retrieval_valid_){
+    const bool multiview=config_.fixed_map_multiview&&!config_.mapping;
+    if(retrieval_multiview_!=multiview)retrieval_valid_=false;
+    if((global||multiview)&&!retrieval_valid_){
         const double build_start=profile?threadCpuMs():0;
         retrieval_descriptors_.clear();retrieval_slots_.clear();
-        for(unsigned j=0;j<map_.size();j++)if(map_[j].active){retrieval_descriptors_.push_back(map_[j].descriptor);retrieval_slots_.push_back(j);}
+        retrieval_offsets_.resize(map_.size()+1);
+        for(unsigned j=0;j<map_.size();j++){
+            retrieval_offsets_[j]=static_cast<unsigned>(retrieval_descriptors_.size());
+            if(!map_[j].active)continue;
+            retrieval_descriptors_.push_back(map_[j].descriptor);retrieval_slots_.push_back(j);
+            if(multiview&&map_[j].fixed)for(unsigned v=0;v<map_[j].sight_count;v++){
+                const auto &s=map_[j].sights[v];
+                auto key=std::find_if(keys_.begin(),keys_.end(),[&](const Keyframe &k){return k.id==s.key;});
+                if(key==keys_.end()||s.feature>=key->features.size()||!alive(key->refs[s.feature])||key->refs[s.feature].slot!=j)continue;
+                const auto &d=key->features[s.feature].descriptor;
+                if(std::find(retrieval_descriptors_.begin()+retrieval_offsets_[j],retrieval_descriptors_.end(),d)!=retrieval_descriptors_.end())continue;
+                retrieval_descriptors_.push_back(d);retrieval_slots_.push_back(j);
+            }
+        }
+        retrieval_offsets_[map_.size()]=static_cast<unsigned>(retrieval_descriptors_.size());
         std::array<unsigned,256> ones{},order{};
         for(unsigned bit=0;bit<256;bit++)order[bit]=bit;
         if(config_.cached_retrieval_build){
@@ -144,7 +160,7 @@ std::vector<Observation> Slam::matchMap(const Frame &f,Pose prediction,bool glob
                 retrieval_links_[t*retrieval_descriptors_.size()+retrieval_cursor_[code]++]=j;
             }
         }
-        retrieval_valid_=true;
+        retrieval_valid_=true;retrieval_multiview_=multiview;
         if(profile){profile->retrieval_builds++;profile->retrieval_build_cpu_ms+=threadCpuMs()-build_start;}
     }
     const double query_start=global&&profile?threadCpuMs():0;
@@ -156,7 +172,12 @@ std::vector<Observation> Slam::matchMap(const Frame &f,Pose prediction,bool glob
     std::vector<Match> candidates;
     for(unsigned i=0;i<f.features.size();i++){
         unsigned best=257,second=257,which=0;const auto &feature=f.features[i];
-        auto consider=[&](unsigned j){unsigned d=descriptorDistance(feature.descriptor,map_[j].descriptor);if(d<best){second=best;best=d;which=j;}else if(d<second)second=d;};
+        auto consider=[&](unsigned j){
+            unsigned d=257;
+            if(multiview)for(unsigned view=retrieval_offsets_[j];view<retrieval_offsets_[j+1];view++)d=std::min(d,descriptorDistance(feature.descriptor,retrieval_descriptors_[view]));
+            else d=descriptorDistance(feature.descriptor,map_[j].descriptor);
+            if(d<best){second=best;best=d;which=j;}else if(d<second)second=d;
+        };
         if(global){for(unsigned t=0;t<tables;t++){
             unsigned code=hash(feature.descriptor,t);
             // Exact buckets from every table; one-bit probes from four diverse
@@ -168,7 +189,11 @@ std::vector<Observation> Slam::matchMap(const Frame &f,Pose prediction,bool glob
                 for(unsigned entry=begin;entry<end;entry++){
                     unsigned j=retrieval_links_[t*retrieval_descriptors_.size()+entry];
                     if(visited[j]==i+1)continue;visited[j]=i+1;unsigned d=descriptorDistance(feature.descriptor,retrieval_descriptors_[j]);
-                    if(d<best){second=best;best=d;which=retrieval_slots_[j];}else if(d<second)second=d;
+                    unsigned slot=retrieval_slots_[j];
+                    // Two observations of one landmark are not competitors in
+                    // the ratio test, whose second choice is another landmark.
+                    if(multiview&&slot==which)best=std::min(best,d);
+                    else if(d<best){second=best;best=d;which=slot;}else if(d<second)second=d;
                 }
             }
         }}
@@ -302,6 +327,7 @@ void Slam::bundleAdjust(double budget_ms){
 std::vector<PointView> Slam::points()const{std::vector<PointView> result;result.reserve(map_.size());for(const auto &p:map_)if(p.active)result.push_back({p.xyz,p.id,p.seen});return result;}
 std::size_t Slam::reservedBytes()const{std::size_t n=map_.capacity()*sizeof(Landmark)+trajectory_.capacity()*sizeof(TrackSample)+keys_.capacity()*sizeof(Keyframe);
     n+=retrieval_descriptors_.capacity()*sizeof(Descriptor)+(retrieval_slots_.capacity()+retrieval_heads_.capacity()+retrieval_links_.capacity())*sizeof(unsigned);
+    n+=retrieval_offsets_.capacity()*sizeof(unsigned);
     n+=tracking_bins_.reservedBytes()+tracking_projected_.capacity()*sizeof(V2);
     n+=retrieval_hashes_.capacity()*sizeof(uint16_t)+sizeof(retrieval_cursor_);
     for(const auto &k:keys_)n+=k.features.capacity()*sizeof(Feature)+k.refs.capacity()*sizeof(Ref);return n;}

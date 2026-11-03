@@ -1,0 +1,14 @@
+{
+  "profile": "kv260-b4096-vai25-component",
+  "os": "Ubuntu 22.04 Kria",
+  "vitis_ai": "2.5",
+  "dpu": "DPUCZDX8G_ISA1_B4096",
+  "container": "xilinx/vitis-ai-cpu:2.5.0",
+  "container_manifest_sha256": "eaa85efb06924995ebdb973546e7f69169b003b8cc525764bd9524ad554dddbe",
+  "arch_in_container": "/opt/vitis_ai/compiler/arch/DPUCZDX8G/ZCU104/arch.json",
+  "source": "https://github.com/Xilinx/DPU-PYNQ/blob/master/host/README.md",
+  "component_only": true,
+  "board_verified": false,
+  "cpu_network_allowlist": ["resize", "upsample", "reshape", "transpose", "concat", "fix", "float2fix", "fix2float", "data", "const", "identity", "upload", "download"],
+  "note": "The official DPU-PYNQ host guide identifies KV260/ZCU102/ZCU104 architectures as compatible. Exact fingerprint must still match loaded hardware. No hardware is loaded by this package."
+}

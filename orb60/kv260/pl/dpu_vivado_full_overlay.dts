@@ -1,0 +1,47 @@
+// Fresh-boot native Vivado DPU deployment; requires the matching explicit driver.
+// This file is not loaded automatically by inference or preflight.
+/dts-v1/;
+/plugin/;
+
+&fpga_full {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    firmware-name = "kv260-dpu-only.bit.bin";
+    resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>,
+             <&zynqmp_reset 118>, <&zynqmp_reset 119>;
+};
+
+&amba {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    afi_dpu_native {
+        compatible = "xlnx,afi-fpga";
+        config-afi = <0 0>, <1 0>, <2 0>, <3 0>, <4 0>, <5 0>,
+                     <6 0>, <7 0>, <8 0>, <9 0>, <10 0>, <11 0>,
+                     <12 0>, <13 0>, <14 0x200>, <15 0>;
+    };
+    dpu_control_clock: dpu-control-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <150000000>;
+    };
+    dpu_data_clock: dpu-data-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <250000000>;
+    };
+    dpu_dsp_clock: dpu-dsp-clock {
+        compatible = "fixed-clock";
+        #clock-cells = <0>;
+        clock-frequency = <500000000>;
+    };
+    dpu_vivado: dpu@a1000000 {
+        compatible = "xlnx,dpuczdx8g-4.0", "xlnx,dpuczdx8g-3.4";
+        reg = <0 0xa1000000 0 0x1000000>;
+        interrupt-parent = <&gic>;
+        interrupts = <0 89 4>;
+        clocks = <&dpu_control_clock>, <&dpu_data_clock>, <&dpu_dsp_clock>;
+        clock-names = "s_axi_aclk", "m_axi_dpu_aclk", "dpu_2x_clk";
+        status = "okay";
+    };
+};

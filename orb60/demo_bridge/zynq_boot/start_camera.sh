@@ -8,7 +8,7 @@ cd "$root"
 sha256sum -c SHA256SUMS
 test "$(uname -r)" = 4.14.0-xilinx
 sh ./scripts/bind_wc.sh
-if ! test -d /sys/module/videobuf2_vmalloc; then insmod modules/videobuf2-vmalloc.ko; fi
+if ! test -d /sys/module/videobuf2-vmalloc; then insmod modules/videobuf2-vmalloc.ko; fi
 if ! test -d /sys/module/uvcvideo; then insmod modules/uvcvideo.ko; fi
 n=0
 while ! test -c /dev/video0; do

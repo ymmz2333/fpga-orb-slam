@@ -1,0 +1,13 @@
+{
+  "status": "TAGGED_SAME_ROUTE_EXPORT_PASS_BOARD_UNTESTED",
+  "parent": "D:\\pld\\orb60\\build\\kv260_system\\dpu_points_250_150_20261103_a",
+  "parent_release_sha256": "2c5eab63dd52baada1d88b2255bdb78f5dc173473b28f8db557a623da9cda983",
+  "routed_dcp_sha256": "74cb26e939f7f4a64adbc627cbf7f9abad89b776b3ed96101be72e0a719667a2",
+  "usr_access": "0x4f525050",
+  "scope": "Same routed fabric and retained STA; change only configuration USR_ACCESS, no new place/route or board acceptance",
+  "bitstream_sha256": "700e6fcc7fe9a60fa36e321a7a94125b8d4d1bb84db2178fc147ddb67671e90b",
+  "release_sha256": "efb36d95281189f5a3d0b8f0713a08a75dced8dccdfac1be9716eb51ddf7f9a5",
+  "usr_access_writes": [
+    1330794576
+  ]
+}

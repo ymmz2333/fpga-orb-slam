@@ -1,0 +1,24 @@
+{
+  "camera": "../assets/camera_orb.csv",
+  "slam_yaml": "../assets/camera.yaml",
+  "vocabulary": "../vocabulary/ORBvoc.txt",
+  "slam_executable": "../build/bin/mono_kv260",
+  "gui_python": "../.venv_gui/bin/python",
+  "register_map": "../assets/register_map_64.json",
+  "input_layout": "center_crop_1280x720",
+  "platform": {
+    "layer": {"uio": "/dev/kv260_orb_layer", "name": "orb60_layer64", "address": null},
+    "descriptor": {"uio": "/dev/kv260_orb_descriptor", "name": "orb60_descriptor64", "address": null}
+  },
+  "depth": {
+    "backend": "ps_cpu",
+    "model": "../models/midas_ps_cpu_fp32.onnx",
+    "model_sha256": "8b2c642814a81f56e461d97b73d72d73864be9cee7b59a6fe21cd528ec377ac1",
+    "threads": 2,
+    "cpu_affinity": [2, 3],
+    "nice": 10,
+    "keyframes_only": true,
+    "interval_seconds": 3,
+    "port": 18786
+  }
+}

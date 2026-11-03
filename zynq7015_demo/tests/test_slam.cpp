@@ -27,12 +27,46 @@ struct RetrievalTestAccess {
     static void move(Slam &s,Ref ref,V3 xyz){s.map_[ref.slot].xyz=xyz;}
     static bool sameIndex(const Slam &a,const Slam &b){return a.retrieval_bits_==b.retrieval_bits_&&a.retrieval_descriptors_==b.retrieval_descriptors_&&a.retrieval_slots_==b.retrieval_slots_&&a.retrieval_heads_==b.retrieval_heads_&&a.retrieval_links_==b.retrieval_links_;}
     static std::size_t hashScratch(const Slam &s){return s.retrieval_hashes_.capacity()*sizeof(uint16_t);}
+    static void fixedViews(Slam &s,Ref ref,const std::vector<Descriptor>&views){
+        s.map_[ref.slot].fixed=true;
+        for(const auto &d:views){Frame f;f.id=s.keys_.size()+1;Feature x;x.descriptor=d;x.raw=x.uv=s.camera_.project(s.map_[ref.slot].xyz);f.features.push_back(x);s.addKeyframe(f,Pose{},std::vector<Ref>{ref});}
+        s.retrieval_valid_=false;
+    }
+    static std::vector<Observation> local(const Slam &s,const Frame &f){return s.matchMap(f,Pose{},false);}
+    static unsigned views(const Slam &s,unsigned slot){return s.retrieval_offsets_[slot+1]-s.retrieval_offsets_[slot];}
 };
 }
 
 using namespace zslam;
 namespace {
 void check(bool yes,const char *message){if(!yes)throw std::runtime_error(message);}
+void fixedMapMultiview(const fs::path &root){
+    Config base;base.mapping=false;base.max_points=80;Config candidate=base;candidate.fixed_map_multiview=true;
+    Slam old(Camera{},base),modern(Camera{},candidate);
+    Descriptor zero{},ones,near,alternate;ones.fill(255);near=ones;near[0]^=3;alternate.fill(170);
+    for(Slam *s:{&old,&modern}){
+        auto a=RetrievalTestAccess::add(*s,{0,0,4},zero,0);
+        RetrievalTestAccess::fixedViews(*s,a,{ones,near,ones});
+        Descriptor representative;representative.fill(85);
+        auto b=RetrievalTestAccess::add(*s,{2,0,4},representative,0);RetrievalTestAccess::fixedViews(*s,b,{alternate});
+    }
+    Frame q;q.id=1;q.timestamp_ns=1;Feature x;x.descriptor=ones;x.descriptor[0]^=1;x.raw=x.uv=Camera{}.project({0,0,4});q.features.push_back(x);
+    Status profile;auto matches=RetrievalTestAccess::query(modern,q,profile);
+    check(matches.size()==1&&matches[0].landmark==0,"A one-bit observed view must match its landmark despite a distant representative");
+    check(RetrievalTestAccess::query(old,q,profile).empty(),"Default representative matching must remain unchanged");
+    check(RetrievalTestAccess::local(modern,q).size()==1&&RetrievalTestAccess::local(old,q).empty(),"Projected tracking must use bounded saved views only when explicitly enabled");
+    check(RetrievalTestAccess::views(modern,0)==3,"Repeated descriptors are deduplicated within one landmark");
+    auto path=root/"fixed-views.zmap";modern.save(path.string());Slam restored(Camera{},candidate);restored.load(path.string());
+    check(RetrievalTestAccess::query(restored,q,profile).size()==1,"Saved keyframe observations must rebuild the same view cache after native load");
+    Descriptor different;different.fill(221);auto c=RetrievalTestAccess::add(modern,{3,0,4},different,0);
+    RetrievalTestAccess::fixedViews(modern,c,{ones});
+    check(RetrievalTestAccess::query(modern,q,profile).empty(),"Equal one-bit matches from different landmarks must still fail the ratio test");
+    modern.setMapping(true);check(RetrievalTestAccess::query(modern,q,profile).empty(),"View matching must not change online mapping semantics");
+    modern.reset();auto d=RetrievalTestAccess::add(modern,{0,0,4},ones,0);RetrievalTestAccess::fixedViews(modern,d,{ones});modern.setMapping(false);
+    check(RetrievalTestAccess::query(modern,q,profile).size()==1,"Reset and mode changes must invalidate stale descriptor/index ownership");
+    check(RetrievalTestAccess::views(modern,0)<=9,"The per-landmark cache is bounded by eight sightings plus one representative");
+    std::cout<<"FIXED_MAP_MULTIVIEW_DEFAULT_RATIO_LOCAL_ROUNDTRIP_RESET_PASS\n";
+}
 template<class F>void rejected(F f,const char *message){bool threw=false;try{f();}catch(const std::exception&){threw=true;}check(threw,message);}
 void cameraFrames(const fs::path &fixtures,const fs::path &output){
     auto read=[](const fs::path &path){std::ifstream in(path,std::ios::binary);if(!in)throw std::runtime_error("Missing camera fixture: "+path.string());return std::vector<uint8_t>((std::istreambuf_iterator<char>(in)),{});};
@@ -310,6 +344,30 @@ void trajectoryProjection(){
     }
     std::cout<<"TRAJECTORY_CACHE_ALL_PIXELS_RING4096_HISTORY_EDIT_LOSS_VIEWPOINT_RESET_COLLISION_PASS\n";
 }
+void coloredBackground(){
+    SceneSnapshot scene;std::vector<DensePoint> colors;
+    for(unsigned i=0;i<100;i++){
+        V3 p{(double(i%10)-4.5)*.08,(double(i/10)-4.5)*.08,4+double(i%3)*.03};
+        scene.points.push_back({p,i+1,10});colors.push_back({float(p.x),float(p.y),float(p.z),uint8_t(i%2?255:0),0,uint8_t(i%2?0:255)});
+    }
+    Dashboard cached(true);cached.setDenseEnvironment(colors);Status status;status.pose_valid=true;status.state=State::Tracking;Timings timing;Frame frame;
+    for(unsigned step=0;step<10;step++){
+        scene.trajectory.push_back({step,1000000000ull+step*33333333ull,{.02*step,0,3.8},step!=3});
+        status.tcw.t={-.02*step,0,-3.8};
+        if(step==2)scene.points[0].observations=2; // Localization counts cannot change dense RGB/view.
+        if(step==4){for(auto &p:colors)std::swap(p.r,p.b);cached.setDenseEnvironment(colors);}
+        if(step==6)scene.points[0].xyz.x+=.08;
+        if(step==7){colors.clear();scene.points.clear();scene.trajectory.clear();status.pose_valid=false;cached.setDenseEnvironment(colors);}
+        Dashboard fresh;fresh.setDenseEnvironment(colors);
+        cached.draw(nullptr,frame,scene,status,timing);fresh.draw(nullptr,frame,scene,status,timing);
+        check(cached.pixels==fresh.pixels,"Frozen RGB background and changing trail/camera must equal fresh redraw without ghosts across color/map replacement and reset");
+        const bool rebuilt=step==0||step==4||step==6||step==7;
+        check(cached.lastProfile().background_builds==unsigned(rebuilt)&&cached.lastProfile().background_hits==unsigned(!rebuilt),"Background must build only on map/color replacement, never camera motion");
+        if(step==0){unsigned rgb_pixels=0;for(unsigned y=124;y<526;y++)for(unsigned x=780;x<1251;x++)if(cached.pixels[y*1280+x]==0xf800||cached.pixels[y*1280+x]==0x001f)rgb_pixels++;
+            check(rgb_pixels>20,"Dense background must retain actual red/blue RGB565 colors");}
+    }
+    std::cout<<"COLORED_BACKGROUND_CACHE_ALL_PIXELS_MOTION_LOSS_REPLACE_RESET_PASS\n";
+}
 void retrievalInvalidation(const zslam::fs::path &root){
     Config exact_config;exact_config.precise_retrieval_invalidation=true;exact_config.max_points=96;exact_config.max_keyframes=4;
     Config legacy_config=exact_config;legacy_config.precise_retrieval_invalidation=false;
@@ -493,5 +551,5 @@ void reviewRawIndex(const fs::path &root){
 }
 int main(int argc,char **argv){try{if(argc!=2)throw std::runtime_error("Test needs isolated output directory");
     auto root=zslam::fs::path(argv[1])/("test-"+std::to_string(std::chrono::steady_clock::now().time_since_epoch().count()));zslam::fs::create_directories(root);
-    cameraFrames(fs::path(argv[0]).parent_path()/"test-fixtures/camera",root);records();decodeCache();spatialBins();geometry();mapping(root);ports();pipeline();grayPool();preview();trajectoryProjection();retrievalInvalidation(root);csvRetention(root);rawFiles(root);anchors(root);reviewMotion(root);reviewRetrieval();reviewAffinity();reviewRawIndex(root);std::cout<<"ALL_TESTS_PASS output="<<root.string()<<'\n';return 0;
+    cameraFrames(fs::path(argv[0]).parent_path()/"test-fixtures/camera",root);records();decodeCache();spatialBins();geometry();mapping(root);ports();pipeline();grayPool();preview();trajectoryProjection();coloredBackground();retrievalInvalidation(root);csvRetention(root);rawFiles(root);anchors(root);reviewMotion(root);reviewRetrieval();reviewAffinity();reviewRawIndex(root);fixedMapMultiview(root);std::cout<<"ALL_TESTS_PASS output="<<root.string()<<'\n';return 0;
 }catch(const std::exception &e){std::cerr<<"TEST_FAILED "<<e.what()<<'\n';return 1;}}

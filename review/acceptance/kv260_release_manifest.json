@@ -1,0 +1,117 @@
+{
+  "scope": "complete KV260 DPU + point-project routed top",
+  "platform_kind": "dpu_points",
+  "board_verified": false,
+  "timing": {
+    "wns_ns": 0.112,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0.0,
+    "setup_endpoints": 425058.0,
+    "whs_ns": 0.01,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0.0,
+    "hold_endpoints": 425058.0,
+    "wpws_ns": 0.238,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0.0,
+    "pulse_endpoints": 145932.0
+  },
+  "coverage": {
+    "no_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "no_input_delay": 0,
+    "no_output_delay": 0
+  },
+  "routing": {
+    "routable": 201561,
+    "routed": 201561,
+    "errors": 0
+  },
+  "audit": {
+    "part": "xck26-sfvc784-2LV-c",
+    "vivado": "2024.2",
+    "black_box_count": "0",
+    "drc_errors": "0",
+    "drc_critical_warnings": "0",
+    "drc_warnings": "850"
+  },
+  "resources": {
+    "lut": {
+      "used": 68379.0,
+      "available": 117120.0,
+      "percent": 58.38
+    },
+    "ff": {
+      "used": 127157.0,
+      "available": 234240.0,
+      "percent": 54.28
+    },
+    "bram_tiles": {
+      "used": 51.0,
+      "available": 144.0,
+      "percent": 35.42
+    },
+    "uram": {
+      "used": 56.0,
+      "available": 64.0,
+      "percent": 87.5
+    },
+    "dsp": {
+      "used": 794.0,
+      "available": 1248.0,
+      "percent": 63.62
+    }
+  },
+  "dpu_fingerprint": "0x101000016010407",
+  "structure": {
+    "dpu_ip_count": 1,
+    "hls_ip_count": 1
+  },
+  "clocks_mhz": {
+    "control_mhz": 150,
+    "dpu_mhz": 250,
+    "dsp_mhz": 500
+  },
+  "model_binding": {
+    "path": "orb60\\build\\kv260_system\\depth_midas_qat\\compiled\\midas_kv260_b4096.xmodel",
+    "sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+    "fingerprint": "0x101000016010407",
+    "hardware_inference_verified": false,
+    "numerical_acceptance": "QUANTIZATION_FAILED",
+    "user_visual_acceptance": true
+  },
+  "bitstream_configuration_sha256": "dcf42e9260a75dc627d9085300df83676c3cae8a657f64e4e124ba3cd36b178b",
+  "xsa_configuration_sha256": "dcf42e9260a75dc627d9085300df83676c3cae8a657f64e4e124ba3cd36b178b",
+  "status": "FULL_TOP_STATIC_TIMING_PASS_BOARD_UNTESTED",
+  "problems": [],
+  "sha256": {
+    "routed.dcp": "74cb26e939f7f4a64adbc627cbf7f9abad89b776b3ed96101be72e0a719667a2",
+    "utilization.rpt": "8e9ccd37dabe0d4f31f39919bd4866371ce4a963096877391a1c981662fcbd6a",
+    "utilization_hierarchical.rpt": "b980e555f8c147cf673b8493ade9e19ae13901ed336792265f6a159ef55859d4",
+    "congestion.rpt": "c8d4a95a1d61245d1627f7c62d608f4649c9bbe072ef5f1f8164c25f37a32c78",
+    "route_status.rpt": "23e47aded94fd1ed8eebbe1a38c8004312fd1be9e5d8843c802eca21ba008705",
+    "drc.rpt": "a924a9ef0c1a24e683e48aeec8efc3771abb10f7d756a8c2718c4fb45f20c830",
+    "methodology.rpt": "33c8813e882ceae1ba229629c893bce74b55ec1b51bf1e59793fc36c81e2c9e6",
+    "timing_summary.rpt": "987e0c9dff18117f8ec66197d59f1a5d84a269ef8b3327153bf0e7ea77f2a2f7",
+    "setup_paths.rpt": "9457c6a0bea5a627612e8ce3fa58d37109a95da7887cf6c82483ba9597a41596",
+    "hold_paths.rpt": "1fbf8823c46863cf186c359f55ad3fc2a58e06aa25c270d69f7612d8ca5f6d5e",
+    "clock_interaction.rpt": "a6854450ee8a33d116840dd68c8d394e93deed687c3dab8f1b491d894c79be1b",
+    "cdc.rpt": "ef540fdd376c28e6da5475bd84d7b7da8c96c0ca65bd9b9609ee7d92b09c7738",
+    "check_timing.rpt": "27f1a8d78b7618d0c6b9678192637e006d9151778cf634fbfedec372ac513623",
+    "routed_audit.tsv": "501e5879fc9720efb5e2378bb5621c8866dd3e4eb42cabf7d78fc907db3a645a",
+    "dpu_arch.json": "4404a8c71b5738d1df15a53db508811ac4d8fbce38effe448f6c78bbc9c8ec74",
+    "dpu_properties.tsv": "5716f6c3a5f5a76eb8d551e9c1cf55a72ce68fb507e619fc824dcfa2b7c6f9e9",
+    "bd_inventory.tsv": "7bd77b9367bdc00f560104c61510e5211b77aa6708b5762fae87487534310439",
+    "address_map.tsv": "7dcb602ecb5a035a9073c8abee21b06d63d0f8ec0432bebc253cd2dda878ef13",
+    "build_config.json": "dccf479baf67100e776faf79719a55741e7dc523b53f7cafae3beaec61a999da",
+    "exceptions_summary.rpt": "914166fe30484ac926758a2bfe76001fde3e5771fe158b8dc600ca203efaf92a",
+    "kv260_dpu_points.xsa": "1e8ca9819be09e753c951a926d15c8cd9a80a56a1f5381c383667e5c324620c4",
+    "kv260_dpu_points.bit": "700e6fcc7fe9a60fa36e321a7a94125b8d4d1bb84db2178fc147ddb67671e90b",
+    "kv260_dpu_points.bin": "dcf42e9260a75dc627d9085300df83676c3cae8a657f64e4e124ba3cd36b178b",
+    "kv260_dpu_points_with_bit.xsa": "a2468bd8b891efd3956376510fe7042b7b8c2382e3aab25ba957a973f59d4fc7",
+    "kernel_provenance.json": "1b003239d2a78f841a4bb4727b9b4209f97841badaf033cdc842f2b53d06ffbd",
+    "point_abi.json": "ac9a84548438284a65b927aadea08f9adab11e6ecef160d8cd82674e2e2506e2",
+    "source_manifest.json": "131d8480245e9948102e1ec0a18dda513781b801241ec9b0dde1bf36157ad3eb"
+  },
+  "export_verified": true
+}

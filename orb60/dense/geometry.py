@@ -138,6 +138,10 @@ class VoxelMap:
         self.counts = np.empty(0, np.int64)
         self.resolutions = [self.edge]
 
+    @staticmethod
+    def _group_keys(keys):
+        return np.unique(keys, axis=0, return_inverse=True)[1]
+
     def add(self, points, colors):
         points, colors = np.asarray(points), np.asarray(colors)
         if points.shape != colors.shape or points.ndim != 2 or points.shape[1] != 3:
@@ -148,7 +152,7 @@ class VoxelMap:
         counts = np.r_[self.counts, np.ones(len(points), np.int64)]
         while len(counts):
             keys = np.floor(sums[:, :3]/counts[:, None]/self.edge).astype(np.int64)
-            _, inverse = np.unique(keys, axis=0, return_inverse=True)
+            inverse = self._group_keys(keys)
             n = int(inverse.max())+1
             reduced = np.empty((n, 6), np.float64)
             for j in range(6):

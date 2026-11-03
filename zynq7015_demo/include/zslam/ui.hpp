@@ -7,7 +7,8 @@ namespace zslam {
 struct Timings {double capture_ms=0,orb_ms=0,slam_ms=0,render_ms=0,present_ms=0,total_ms=0,fps=0,target_fps=30;uint64_t deadline_misses=0;bool physical=false,recorded=false,preview=false;double focus_score=0;};
 struct GrayFrame {uint64_t id=0,timestamp_ns=0;unsigned width=960,height=720;std::vector<uint8_t> pixels;
     // Optional source MJPEG lease, selected before V4L2 QBUF; never re-encoded.
-    std::vector<uint8_t> color_jpeg;};
+    std::vector<uint8_t> color_jpeg;
+};
 struct SceneSnapshot {
     std::vector<PointView> points;
     std::vector<TrackSample> trajectory;
@@ -15,7 +16,7 @@ struct SceneSnapshot {
     explicit SceneSnapshot(const Slam &slam):points(slam.points()),trajectory(slam.trajectory()),reserved_bytes(slam.reservedBytes()){}
     SceneSnapshot()=default;
 };
-struct DrawProfile {double image_cpu_ms=0,geometry_cpu_ms=0,labels_cpu_ms=0;uint64_t trajectory_hits=0,trajectory_misses=0;};
+struct DrawProfile {double image_cpu_ms=0,geometry_cpu_ms=0,labels_cpu_ms=0;uint64_t trajectory_hits=0,trajectory_misses=0,background_builds=0,background_hits=0;};
 class Dashboard {
 public:
     unsigned width=1280,height=720;std::vector<uint16_t> pixels;
@@ -32,9 +33,10 @@ public:
 private:
     DrawProfile profile_;
     bool initialized_=false,preview_mode_=false;
-    struct CloudPixel {int x,y;uint16_t color;};
     std::vector<PointView> cloud_cache_;
-    std::vector<CloudPixel> cloud_pixels_;
+    // Fixed-view RGB565 background. Restore rows before drawing the live trail
+    // and camera marker; do not visit/project environment points every frame.
+    std::vector<uint16_t> cloud_background_;
     std::vector<DensePoint> dense_environment_;
     V3 eye_,forward_,right_,up_;double radius_=3;
     bool cloud_valid_=false;

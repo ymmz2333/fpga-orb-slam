@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "selected_family": "MiDaS_v2_1_Small_256_QAT",
+  "weights": "orb60/build/kv260/midas_refine/qat-e2e/best.pth",
+  "weights_sha256": "5e96ed984ab458c37fd21215be2039ea3232e7e55dafe2c076d87341bc478284",
+  "original_weights_sha256": "70d6b9c891758c67f974a6097fb0c608c7ee67fb81ac3e5588847d5596d56fca",
+  "user_visual_acceptance": true,
+  "user_acceptance_text": "我觉得这版精度没问题，可以使用",
+  "numerical_acceptance": "FAILED_ORIGINAL_THRESHOLDS",
+  "board_verified": false,
+  "board_gpu_rendering": {
+    "verified": true,
+    "renderer": "Mali-400 MP / GLES2",
+    "source": "saved QAT RGB cloud; no DPU execution",
+    "evidence": "orb60/build/kv260_system/board_gpu_desktop_20261102/validation.json"
+  },
+  "target_xmodel": "orb60/build/kv260_system/depth_midas_qat/compiled/midas_kv260_b4096.xmodel",
+  "checkpoint_kind": "Vitis_AI_2_5_QAT_training_state_requires_to_deployable",
+  "load_reference": "orb60/dense/kv260/midas_refine/video_test.py",
+  "test_report": "orb60/build/kv260/midas_refine/video_test/TEST_RESULT.json",
+  "frozen_20": {
+    "passed": 0,
+    "total": 20,
+    "mean_nrmse": 0.111224,
+    "worst_nrmse": 0.22458931772066704,
+    "minimum_spearman": 0.8426051944004342
+  },
+  "video_230": {
+    "mean_nrmse": 0.12566895529429958,
+    "worst_nrmse": 0.5113314937207714,
+    "minimum_spearman": 0.35018200546001066
+  },
+  "pointcloud": {
+    "candidate_points": 165761,
+    "valid_keyframes": 81,
+    "reference_points": 140274,
+    "reference_valid_keyframes": 79
+  },
+  "pending": [
+    "match_unified_ORB_DPU_fingerprint",
+    "board_numeric_and_video_validation"
+  ],
+  "target_model_sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+  "target_fingerprint": "0x101000016010407",
+  "dpu_convolutions": 99,
+  "dpu_subgraphs": 7,
+  "ps_extra_relu": 4
+}

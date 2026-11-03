@@ -597,7 +597,7 @@ class Window(QtWidgets.QMainWindow):
                         self.live_cloud.add(meta,points)
                         if before==0 and self.live_cloud.counts()[0]:self.map_view.fit(self.scene)
                     chunks,points,displayed=self.live_cloud.counts()
-                    self.info.setText(f'实时点块 {chunks}\n实际彩色点 {points:,}\n显示 {displayed:,}\nNPU 关键帧增量\n位姿优化按块更新')
+                    self.info.setText(f'实时点块 {chunks}\n实际彩色点 {points:,}\n显示 {displayed:,}\n{getattr(self,"depth_backend_label","NPU")} 关键帧增量\n位姿优化按块更新')
                     self.map_hint.setText(f'MAP {self.scene.map_id} · {chunks} 个增量点块 · {points:,} 点')
                     self.metric_labels['map'].setText(f'{points:,}')
                     self.map_view.auto_fit(self.scene)
@@ -628,21 +628,24 @@ class Window(QtWidgets.QMainWindow):
                 if hasattr(self.map_view.view,'renderer_status'):
                     state['gpu']=self.map_view.view.renderer_status()
                     state['gpu_sparse']=self.sparse_view.view.renderer_status()
-                path=Path(self.args.metrics).with_name('desktop_status.json');tmp=path.with_suffix('.tmp')
+                path=Path(getattr(self.args,'desktop_status',None) or Path(self.args.metrics).with_name('desktop_status.json'));tmp=path.with_suffix('.tmp')
                 tmp.write_text(json.dumps(state),encoding='utf-8');tmp.replace(path)
         except Exception as exc:
             if self.live_cloud:self.fail_live(str(exc))
             else:self.playing=False;self.statusBar().showMessage('显示错误：'+str(exc))
 
+    def draw_feature_marks(self,image,features):
+        for x,y,octave,mapped in features:
+            cv2.circle(image,(round(x),round(y)),3,(135,230,60) if mapped else (40,188,245),1,cv2.LINE_AA)
+
     def show_snapshot(self,snapshot):
         if not self.scene.apply(snapshot):return
         draw_start=time.perf_counter()
         self.current=snapshot;self.latest_color_index=-1;meta=snapshot.meta;image=cv2.imdecode(np.frombuffer(snapshot.jpeg,np.uint8),cv2.IMREAD_COLOR)
-        if image is None:raise ValueError('JPEG图像无法解码')
+        if image is None:raise ValueError('预览图像无法解码')
         self.raw.set_image(image);self.raw_hint.setText(('实时灰度预览 · 彩色深度另行低频采样' if self.live_cloud else '原始灰度输入') if meta['source_gray'] else '原始彩色输入')
         gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY);overlay=cv2.cvtColor(gray,cv2.COLOR_GRAY2BGR)
-        for x,y,octave,mapped in meta['features']:
-            cv2.circle(overlay,(round(x),round(y)),3,(135,230,60) if mapped else (40,188,245),1,cv2.LINE_AA)
+        self.draw_feature_marks(overlay,meta['features'])
         self.feature_image.set_image(overlay)
         self.metric_labels['fps'].setText(f"{meta['processing_fps']:.1f}");self.metric_labels['features'].setText(str(meta['feature_count']))
         self.metric_labels['map'].setText(f'{len(self.scene.points):,}');self.map_hint.setText(f"MAP {meta['map_id']:02d}  ·  {len(self.scene.keyframes)} 关键帧")
@@ -908,6 +911,7 @@ def main():
     p.add_argument('--screenshot',type=Path,help='Application QA: save its own window after rendering')
     p.add_argument('--screenshot-frame',type=int,default=-1);p.add_argument('--exit-after',type=float,default=0)
     p.add_argument('--metrics',type=Path,help='Save display update timing at close')
+    p.add_argument('--desktop-status',type=Path,help='Optional isolated live diagnostic file for this GUI instance')
     p.add_argument('--control-file',type=Path,help='Owned launcher control mailbox: stop or restart actual processing')
     p.add_argument('--demo-controller',help='Two-stage RK controller URL, e.g. http://rk3588:5610')
     p.add_argument('--separate-maps',action='store_true',help='Keep video/controls in main window and show two independent 3D windows')

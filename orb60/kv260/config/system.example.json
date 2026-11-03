@@ -1,0 +1,19 @@
+{
+  "camera": "../assets/camera_orb.csv",
+  "slam_yaml": "../assets/camera.yaml",
+  "vocabulary": "../vocabulary/ORBvoc.txt",
+  "slam_executable": "../build/bin/mono_kv260",
+  "register_map": "../assets/register_map_64.json",
+  "input_layout": "center_crop_1280x720",
+  "platform": {
+    "layer": {"uio": "/dev/kv260_orb_layer", "name": "orb60_layer64", "address": null},
+    "descriptor": {"uio": "/dev/kv260_orb_descriptor", "name": "orb60_descriptor64", "address": null}
+  },
+  "depth": {
+    "model": "../models/midas_kv260_b4096.xmodel",
+    "placement": "../models/placement.json",
+    "selection": "../models/depth_model_selection.json",
+    "preflight": "../runs/board_preflight.json",
+    "port": 18786
+  }
+}

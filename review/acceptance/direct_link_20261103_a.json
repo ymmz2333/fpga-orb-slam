@@ -1,0 +1,20 @@
+{
+  "status": "HOST_LINK_RECOVERY_SOURCE_AND_EVIDENCE_VERIFIED",
+  "archive_sha256": "8f957bf381d581f619adf39fec8d4cf20bc9dd2ace94913204068c484f39b5da",
+  "files_verified": 20,
+  "source_files_verified": 8,
+  "host_tests": {
+    "passed": 411,
+    "skipped": 4
+  },
+  "additional_peer_tests": 16,
+  "actual_mapping_QA_frames": 42,
+  "actual_disconnect_seconds": 26,
+  "persistent_controller": true,
+  "actual_reconnected_stream": true,
+  "original_transport_failure_preserved": true,
+  "map_version": "4b7bebceedc404a863102ee23309ffab4c3e3bc25199f067329826c43dac7dd0",
+  "no_PL_reload": true,
+  "physical_single_cable_verified": false,
+  "tracking_accuracy_acceptance": false
+}

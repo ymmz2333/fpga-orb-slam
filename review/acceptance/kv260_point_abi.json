@@ -1,0 +1,25 @@
+{
+  "offsets": {
+    "AP_CTRL": 0,
+    "GIE": 4,
+    "IER": 8,
+    "ISR": 12,
+    "AP_RETURN": 16,
+    "SAMPLES_DATA": 24,
+    "CONFIG_R_DATA": 36,
+    "POINTS_DATA": 48,
+    "STATS_DATA": 60,
+    "COUNT_DATA": 72,
+    "CAPACITY_DATA": 80
+  },
+  "widths": {
+    "AP_RETURN": 32,
+    "SAMPLES_DATA": 64,
+    "CONFIG_R_DATA": 64,
+    "POINTS_DATA": 64,
+    "STATS_DATA": 64,
+    "COUNT_DATA": 32,
+    "CAPACITY_DATA": 32
+  },
+  "header_sha256": "d3e8c585c0274fd18b6a150d8c9363550ac7538805dc0c70e16bdbbf8cd4059d"
+}

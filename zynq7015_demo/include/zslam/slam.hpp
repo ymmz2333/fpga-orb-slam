@@ -25,6 +25,7 @@ struct Config {
     double match_radius_px=24,mapping_budget_ms=4;
     bool mapping=true,precise_retrieval_invalidation=false;
     bool time_aware_motion=true,cached_retrieval_build=true;
+    bool fixed_map_multiview=false;
 };
 struct Ref {unsigned slot=~0u,generation=0;};
 struct PointView {V3 xyz;uint64_t id=0;unsigned observations=0;};
@@ -68,8 +69,9 @@ private:
     unsigned recovery_failures_=0,recovery_wait_=0;
     std::vector<Ref> associations_;
     mutable bool retrieval_valid_=false;
+    mutable bool retrieval_multiview_=false;
     mutable std::vector<Descriptor> retrieval_descriptors_;
-    mutable std::vector<unsigned> retrieval_slots_,retrieval_heads_,retrieval_links_;
+    mutable std::vector<unsigned> retrieval_slots_,retrieval_heads_,retrieval_links_,retrieval_offsets_;
     mutable std::array<unsigned,160> retrieval_bits_{};
     mutable std::vector<uint16_t> retrieval_hashes_;
     mutable std::array<unsigned,1024> retrieval_cursor_{};

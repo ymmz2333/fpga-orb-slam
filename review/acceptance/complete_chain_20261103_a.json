@@ -1,0 +1,49 @@
+{
+  "status": "HOST_VERIFIED_FRESH_FULL_SAVED_VIDEO_CHAIN_PASS",
+  "archive_sha256": "9f878b03ed5adaf5c148e7e0ad2d134e1eae60b397313090783817b4609504e8",
+  "files_verified": 801,
+  "mapping_frames": 2297,
+  "mapping_first_valid": 140,
+  "mapping_valid": 2157,
+  "mapping_valid_after_initialization": 1.0,
+  "map_ids": [
+    0
+  ],
+  "mapping_tracking_loss_segments": [],
+  "actual_DPU_keyframes": 58,
+  "DPU_execution_receipts_verified": 58,
+  "raw_depth_tensors_retained": false,
+  "actual_PL_point_projection": true,
+  "RGB_points": 272779,
+  "Mali_hardware_verified": true,
+  "mapping_processing_FPS": 9.627120719047143,
+  "all_geometry_FPS": 8.778249607697598,
+  "map_version": "8c80f12f3616ade9689f77015f52469eae6ff9f2c4db7141be5b7885dabd3a47",
+  "native_localization": {
+    "status": "ACTUAL_7015_FIXED_MAP_COLOR_HDMI_PASS",
+    "frames": 2273,
+    "valid": 2163,
+    "valid_after_initialization": 1.0,
+    "seconds": 81.77000000000044,
+    "fps": 27.79748073865706,
+    "cpu_orb_calls": 0,
+    "map_version": "8c80f12f3616ade9689f77015f52469eae6ff9f2c4db7141be5b7885dabd3a47",
+    "map_unchanged": true,
+    "display": {
+      "interface": "HDMI_2 TMDS/DVI 1280x720p60",
+      "submitted": 2273,
+      "last_ticket": 20104,
+      "scan_frames": 4897,
+      "scan_interval_s": 81.6109,
+      "scan_refresh_hz": 60.0042,
+      "underruns": 0,
+      "axi_errors": 0
+    },
+    "background_builds": 1,
+    "background_hits": 2272
+  },
+  "saved_video_full_chain_passed": true,
+  "actual_camera_field_localization_tested": false,
+  "physical_direct_cable_tested": false,
+  "source_model_sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09"
+}

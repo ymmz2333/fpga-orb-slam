@@ -1,0 +1,35 @@
+// Historical register-only XRT diagnostic overlay, paired with dpu_only.tcl.
+// The raw Vivado DPU register ABI is NOT XRT ap_ctrl_hs. Do not use this
+// overlay/xclbin for inference. Use dpu_vivado_full_overlay.dts and /dev/dpu.
+// Loading this overlay is an explicit deployment step, never runtime fallback.
+/dts-v1/;
+/plugin/;
+
+&fpga_full {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    firmware-name = "kv260-dpu-only.bit.bin";
+    resets = <&zynqmp_reset 116>, <&zynqmp_reset 117>,
+             <&zynqmp_reset 118>, <&zynqmp_reset 119>;
+};
+
+&amba {
+    #address-cells = <2>;
+    #size-cells = <2>;
+    afi_dpu {
+        compatible = "xlnx,afi-fpga";
+        // HP/HPC AXI slaves: encoding 0 is 128 bits. HPM0 AXI master:
+        // AFIFS reg14 bits[9:8]=2 is 128 bits, matching the routed XSA.
+        config-afi = <0 0>, <1 0>, <2 0>, <3 0>, <4 0>, <5 0>,
+                     <6 0>, <7 0>, <8 0>, <9 0>, <10 0>, <11 0>,
+                     <12 0>, <13 0>, <14 0x200>, <15 0>;
+    };
+
+    zocl_dpu: zyxclmm_drm {
+        compatible = "xlnx,zocl";
+        status = "okay";
+        interrupt-parent = <&gic>;
+        // dpu0_interrupt -> pl_ps_irq0[0]; XRT interrupt index zero.
+        interrupts = <0 89 4>;
+    };
+};
