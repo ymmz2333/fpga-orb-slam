@@ -1,0 +1,26 @@
+{
+  "assets/models/midas_qat_best.pth": {
+    "bytes": 86122579,
+    "sha256": "5e96ed984ab458c37fd21215be2039ea3232e7e55dafe2c076d87341bc478284",
+    "source": "orb60/build/kv260/midas_refine/qat-e2e/best.pth",
+    "license": "MIT; see LICENSES/MiDaS-MIT.txt"
+  },
+  "assets/models/midas_kv260_b4096.xmodel": {
+    "bytes": 18586049,
+    "sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+    "source": "orb60/build/kv260_system/depth_midas_qat/compiled/midas_kv260_b4096.xmodel",
+    "license": "MIT; see LICENSES/MiDaS-MIT.txt"
+  },
+  "assets/models/placement.json": {
+    "bytes": 77682,
+    "sha256": "75f9f1673b9b08a2723252afe84d61a3b461ffbf9ddb2e4e8fd8c405ec330df9",
+    "source": "orb60/build/kv260_system/depth_midas_qat/compiled/placement.json",
+    "license": "MIT; see LICENSES/MiDaS-MIT.txt"
+  },
+  "assets/models/compilation.json": {
+    "bytes": 983,
+    "sha256": "280f758299409486ad8b10f94b6ffa27113b3afbe532ff920d3e5429f3d1b89d",
+    "source": "orb60/build/kv260_system/depth_midas_qat/compiled/compilation.json",
+    "license": "MIT; see LICENSES/MiDaS-MIT.txt"
+  }
+}

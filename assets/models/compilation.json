@@ -1,0 +1,25 @@
+{
+  "status": "APPLICATION_ACCEPTED_TARGET_COMPILE_BOARD_UNTESTED",
+  "hardware_inference_verified": false,
+  "command": [
+    "vai_c_xir",
+    "-x",
+    "orb60/build/kv260_system/depth_midas_qat/export/runtime/Scoped_0_int.xmodel",
+    "-a",
+    "orb60/build/kv260_system/depth_midas_qat/compiled/arch.json",
+    "-o",
+    "orb60/build/kv260_system/depth_midas_qat/compiled",
+    "-n",
+    "midas_kv260_b4096"
+  ],
+  "source_model_sha256": "391795601b6f134de949fb83d4eef1203b9ac6bb0b1f3273bcbe55a3f7d1d6d1",
+  "arch_sha256": "1f47e9d34febc6b5b12ebf0cc73431b5c6f2b281ee7052a7d715b684a39aa671",
+  "quantization_report_sha256": "96c8a06b9bee5f1109031ce6bddae283637f86de4dc1c9b80478303c87b907d4",
+  "compiler_exit_code": 0,
+  "compiler_reused": true,
+  "model_sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+  "family": "midas",
+  "model_file": "midas_kv260_b4096.xmodel",
+  "numerical_acceptance": "QUANTIZATION_FAILED",
+  "user_visual_acceptance": true
+}

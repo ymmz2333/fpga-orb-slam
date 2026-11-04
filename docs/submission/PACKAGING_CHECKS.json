@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-04",
+  "scope": "Source packaging only; no new board or implementation run",
+  "navigation_links": "PASS",
+  "license_notices": "GPL-3.0-or-later plus preserved third-party licenses",
+  "computer_regression": {
+    "command": "python -m pytest orb60/kv260/tests/test_manual_control.py -q",
+    "passed": 17,
+    "failed": 0
+  },
+  "retained_native_source_coverage": {
+    "matched": 50,
+    "expected": 50,
+    "missing": []
+  },
+  "private_paperwork_in_repo": false
+}

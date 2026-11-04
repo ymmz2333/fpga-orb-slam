@@ -119,3 +119,29 @@ def test_uninitialized_new_scan_resumes_existing_map(tmp_path):
     control=tmp_path/'mapping_control';control.mkdir()
     (control/'RESULT.json').write_text(json.dumps(dict(status='ACTUAL_CAMERA_SYSTEM_COMPONENT_PASS_NO_MAP_INITIALIZED')))
     s.tick();s.start_localization.assert_called_once();assert s.handoff==tmp_path/'old'
+
+
+@pytest.mark.parametrize('error',[json.JSONDecodeError('empty','',0),FileNotFoundError('missing archive'),ValueError('camera mismatch')])
+def test_bad_saved_map_keeps_controller_alive_without_starting_localization(tmp_path,monkeypatch,error):
+    config=tmp_path/'config.json';config.write_text(json.dumps(dict(root=str(tmp_path),camera='camera.csv')))
+    connection=tmp_path/'connection.json';connection.write_text('{}')
+    monkeypatch.setattr('orb60.kv260.peer_link.PeerLink',Mock())
+    monkeypatch.setattr('orb60.kv260.install_camera_map_7015.check_handoff',Mock(side_effect=error))
+    saved=tmp_path/'bad_map';saved.mkdir();(saved/'HANDOFF.json').write_bytes(b'')
+    app=Session(config,connection,tmp_path/'library',tmp_path/'session',saved)
+    app.start_localization=Mock();app.resume()
+    assert app.phase=='ERROR' and app.handoff is None
+    app.start_localization.assert_not_called()
+    state=json.loads((app.folder/'status.json').read_text())
+    assert state['buttons']['start_mapping'] and not state['map_available']
+    assert state['events'][-1]['event']=='SAVED_MAP_REJECTED'
+    assert (saved/'HANDOFF.json').read_bytes()==b''
+
+
+def test_failed_map_flush_does_not_replace_last_selection(tmp_path,monkeypatch):
+    from orb60.kv260.saved_map import commit_selection
+    pointer=tmp_path/'manual_latest_map.json';pointer.write_text('{"handoff":"old"}')
+    handoff=tmp_path/'new';handoff.mkdir();(handoff/'map.bin').write_bytes(b'map')
+    monkeypatch.setattr('orb60.kv260.saved_map.os.fsync',Mock(side_effect=OSError('write failed')))
+    with pytest.raises(OSError):commit_selection(tmp_path,handoff,'a'*64)
+    assert json.loads(pointer.read_text())=={'handoff':'old'}

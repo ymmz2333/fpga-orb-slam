@@ -1,0 +1,20 @@
+{
+  "team_number": "53996",
+  "team_name": "芯火启航",
+  "title": "便携式单目建图与彩色地图定位系统",
+  "members": [
+    "王纪新",
+    "李子阳",
+    "孙诗宁"
+  ],
+  "source_date": "2026-11-04",
+  "repository": "https://github.com/ymmzseu/fpga-orb-slam",
+  "release_branch": "submission-53996-20261104",
+  "license": "GPL-3.0-or-later",
+  "hardware": [
+    "KV260 / K26",
+    "ZYNQ-7015 / XC7Z015CLG485-2"
+  ],
+  "archive_limit_bytes": 200000000,
+  "new_board_tests_for_this_packaging": false
+}

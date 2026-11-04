@@ -9,3 +9,9 @@
 **/.env
 *.pem
 *.key
+
+# Private competition paperwork and verification scratch
+**/signature*
+**/*授权书*
+**/private/
+.pytest_cache/

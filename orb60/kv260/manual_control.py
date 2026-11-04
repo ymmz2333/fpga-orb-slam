@@ -31,11 +31,17 @@ class Session:
         self.network=PeerLink(self.root,self.connection,self.folder,self.root/self.config['camera'])
         self.waiting_intent=None;self.next_network_attempt=0;self.network_lost=False;self.loss_journal_size=0
         if self.handoff:
-            from .install_camera_map_7015 import check_handoff
-            proof,_,_=check_handoff(self.handoff,allow_camera_diagnostic=True,allow_manual_latest=True)
-            camera=self.root/self.config['camera']
-            if digest(camera)!=proof['source']['camera_sha256']:raise ValueError('Existing map belongs to a different camera')
-            self.phase='MAP_READY';self.map_label='上次保存的地图';self.message='已有摄像头地图，正在恢复持续定位'
+            try:
+                from .install_camera_map_7015 import check_handoff
+                proof,_,_=check_handoff(self.handoff,allow_camera_diagnostic=True,allow_manual_latest=True)
+                camera=self.root/self.config['camera']
+                if digest(camera)!=proof['source']['camera_sha256']:raise ValueError('Existing map belongs to a different camera')
+            except (OSError,ValueError,KeyError,TypeError) as error:
+                self.events.append(dict(event='SAVED_MAP_REJECTED',handoff=str(self.handoff),error=repr(error)))
+                self.handoff=None;self.phase='ERROR';self.map_label='保存的地图校验失败'
+                self.message='保存的地图损坏或不匹配，未用于定位；原文件保留，可重新建图。详情：'+str(error)
+            else:
+                self.phase='MAP_READY';self.map_label='上次保存的地图';self.message='已有摄像头地图，正在恢复持续定位'
         self.publish()
 
     def publish(self):
@@ -180,7 +186,9 @@ class Session:
                     from .handoff_camera_7015 import create
                     candidate=self.folder/('handoff_%03d'%self.counter)
                     proof=create(self.run,self.root/self.config['camera'],candidate,manual_latest=True)
-                    self.handoff=candidate;self.map_label='本次保存的地图';save(self.root/'manual_latest_map.json',dict(handoff=str(candidate),camera_sha256=proof['source']['camera_sha256']))
+                    from .saved_map import commit_selection
+                    commit_selection(self.root,candidate,proof['source']['camera_sha256'])
+                    self.handoff=candidate;self.map_label='本次保存的地图'
                     self.events.append(dict(event='CURRENT_MAP_SAVED',map_id=proof['source']['map_id'],handoff=str(candidate),
                                             original_failed_gates=proof['source']['failed_gates']))
                     self.phase='MAP_READY';self.message='最新地图已保存，正在自动切换定位'

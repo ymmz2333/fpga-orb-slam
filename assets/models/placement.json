@@ -1,0 +1,1839 @@
+{
+  "status": "COMPILE_PLACEMENT_PASS",
+  "model_sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+  "subgraphs": [
+    {
+      "name": "subgraph_Scoped__Scoped_QuantStub_quant__input_1",
+      "device": "USER",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_QuantStub_quant__input_1",
+          "type": "data-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_0__Conv2d_1__input_5",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_3__DepthwiseSeparableConv_0__Conv2d_conv_dw__input_11",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_3__DepthwiseSeparableConv_0__Conv2d_conv_pw__input_17",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_0__Conv2d_conv_pw__input_21",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_0__Conv2d_conv_pwl__input_35",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_0__Sequential_conv_dw__Conv2d_1__input_29",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_1__Add_quant_add__input_53",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_1__Conv2d_conv_dw__input_45",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_1__Conv2d_conv_pw__input_39",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_1__Conv2d_conv_pwl__input_51",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Add_quant_add__input_69",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Add_quant_add__input_69_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Conv2d_conv_dw__input_61",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Conv2d_conv_pw__input_55",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Conv2d_conv_pwl__input_67",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_0__Conv2d_conv_pw__input_71",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_0__Conv2d_conv_pwl__input_85",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_0__Sequential_conv_dw__Conv2d_1__input_79",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_1__Add_quant_add__input_103",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_1__Conv2d_conv_dw__input_95",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_1__Conv2d_conv_pw__input_89",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_1__Conv2d_conv_pwl__input_101",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_2__Add_quant_add__input_119",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_2__Conv2d_conv_dw__input_111",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_2__Conv2d_conv_pw__input_105",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer2__Sequential_0__InvertedResidual_2__Conv2d_conv_pwl__input_117",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_0__Conv2d_conv_pw__input_121",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_0__Conv2d_conv_pwl__input_135",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_0__Sequential_conv_dw__Conv2d_1__input_129",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_1__Add_quant_add__input_153",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_1__Conv2d_conv_dw__input_145",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_1__Conv2d_conv_pw__input_139",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_1__Conv2d_conv_pwl__input_151",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_2__Add_quant_add__input_169",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_2__Conv2d_conv_dw__input_161",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_2__Conv2d_conv_pw__input_155",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_2__Conv2d_conv_pwl__input_167",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_3__Add_quant_add__input_185",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_3__Conv2d_conv_dw__input_177",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_3__Conv2d_conv_pw__input_171",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_3__Conv2d_conv_pwl__input_183",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_4__Add_quant_add__input_201",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_4__Conv2d_conv_dw__input_193",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_4__Conv2d_conv_pw__input_187",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_0__InvertedResidual_4__Conv2d_conv_pwl__input_199",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_0__Conv2d_conv_dw__input_209",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_0__Conv2d_conv_pw__input_203",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_0__Conv2d_conv_pwl__input_215",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_1__Add_quant_add__input_233",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_1__Conv2d_conv_dw__input_225",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_1__Conv2d_conv_pw__input_219",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_1__Conv2d_conv_pwl__input_231",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_2__Add_quant_add__input_249",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_2__Conv2d_conv_dw__input_241",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_2__Conv2d_conv_pw__input_235",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_2__Conv2d_conv_pwl__input_247",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_3__Add_quant_add__input_265",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_3__Conv2d_conv_dw__input_257",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_3__Conv2d_conv_pw__input_251",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_3__Conv2d_conv_pwl__input_263",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_4__Add_quant_add__input_281",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_4__Conv2d_conv_dw__input_273",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_4__Conv2d_conv_pw__input_267",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer3__Sequential_1__InvertedResidual_4__Conv2d_conv_pwl__input_279",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_0__Conv2d_conv_pw__input_283",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_0__Conv2d_conv_pwl__input_297",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_0__Sequential_conv_dw__Conv2d_1__input_291",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_1__Add_quant_add__input_315",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_1__Conv2d_conv_dw__input_307",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_1__Conv2d_conv_pw__input_301",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_1__Conv2d_conv_pwl__input_313",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_2__Add_quant_add__input_331",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_2__Conv2d_conv_dw__input_323",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_2__Conv2d_conv_pw__input_317",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_2__Conv2d_conv_pwl__input_329",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_3__Add_quant_add__input_347",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_3__Conv2d_conv_dw__input_339",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_3__Conv2d_conv_pw__input_333",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_3__Conv2d_conv_pwl__input_345",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_4__Add_quant_add__input_363",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_4__Conv2d_conv_dw__input_355",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_4__Conv2d_conv_pw__input_349",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_4__Conv2d_conv_pwl__input_361",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_5__Add_quant_add__input_379",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_5__Conv2d_conv_dw__input_371",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_5__Conv2d_conv_pw__input_365",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_0__InvertedResidual_5__Conv2d_conv_pwl__input_377",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_1__InvertedResidual_0__Conv2d_conv_dw__input_387",
+          "type": "depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_1__InvertedResidual_0__Conv2d_conv_pw__input_381",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer4__Sequential_1__InvertedResidual_0__Conv2d_conv_pwl__input_393",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_QuantStub_quant__input_1_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_0_1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_0_1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_3_0_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_3_0_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_3_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_3_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_dw_1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_dw_1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_1_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer1_4_2_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_dw_1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_dw_1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_1_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer2_0_2_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_dw_1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_dw_1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_1_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_2_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_3_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_0_4_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_1_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_2_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_3_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer3_1_4_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_dw_1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_dw_1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_1_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_2_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_3_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_4_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_0_5_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_dw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_dw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_pw_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_pw_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_pwl_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_pretrained_layer4_1_0_conv_pwl_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_layer2_rn_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_layer3_rn_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_layer4_rn_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+          "type": "fix2float"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+          "type": "relu"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399_fix",
+          "type": "float2fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_405",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_download_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_405",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_405_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv1__input_401",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv2__18715",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399_fix_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_resConfUnit2_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_resConfUnit2_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_resConfUnit2_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_resConfUnit2_conv2_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407",
+          "type": "upsample-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+          "type": "fix2float"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+          "type": "relu"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411_fix",
+          "type": "float2fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_download_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__Add_skip_add__Add_operation__18784",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv1__input_413",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv2__18782",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411_fix_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Conv2d_out_conv__18742",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit1_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit1_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit1_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit1_conv2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_out_conv_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet4_out_conv_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+          "type": "fix2float"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+          "type": "relu"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419_fix",
+          "type": "float2fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_425",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417_download_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_425",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_425_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv1__input_421",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv2__18826",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419_fix_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit2_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit2_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit2_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_resConfUnit2_conv2_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427",
+          "type": "upsample-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+          "type": "fix2float"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+          "type": "relu"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431_fix",
+          "type": "float2fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Add_skip_add__Add_operation__input_437",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_download_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Add_skip_add__Add_operation__input_437",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Add_skip_add__Add_operation__input_437_recomputation_0",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__Add_skip_add__Add_operation__18895",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv1__input_433",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv2__18893",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431_fix_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_445",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_445_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv1__input_441",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv2__18937",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Conv2d_out_conv__18853",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit1_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit1_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit1_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit1_conv2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit2_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit2_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit2_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_resConfUnit2_conv2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_out_conv_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet3_out_conv_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447",
+          "type": "upsample-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer1_rn__input_449",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer1_rn__input_449",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer1_rn__input_449_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer1_rn__input_449_recomputation_0",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer1_rn__input_449_recomputation_0_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Add_skip_add__Add_operation__input_457",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Add_skip_add__Add_operation__input_457_recomputation_0",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit1__Add_skip_add__Add_operation__19006",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv1__input_453",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit1__Conv2d_conv2__19004",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_465",
+          "type": "eltwise-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit2__Add_skip_add__Add_operation__input_465_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv1__input_461",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__ResidualConvUnit_custom_resConfUnit2__Conv2d_conv2__19048",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Conv2d_out_conv__18964",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_pretrained__Sequential_layer1__Sequential_4__InvertedResidual_2__Add_quant_add__input_69_download_0_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__net_scratch_layer1_rn_weight_auto_recomputation_0_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_layer1_rn_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit1_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit1_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit1_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit1_conv2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit2_conv1_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit2_conv1_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit2_conv2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_resConfUnit2_conv2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_out_conv_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet2_out_conv_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467",
+          "type": "upsample-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Conv2d_out_conv__input_469",
+      "device": "DPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Conv2d_out_conv__input_469",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467_upload_0",
+          "type": "upload"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Conv2d_0__input_471",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Conv2d_2__input_475",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Conv2d_4__input",
+          "type": "conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Interpolate_1__Interpolate_quant_interpolate__input_473",
+          "type": "transposed-depthwise-conv2d-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Interpolate_1__Interpolate_quant_interpolate__input_473_fake_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Interpolate_1__Interpolate_quant_interpolate__input_473_transfered_DwDeConv2d_weights_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Interpolate_1__Interpolate_quant_interpolate__input_473_transfered_pad",
+          "type": "pad-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__inputs",
+          "type": "reshape-fix"
+        },
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__inputs_download_0",
+          "type": "download"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_0_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_0_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_2_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_2_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_4_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_output_conv_4_weight_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_out_conv_bias_new",
+          "type": "const-fix"
+        },
+        {
+          "name": "Scoped__net_scratch_refinenet1_out_conv_weight_new",
+          "type": "const-fix"
+        }
+      ]
+    },
+    {
+      "name": "subgraph_Scoped__Scoped_MidasNet_small_net__inputs_fix_",
+      "device": "CPU",
+      "ops": [
+        {
+          "name": "Scoped__Scoped_MidasNet_small_net__inputs_fix_",
+          "type": "fix2float"
+        }
+      ]
+    }
+  ],
+  "dpu_subgraphs": 7,
+  "convolutions": 99,
+  "ps_operations": [
+    {
+      "name": "Scoped__Scoped_QuantStub_quant__input_1",
+      "type": "data-fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer4_rn__input_397_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+      "type": "fix2float"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+      "type": "relu"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399_fix",
+      "type": "float2fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407",
+      "type": "upsample-fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer3_rn__input_409_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+      "type": "fix2float"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+      "type": "relu"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411_fix",
+      "type": "float2fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Add_skip_add__Add_operation__input_417_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+      "type": "fix2float"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+      "type": "relu"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419_fix",
+      "type": "float2fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427",
+      "type": "upsample-fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__Conv2d_scratch__Conv2d_layer2_rn__input_429_fix_Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+      "type": "fix2float"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+      "type": "relu"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431_fix",
+      "type": "float2fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447",
+      "type": "upsample-fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467",
+      "type": "upsample-fix"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__inputs_fix_",
+      "type": "fix2float"
+    }
+  ],
+  "hardware_inference_verified": false,
+  "fingerprints": [
+    "0x101000016010407"
+  ],
+  "target_names": [
+    "DPUCZDX8G_ISA1_B4096"
+  ],
+  "resize_semantics": [
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407",
+      "type": "upsample-fix",
+      "align_corners": true,
+      "half_pixel_centers": false,
+      "mode": "BILINEAR",
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "device": "CPU"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427",
+      "type": "upsample-fix",
+      "align_corners": true,
+      "half_pixel_centers": false,
+      "mode": "BILINEAR",
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "device": "CPU"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447",
+      "type": "upsample-fix",
+      "align_corners": true,
+      "half_pixel_centers": false,
+      "mode": "BILINEAR",
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "device": "CPU"
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467",
+      "type": "upsample-fix",
+      "align_corners": true,
+      "half_pixel_centers": false,
+      "mode": "BILINEAR",
+      "scale": [
+        2.0,
+        2.0
+      ],
+      "device": "CPU"
+    }
+  ],
+  "source_resize_semantics": [
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__Interpolate_quant_interpolate__input_407",
+      "mode": "BILINEAR",
+      "align_corners": true,
+      "half_pixel_centers": false
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__Interpolate_quant_interpolate__input_427",
+      "mode": "BILINEAR",
+      "align_corners": true,
+      "half_pixel_centers": false
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__Interpolate_quant_interpolate__input_447",
+      "mode": "BILINEAR",
+      "align_corners": true,
+      "half_pixel_centers": false
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet1__Interpolate_quant_interpolate__input_467",
+      "mode": "BILINEAR",
+      "align_corners": true,
+      "half_pixel_centers": false
+    },
+    {
+      "name": "Scoped__Scoped_MidasNet_small_net__Sequential_scratch__Sequential_output_conv__Interpolate_1__Interpolate_quant_interpolate__input_473",
+      "mode": "BILINEAR",
+      "align_corners": false,
+      "half_pixel_centers": true
+    }
+  ],
+  "final_half_pixel_resize_lowered_into_dpu": true,
+  "compiler_lowering_numerical_gate": "BOARD_REQUIRED",
+  "explicit_ps_operator_policy": {
+    "schema": 1,
+    "model_sha256": "24733de9949579552db3ec42c742c18febab5a4762407318dcef07f9c4b5de09",
+    "source_model_sha256": "391795601b6f134de949fb83d4eef1203b9ac6bb0b1f3273bcbe55a3f7d1d6d1",
+    "approved_extra_ops": [
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+        "type": "relu"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+        "type": "relu"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+        "type": "relu"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+        "type": "relu"
+      }
+    ],
+    "equivalent_ps_operation": "elementwise maximum(x, 0); no weights or convolution",
+    "review": [
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet4__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_399",
+        "type": "relu",
+        "attrs": {
+          "device": "CPU"
+        },
+        "output_shape": [
+          1,
+          8,
+          8,
+          512
+        ],
+        "device": "CPU"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_411",
+        "type": "relu",
+        "attrs": {
+          "device": "CPU"
+        },
+        "output_shape": [
+          1,
+          16,
+          16,
+          256
+        ],
+        "device": "CPU"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet3__ResidualConvUnit_custom_resConfUnit2__ReLU_quant_activation1__input_419",
+        "type": "relu",
+        "attrs": {
+          "device": "CPU"
+        },
+        "output_shape": [
+          1,
+          16,
+          16,
+          256
+        ],
+        "device": "CPU"
+      },
+      {
+        "name": "Scoped__Scoped_MidasNet_small_net__FeatureFusionBlock_custom_scratch__FeatureFusionBlock_custom_refinenet2__ResidualConvUnit_custom_resConfUnit1__ReLU_quant_activation1__input_431",
+        "type": "relu",
+        "attrs": {
+          "device": "CPU"
+        },
+        "output_shape": [
+          1,
+          32,
+          32,
+          128
+        ],
+        "device": "CPU"
+      }
+    ],
+    "dpu_convolutions": 99,
+    "status": "EXPLICIT_PS_RELU_POLICY_BOARD_UNTESTED"
+  }
+}
